@@ -163,24 +163,25 @@ Main
     display: flex;
 }
 
-.info-slide-img>img{
+.slide-img>img{
     width: 100vw;
     height: 100vh;
-    position: relative;
+}
+.info-slide-img{
+    width: 100vw;
 }
 
 .info-slide-img p{
-    position: absolute;
+    
     top: 30%;
     left: 15%;
 }
 .info{
     color: #fff;
-    
 }
 
 .ball-name{
-    position: absolute;
-    top: 35%;
-    left: 15%;
+   
+    top: 40%;
+    left: 17%;
 }
