@@ -6,9 +6,9 @@ main{
     height: 100vh;
 }
 /* 공사중 */
-body * {
+/* body * {
     outline: 5px dashed green;
-}
+} */
 /* 12 그리드 클래스 : 
 한줄에 합이 12컬럼이 되도록 셋팅! */
 .col-1 {width: 8.33%;}
@@ -51,6 +51,7 @@ a {
     flex-direction: row;
     align-items: center;
     z-index: 100;
+    border-bottom: 1px solid #fff;
 }
 .top-area::before{
     content: '';
@@ -63,7 +64,8 @@ a {
     transition: 0.4s ease-in-out;
 }
 .top-area:hover::before{
-    height: calc(40px * 7);
+    height: 300px;
+    border-bottom: 1px solid #fff;
 }
 .part-box {   
     position: relative;
@@ -92,7 +94,7 @@ a {
 /* 최상위 직계 li만 적용 */
 .gnb > ul > li {
     position: relative;
-    width: min(144px, 9.5vw);
+    width: min(150px, 9.5vw);
     height: 103px;
 }
 
@@ -134,15 +136,18 @@ a {
 }
 /* 상위메뉴 li에 마우스 오버시 서브메뉴 보이기 애니 */
 .top-area:hover .gnb > ul > li .sub-menu {
-    /* 서브 메뉴별 개수로 높이값 차등설정 */
     height: calc(40px * 7);
-    /* height: auto; 
-    - 자동 높이값은 애니메이션 불가*/
     opacity: 1;
 }
 
 li {
     text-align: center;
+}
+/* *************************************
+서브메뉴
+**************************************/
+.sub-menu{
+    border-right: 1px solid hsla(0, 0%, 100%, 0.5);
 }
 /* 서브메뉴 a */
 .sub-menu a {
@@ -161,33 +166,34 @@ li {
 .sub-menu a:hover {
     opacity: 1;
     background-color: red;
-    
-
 }
 
 
 /* snb 메뉴 */
 .sn {
-    /* position: absolute;
-    display: inline-block; */
     height: 103px;
 }
 .sn>ul{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     height: 100%;
 }
 .sn a {
     font-size: 1em;
-    padding: 0 10px;
+    width: min(100px,5vw);
+    white-space: nowrap;
 }
 .sn ul li{
     height: 100%;
     text-align: center;
 }
 .sn:last-child ul li:last-of-type{
+    opacity: .9;
     background-color: red;
+}
+.sn:last-child ul li:last-of-type:hover{
+    opacity: 1;
 }
 
 /*******************************************************************************************
