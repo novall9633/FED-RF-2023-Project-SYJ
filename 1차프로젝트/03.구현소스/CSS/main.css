@@ -172,7 +172,7 @@ Main
 }
 
 .info-slide-img p{
-    
+    position: absolute;
     top: 30%;
     left: 15%;
 }
@@ -181,7 +181,17 @@ Main
 }
 
 .ball-name{
-   
+   position: absolute;
     top: 40%;
-    left: 17%;
+    left: 15%;
+}
+.ball-color{
+    position: absolute;
+    top: 45%;
+    left: 15%;
+}
+.ball-intro{
+    position: absolute;
+    top: 50%;
+    left: 15%;
 }
