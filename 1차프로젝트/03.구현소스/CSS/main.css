@@ -64,6 +64,8 @@ a {
     transition: 0.4s ease-in-out;
 }
 .top-area:hover::before{
+    content: '';
+    position: absolute;
     height: 300px;
     border-bottom: 1px solid #fff;
 }
@@ -213,7 +215,7 @@ Main
 
 .info-slide-img p{
     position: absolute;
-    top: 30%;
+    top: 31%;
     left: 15%;
 }
 .info{
@@ -222,17 +224,17 @@ Main
 
 .ball-name{
    position: absolute;
-    top: 40%;
+    top: 39%;
     left: 15%;
 }
 .ball-color{
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 15%;
 }
 .ball-intro{
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 15%;
     line-height: 1.6;
     opacity: .8;
