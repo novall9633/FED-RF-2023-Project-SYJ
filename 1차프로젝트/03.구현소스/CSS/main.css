@@ -1,9 +1,18 @@
 @charset "utf-8";
 @import url(./reset.css);
 
+html{
+    /* 스크롤 애니메이션 설정 */
+    scroll-behavior:smooth
+}
 main{
     width: 100vw;
     height: 100vh;
+}
+
+/* 자동스크롤 위해 스크롤바 없애기 */
+body{
+    overflow: hidden;
 }
 /* 공사중 */
 /* body * {
@@ -73,10 +82,10 @@ a {
     position: relative;
 }
 
-.logo {
+.top-area .logo {
     height: 103px;
 }
-.logo img {
+.top-area .logo img {
     position: absolute;
     top: 29px;
     left: 44px;
@@ -200,19 +209,47 @@ li {
 /*******************************************************************************************
 Main
 *******************************************************************************************/
+/* 
+    공통
+*/
+.bg-com{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+.pg1{
+    background-image: url(../imgs/pro_back.jpg);
+}
+.pg2{
+    background-image: url(../imgs/pexels-karolina-grabowska-5477844.jpg);
+}
+.pg3{
+    background-image: url(../imgs/bolling_back.jpg);
+}
+.pg4{
+    background-image: url(../imgs/comm_back.jpg);
+}
+.pg5{
+    background-image: url(../imgs/pexels-matthias-zomer-344029.jpg);
+}
+/* 공통 끝 */
+.page .swip-container{
+    position: relative;
+    height: 100vh;
+}
+.swip-container{
+    width: 100vw;
+    margin: 0 auto;
+}
 .swip-wrap{
     display: flex;
 }
 
-.slide-img>img{
-    width: 100vw;
-    height: 100vh;
-}
-.info-slide-img{
+.slide-img-info{
     width: 100vw;
 }
 
-.info-slide-img p{
+.slide-img-info p{
     position: absolute;
     top: 31%;
     left: 15%;
@@ -237,4 +274,25 @@ Main
     left: 15%;
     line-height: 1.6;
     opacity: .8;
+}
+.swip-prev a{
+    position: absolute;
+    display: block;
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 3%;
+    background: url(../imgs/mk_board_btn_prev.png) no-repeat center/contain;
+}
+
+.swip-next a{
+    position: absolute;
+    display: block;
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    right: 3%;
+    background: url(../imgs/mk_board_btn_next.png) no-repeat center/contain;
 }

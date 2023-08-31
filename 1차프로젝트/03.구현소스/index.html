@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>엠케이트레이딩</title>
         <link rel="stylesheet" href="./CSS/main.css" />
+        <script src="./JS/main.js"></script>
     </head>
     <body>
         <header class="top-area clb">
@@ -147,15 +148,14 @@
         </header>
         <main>
             <!-- 볼 소개 -->
-            <section class="main-visual">
+            <section class="page">
                 <!-- 볼 소개 화면 전체 -->
-                <div class="swip-container">
+                <div class="swip-container main-visual" style="background: url(./imgs/main_visual16.jpg) no-repeat center/cover;">
                     <div class="swip-wrap">
                         <!-- 각각의 볼 특징 및 화면 -->
                         <div class="slide-img">
-                            <img src="./imgs/main_visual16.jpg">
                             <!-- 볼 각각의 정보 -->
-                            <div class="info-slide-img">
+                            <div class="slide-img-info">
                                 <!-- 제조사 -->
                                 <p class="manu-comp">
                                     <img src="./imgs/main_visual_icon_c.png">
@@ -167,21 +167,49 @@
                         </div>
                     </div>
                     <div class="swip-nav"></div>
-                    <div class="swip-prev"></div>
-                    <div class="swip-next"></div>
+                    <div class="swip-prev">
+                        <a href="#">
+                            <img src="../imgs/mk_board_btn_prev.png" alt="">
+                        </a>
+                    </div>
+                    <div class="swip-next">
+                        <a href="#">
+                            <img src="../imgs/mk_board_btn_next.png" alt="">
+                        </a>
+                    </div>
                 </div>
-                
+                               
             </section>
             <!-- MK사 볼링제품  -->
-            <section></section>
+            <section class="page">
+                <div class="swip-container bg-com pg1">
+
+                </div>
+            </section>
             <!-- 대회 안내 -->
-            <section></section>
+            <section class="page">
+                <div class="swip-container bg-com pg2">
+
+                </div>
+            </section>
             <!-- 볼링센터 -->
-            <section></section>
+            <section class="page">
+                <div class="swip-container bg-com pg3">
+
+                </div>
+            </section>
             <!-- MK News -->
-            <section></section>
+            <section class="page">
+                <div class="swip-container bg-com pg4">
+
+                </div>
+            </section>
             <!-- Youtube -->
-            <section></section>
+            <section class="page">
+                <div class="swip-container bg-com pg5">
+
+                </div>
+            </section>
         </main>
         <footer></footer>
     </body>
