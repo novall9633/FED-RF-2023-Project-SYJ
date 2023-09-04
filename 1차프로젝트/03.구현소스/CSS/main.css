@@ -321,3 +321,9 @@ Main
 .swip-prev a:hover,.swip-next a:hover{
     opacity: 1;
 }
+.ball-more img{
+    width: 82px;
+    height: 51px;
+    vertical-align: -9px;
+    margin: 0px -34px;
+}
