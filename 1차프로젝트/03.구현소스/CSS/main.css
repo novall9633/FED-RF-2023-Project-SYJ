@@ -283,17 +283,42 @@ Main
     width: 100vw;
     height: 100vh;
 }
+.ball-more{
+    display: inline-block;
+    margin-top: 20px;
+
+}
 .ball-more a{
     color: rgb(255, 255, 255);
     font-size: 28px;
     font-weight: bold;
-    line-height: 3;
 }
-.ball-more a:after{
-    /* 볼링핀 자빠지거나 스기 */
-    content: '';
+
+.ball-more a::after{
+    content: "";
     display: block;
-    /* background:"볼링핀" ; */
+    width: 0%;
+    height: 2px;
+    background-color: #fff; 
+}
+.ball-more:hover a::after{
+   width: 100%;
+   transition: 1s;
+}
+.ball-more img{
+    width: 82px;
+    height: 51px;
+    vertical-align: -9px;
+    margin: 0px -34px;
+    -webkit-transform-origin-y: 70%;
+}
+@keyframes falls_pin {
+    to{
+        transform: translateX(10px) rotate(90deg);
+    }
+}
+.ball-more:hover img{
+    animation: falls_pin .3s linear .5s forwards;
 }
 
 .swip-prev a{
@@ -321,9 +346,8 @@ Main
 .swip-prev a:hover,.swip-next a:hover{
     opacity: 1;
 }
-.ball-more img{
-    width: 82px;
-    height: 51px;
-    vertical-align: -9px;
-    margin: 0px -34px;
+.img-com{
+    position: absolute;
+    top: 20%;
+    vertical-align: center;
 }

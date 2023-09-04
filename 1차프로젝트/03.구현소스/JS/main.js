@@ -12,6 +12,7 @@ let pg_num = 0;
 let sts_wheel = 0;
 // 1-3. 전체 페이지수
 let total_pg = 7;
+let ele_page;
 
 // 새로고침시 첫페이지로 리셋하기
 // 브라우저 스크롤바 위치 캐싱때문에
@@ -36,9 +37,11 @@ const qsa = x => document.querySelectorAll(x);
 function loadFn(){
     // 호출확인
     console.log('로딩완료');
+    // .page요소 담기
+    ele_page = qsa('.page');
 
     // 전체 페이지 수 할당
-    total_pg = qsa('.page').length;
+    total_pg = ele_page.length;
     console.log('전체페이지수:',total_pg)
 }/////////loadFn함수////////////////////////////
 
@@ -87,3 +90,84 @@ function wheelFn(e){ //e -> 이벤트 전달변수
     window.scrollTo(0,window.innerHeight*pg_num);
     
 } // wheelFn 함수////////////////////////////
+// 1. 모바일 이벤트 등록하기 ///////////
+// 대상 : window
+window.addEventListener('touchstart',touchStart);
+window.addEventListener('touchend',touchEnd);
+
+// 2. 모바일 이벤트 함수 만들기 ////////////
+
+// 터치 위치값 변수
+let pos_start=0, pos_end=0;
+
+// 2-1. 터치 시작 이벤트 호출 함수/////////////////
+function touchStart(e){ //e는 이벤트 전달변수
+    // 모바일 이벤트 화면 위치값 구하기
+    // 모바일 오리지널 이벤트 객체 - originalEvent(jQuery에서만 씀)
+    // 하위 터치 이벤트 컬렉션 - touches[0]
+    // 변경된 터치이벤트를 담는 컬렉션 - changedTouches[0]
+    
+    // 스크린 위치값 구하기
+    // jQuery는 originalEvent를 사용해야 나옴
+    // let scY = e.originalEvent.touches[0].screenY;
+    pos_start = e.touches[0].screenY;
+    // 함수호출 확인
+    console.log("터치시작",pos_start);
+
+    // 
+} //touchStart함수////////////////////
+
+// 2-2. 터치끝 이벤트 호출 함수 /////////////
+function touchEnd(e){ //e는 이벤트 전달변수
+    // 모바일 이벤트 화면 위치값 구하기
+    // 모바일 오리지널 이벤트 객체 - originalEvent(jQuery에서만 씀)
+    // 하위 터치 이벤트 컬렉션 - touches[0]
+    // 변경된 터치이벤트를 담는 컬렉션 - changedTouches[0]
+    
+    // 1.스크린 위치값 구하기
+    // jQuery는 originalEvent를 사용해야 나옴
+    // let scY = e.originalEvent.changedTouches[0].screenY;
+    //  터치가 끝날 때는 changedTouches[0]를 사용해야함
+    pos_end = e.changedTouches[0].screenY;
+
+    // 2. 터치방향 알아내기
+    // 원리 : 시작위치 - 끝위치
+    // 음수면 윗방향이동 양수면 아랫방향이동
+    let result = pos_start - pos_end;
+    // 함수호출 확인
+    console.log("터치끝",pos_end,'결과:',result);
+
+    // return값이 차가 0이면 함수 나감
+    if(result==0) return;
+    
+    // 이벤트 처리함수 호출
+    // 음수면 0, 양수면 1을 넘겨준다
+    movePage(result>0?1:0);
+
+} //touchEnd함수////////////////////
+
+//// 2-3. 이벤트 처리함수 : 화면이동 /////
+function movePage(dir){ //dir은 방향값(1-아랫쪽, 0-윗쪽)
+    // 함수호출확인
+    console.log('이동방향은?',dir);
+
+
+    // 1. 페이지번호 변경 반영하기//////
+    // 1은(true) 아랫방향, 0은 윗방향
+    // 1값은 true, 0값은 false로 처리됨
+    if(dir){
+        pg_num++;
+    }else if(!dir){
+        pg_num--;
+    }
+
+    // 2. 페이지번호 한계수 체크(양끝 페이지 고정)
+    if(pg_num < 0) pg_num=0;
+    if(pg_num == total_pg) pg_num=total_pg-1;
+
+    // 3. 페이지 이동하기//////////
+    // offsetTop은 선택요소의 top 위치값 리턴함
+    // window.scrollTo(0,window.innerHeight*pg_num); 
+    window.scrollTo(0,ele_page[pg_num].offsetTop);
+    console.log('여기야!',ele_page[pg_num].offsetTop);
+}/////movePage함수 /////////////
