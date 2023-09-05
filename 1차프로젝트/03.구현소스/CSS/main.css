@@ -9,6 +9,13 @@ main{
     width: 100vw;
     height: 100vh;
 }
+@media screen and (max-width:500px) {
+    /* 수정중 */
+    .page{
+        width:100vw;
+        height: 100vh;
+    }
+}
 
 /* 자동스크롤 위해 스크롤바 없애기 */
 body{
@@ -90,6 +97,30 @@ a {
     top: 29px;
     left: 44px;
     width: min(240px, 17vw);
+}
+/* 수정중 */
+.top-area .logo img:first-of-type{
+    animation:  fadeIn ease-in 5s infinite backwards;
+}
+.top-area .logo img:last-of-type{
+
+    animation: fadeOut ease-in 5s infinite backwards;
+}
+@keyframes fadeOut {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity:0;
+    }
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .gnb {
@@ -218,13 +249,13 @@ Main
     background-size: 100% 100%;
 }
 .pg1{
-    background-image: url(../imgs/pro_back.jpg);
+    background-color: #fff;
 }
 .pg2{
-    background-image: url(../imgs/pexels-karolina-grabowska-5477844.jpg);
+    background-image: url(../imgs/bolling_back.jpg);
 }
 .pg3{
-    background-image: url(../imgs/bolling_back.jpg);
+    background-color: #fff;
 }
 .pg4{
     background-image: url(../imgs/comm_back.jpg);
@@ -238,7 +269,7 @@ Main
     height: 100vh;
 }
 .swip-container{
-    width: 100vw;
+    width: 100%;
     margin: 0 auto;
 }
 .swip-wrap{
@@ -248,10 +279,10 @@ Main
 .slide-img-info{
     position: absolute;
     width: 100%;
-    max-width: min(1300px,78vw);
+    max-width: min(1200px,78vw);
     height: 50%;
     transform: translate(-50%, -50%);
-    top: 50%;
+    top: 40%;
     left: 50%;
     text-align: left;
 }
@@ -260,52 +291,57 @@ Main
 }
 /* 볼 브랜드 */
 .slide-img-info p{
-    font-size: 14px;
+    font-size: 14rem;
+    animation: fadeIn ease-in-out 2s forwards;
 }
 /* 볼이름 */
 .ball-name{
     font-size: 6rem;
     line-height: 1;
+    animation: fadeIn ease-in-out 1s forwards;
 }
 /* 볼 색깔 */
 .ball-color{
     font-size: 3.5rem;
     line-height: 1.3;
+    animation: fadeIn ease-in-out 1.5s forwards;
 }
 /* 볼 설명 */
 .ball-intro{
     font-size: 1.3rem;
     line-height: 1.3;
     margin-top: 30px;
+    animation: fadeIn ease-in-out 2.5s forwards;
 }
 /* 볼 이미지 */
 .dtimg img{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
-.ball-more{
+/* more버튼 */
+.btn-more{
     display: inline-block;
     margin-top: 20px;
-
+    animation: fadeIn ease-in-out 3s forwards;
 }
-.ball-more a{
+.btn-more a{
     color: rgb(255, 255, 255);
     font-size: 28px;
     font-weight: bold;
 }
 
-.ball-more a::after{
+.btn-more a::after{
     content: "";
     display: block;
     width: 0%;
     height: 2px;
     background-color: #fff; 
 }
-.ball-more:hover a::after{
+.btn-more:hover a::after{
    width: 100%;
    transition: 1s;
 }
-.ball-more img{
+.btn-more img{
     width: 82px;
     height: 51px;
     vertical-align: -9px;
@@ -317,7 +353,7 @@ Main
         transform: translateX(10px) rotate(90deg);
     }
 }
-.ball-more:hover img{
+.btn-more:hover img{
     animation: falls_pin .3s linear .5s forwards;
 }
 
@@ -346,8 +382,14 @@ Main
 .swip-prev a:hover,.swip-next a:hover{
     opacity: 1;
 }
+
+/**********************************************
+ 2번째 section 
+**********************************************/
 .img-com{
     position: absolute;
     top: 10%;
-    vertical-align: center;
+    width: 100%;
+    height: 10%;
+    transition: 10s;
 }
