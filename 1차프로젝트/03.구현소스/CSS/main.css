@@ -282,7 +282,7 @@ Main
     max-width: min(1200px,78vw);
     height: 50%;
     transform: translate(-50%, -50%);
-    top: 40%;
+    top: 50%;
     left: 50%;
     text-align: left;
 }
@@ -290,8 +290,8 @@ Main
     color: #fff;
 }
 /* 볼 브랜드 */
-.slide-img-info p{
-    font-size: 14rem;
+.slide-img-info p img{
+    width: min(160px,13vw);
     animation: fadeIn ease-in-out 2s forwards;
 }
 /* 볼이름 */
@@ -387,9 +387,14 @@ Main
  2번째 section 
 **********************************************/
 .img-com{
-    position: absolute;
-    top: 10%;
-    width: 100%;
+    margin-top: 6%;
     height: 10%;
-    transition: 10s;
+    white-space: nowrap;
+}
+.pro-tit{
+    text-align: center; 
+    margin-top: 5vh;
+}
+.pro-tit p{
+    font-size: 2.4rem;
 }
