@@ -13,10 +13,12 @@ window.addEventListener('DOMContentLoaded',loadFn);
 
 const qs = x => document.querySelector(x);
 const qsa = x => document.querySelectorAll(x);
+const addEvt =(ele,evt,fn) => ele.addEventListener(evt,fn);
 
 function loadFn(){
     ele_page = qsa('.page');
     total_pg = ele_page.length;
+    
 
 }/////////loadFn함수////////////////////////////
 

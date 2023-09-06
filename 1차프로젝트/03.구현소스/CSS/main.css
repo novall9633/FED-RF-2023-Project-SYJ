@@ -9,13 +9,13 @@ main{
     width: 100vw;
     height: 100vh;
 }
-@media screen and (max-width:500px) {
-    /* 수정중 */
+/* @media screen and (max-width:500px) {
+
     .page{
         width:100vw;
         height: 100vh;
     }
-}
+} */
 
 /* 자동스크롤 위해 스크롤바 없애기 */
 body{
@@ -45,13 +45,13 @@ ul,ol,li {
     padding: 0;
     list-style: none;
 }
-ul::after,
+/* ul::after,
 ol::after,
 .clb::after {
     content: "";
     display: block;
     clear: both;
-}
+} */
 a {
     text-decoration: none;
 }
@@ -269,7 +269,7 @@ Main
     height: 100vh;
 }
 .swip-container{
-    width: 100%;
+    width: 100vw;
     margin: 0 auto;
 }
 .swip-wrap{
@@ -387,8 +387,8 @@ Main
  2번째 section 
 **********************************************/
 .img-com{
-    margin-top: 6%;
-    height: 10%;
+    padding-top: 104px;
+    height: 10vh;
     white-space: nowrap;
 }
 .pro-tit{
@@ -396,5 +396,21 @@ Main
     margin-top: 5vh;
 }
 .pro-tit p{
-    font-size: 2.4rem;
+    font-size: min(50px,2.4rem);
+    font-weight: bold;
+    white-space: nowrap;
+}
+.pro-tit span{
+    font-size: min(2.4rem,20px);
+    white-space: nowrap;
+}
+.pro-cont{
+    width: 100%;
+    height: 60%;
+    background-color: red;
+}
+.pro-box{
+    border: 1px solid #fff;
+    width: 20vw;
+    height: 20vh;
 }
