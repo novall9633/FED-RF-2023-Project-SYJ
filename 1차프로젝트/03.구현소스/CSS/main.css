@@ -3,7 +3,7 @@
 
 html{
     /* 스크롤 애니메이션 설정 */
-    scroll-behavior:smooth
+    scroll-behavior:smooth;
 }
 main{
     width: 100vw;
@@ -14,12 +14,13 @@ main{
 body{
     overflow: hidden;
 }
-/* @media screen and (max-width:950px) {
-    body{
+@media screen and (max-width:950px) {
+    html,body{
         overflow-y: scroll;
+        overflow-x: hidden;
     }
    
-} */
+}
 /* 공사중 */
 /* body * {
     outline: 5px dashed green;
@@ -99,25 +100,31 @@ a {
 }
 /* 수정중 */
 .top-area .logo img:first-of-type{
-    animation:  fadeIn ease-in 5s infinite backwards;
+    animation:  fadeIn ease-in 5s infinite alternate;
 }
 .top-area .logo img:last-of-type{
 
-    animation: fadeOut ease-in 5s infinite backwards;
+    animation: fadeOut ease-in 5s infinite alternate;
 }
 @keyframes fadeOut {
-    from{
+    0%{
         opacity: 1;
     }
-    to{
+    50%{
+        opacity: 0;
+    }
+    100%{
         opacity:0;
     }
 }
 @keyframes fadeIn {
-    from{
+    0%{
         opacity: 0;
     }
-    to{
+    50%{
+        opacity: 0;
+    }
+    100%{
         opacity: 1;
     }
 }
