@@ -9,18 +9,17 @@ main{
     width: 100vw;
     height: 100vh;
 }
-/* @media screen and (max-width:500px) {
-
-    .page{
-        width:100vw;
-        height: 100vh;
-    }
-} */
 
 /* 자동스크롤 위해 스크롤바 없애기 */
 body{
     overflow: hidden;
 }
+/* @media screen and (max-width:950px) {
+    body{
+        overflow-y: scroll;
+    }
+   
+} */
 /* 공사중 */
 /* body * {
     outline: 5px dashed green;
@@ -296,19 +295,19 @@ Main
 }
 /* 볼이름 */
 .ball-name{
-    font-size: 6rem;
+    font-size: 6vw;
     line-height: 1;
     animation: fadeIn ease-in-out 1s forwards;
 }
 /* 볼 색깔 */
 .ball-color{
-    font-size: 3.5rem;
+    font-size: 3.5vw;
     line-height: 1.3;
     animation: fadeIn ease-in-out 1.5s forwards;
 }
 /* 볼 설명 */
 .ball-intro{
-    font-size: 1.3rem;
+    font-size: 1.3vw;
     line-height: 1.3;
     margin-top: 30px;
     animation: fadeIn ease-in-out 2.5s forwards;
@@ -317,6 +316,7 @@ Main
 .dtimg img{
     width: 100vw;
     height: 100vh;
+    aspect-ratio: 1;
 }
 /* more버튼 */
 .btn-more{
@@ -326,7 +326,7 @@ Main
 }
 .btn-more a{
     color: rgb(255, 255, 255);
-    font-size: 28px;
+    font-size: 2.4vw;
     font-weight: bold;
 }
 
