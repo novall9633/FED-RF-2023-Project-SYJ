@@ -8,6 +8,7 @@ let hcode = "";
 let icode = "";
 let clickSts = 0;
 const TIME_SLIDE = 400;
+let nextSeq = 0;
 
 setTimeout(() => {
   window.scrollTo(0, 0);
@@ -39,68 +40,12 @@ function loadFn() {
   let swipNav = domFn.qs(".swip-nav");
   icode += `<ol class="indic">`;
   liveData.forEach((ele,idx) => {
-      if(idx==0){
-          hcode += `    
-    <div class="slide-img onSlide">
-        <div class="slide-img-info">
-            <p class="manu-comp">
-            <img src="./imgs/main_visual_icon_${ele.img}.png" />
-            </p>
-            <h1 class="ball-name info">${ele.ballName}</h1>
-            <h2 class="ball-color info">${ele.color}</h2>
-            <h3 class="ball-intro info">
-            ${ele.info}
-            </h3>
-            
-            <div class="btn-more info">
-            <a href="#"> 
-            MORE 
-            <img src="imgs/pin.png" alt="볼링핀">
-            </a>
-            </div>
-            </div>
-            <div class="bgimg">
-            <div class="dtimg">
-            <img src="./imgs/main_visual${ele.bImg}.jpg" alt="${ele.ballName}" />
-            </div>
-            </div>
-    </div>`;
-    icode += `<li class="on">
-    <img src="./imgs/dot1.png" alt="흰색">
-    <img src="./imgs/dot2.png" alt="회색">
-    </li>`;
-}else{
-    hcode
-    +=
-    `<div class="slide-img">
-    <div class="slide-img-info">
-    <p class="manu-comp">
-    <img src="./imgs/main_visual_icon_${ele.img}.png" />
-    </p>
-    <h1 class="ball-name info">${ele.ballName}</h1>
-    <h2 class="ball-color info">${ele.color}</h2>
-    <h3 class="ball-intro info">
-    ${ele.info}
-    </h3>
-    
-    <div class="btn-more info">
-    <a href="#"> 
-    MORE 
-    <img src="imgs/pin.png" alt="볼링핀">
-    </a>
-    </div>
-    </div>
-    <div class="bgimg">
-    <div class="dtimg">
-    <img src="./imgs/main_visual${ele.bImg}.jpg" alt="${ele.ballName}" />
-    </div>
-    </div>
-    </div>`;
-    
-    icode += `<li>
-    <img src="./imgs/dot1.png" alt="흰색">
-    <img src="./imgs/dot2.png" alt="회색">
-    </li>`;
+  if(idx==0){
+      hcode += `<div class="slide-img on"><div class="slide-img-info"><p class="manu-comp"><img src="./imgs/main_visual_icon_${ele.img}.png" /></p><h1 class="ball-name info">${ele.ballName}</h1><h2 class="ball-color info">${ele.color}</h2><h3 class="ball-intro info">${ele.info}</h3><div class="btn-more info"><a href="#">MORE<img src="imgs/pin.png" alt="볼링핀"></a></div></div><div class="bgimg"><div class="dtimg"><img src="./imgs/main_visual${ele.bImg}.jpg" alt="${ele.ballName}" /></div></div></div>`;
+      icode += `<li class="on"><img src="./imgs/dot1.png" alt="흰색"><img src="./imgs/dot2.png" alt="회색"></li>`;
+  }else{
+    hcode += `<div class="slide-img"><div class="slide-img-info"><p class="manu-comp"><img src="./imgs/main_visual_icon_${ele.img}.png" /></p><h1 class="ball-name info">${ele.ballName}</h1><h2 class="ball-color info">${ele.color}</h2><h3 class="ball-intro info">${ele.info}</h3><div class="btn-more info"><a href="#"> MORE <img src="imgs/pin.png" alt="볼링핀"></a></div></div><div class="bgimg"><div class="dtimg"><img src="./imgs/main_visual${ele.bImg}.jpg" alt="${ele.ballName}" /></div></div></div>`;    
+    icode += `<li><img src="./imgs/dot1.png" alt="흰색"><img src="./imgs/dot2.png" alt="회색"></li>`;
     }
 });
 icode += `</ol>`;
@@ -115,26 +60,63 @@ swipWrap.querySelectorAll('.slide-img').forEach((ele,idx)=>{
 swipNav.querySelectorAll('li').forEach((ele,idx)=>{
     ele.setAttribute('data-seq',idx);
 });
+// 화살표 클릭시
 abtn.forEach(ele=>{
-    domFn.addEvt(ele,'click',goSlide);
+    domFn.addEvt(ele,'click',abtnSlide);
 });
-
-function goSlide(){
+// 블릿 클릭시
+indic.forEach((ele)=>{
+  domFn.addEvt(ele,'click',()=>{
+    nextSeq = ele.getAttribute('data-seq');
+    swipWrap.querySelectorAll('.slide-img').forEach((ele,idx)=>{
+      if(idx==nextSeq) {
+        ele.classList.add('on');
+        indic[idx].classList.add('on');
+      }
+      else {
+        ele.classList.remove('on');
+        indic[idx].classList.remove('on');
+      }
+    });
+  })
+});
+///////////////abtnSlide함수//////////////////////
+function abtnSlide(){
     if(clickSts) return;
     clickSts =1;
     setTimeout(()=>{
         clickSts=0;
     },TIME_SLIDE);
-    
+
+    // 현재 순번 알아내기
+    swipWrap.querySelectorAll('.slide-img').forEach((ele,idx)=>{
+      if(ele.classList.contains('on')) nextSeq = idx;
+    });
+    console.log("전 순번:",nextSeq);
     let isRight = this.classList.contains('swip-next');
     let eachOne = domFn.qsa('.slide-img');
-    let nowSeq = swipWrap.querySelectorAll('.slide-img')[isRight?1:0].getAttribute('data-seq')
-    console.log(nowSeq);
-    indic.forEach((ele,idx)=>{
-        if(idx==nowSeq) ele.classList.add('on');
-        else ele.classList.remove('on');
+    
+    if(isRight){
+      nextSeq++;
+      if(nextSeq>=eachOne.length) {nextSeq = 0;}
+    }else{
+      nextSeq--;
+      if(nextSeq<0)
+      { nextSeq = eachOne.length-1;}
+    }
+    // let nowSeq = swipWrap.querySelectorAll('.slide-img')[isRight?1:0].getAttribute('data-seq')
+    console.log("현재:",nextSeq);
+    swipWrap.querySelectorAll('.slide-img').forEach((ele,idx)=>{
+      if(idx==nextSeq) {
+        ele.classList.add('on');
+        indic[idx].classList.add('on');
+      }
+      else {
+        ele.classList.remove('on');
+        indic[idx].classList.remove('on');
+      }
     });
-  }
+  }/////////////abtnSlide함수//////////////////
 } /////////loadFn함수////////////////////////////
 
 /******************************************************************** 

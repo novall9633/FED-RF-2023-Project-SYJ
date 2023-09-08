@@ -282,11 +282,9 @@ Main
     display: flex;
 }
 .slide-img{
-    /* opacity: 0; */
     display: none;
 }
-.slide-img.onSlide{
-    /* opacity: 1; */
+.slide-img.on{
     display: contents;
 }
 .slide-img-info{
