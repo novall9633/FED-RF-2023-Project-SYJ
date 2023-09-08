@@ -281,7 +281,14 @@ Main
 .swip-wrap{
     display: flex;
 }
-
+.slide-img{
+    /* opacity: 0; */
+    display: none;
+}
+.slide-img.onSlide{
+    /* opacity: 1; */
+    display: contents;
+}
 .slide-img-info{
     position: absolute;
     width: 100%;
@@ -324,6 +331,37 @@ Main
     width: 100vw;
     height: 100vh;
     aspect-ratio: 1;
+}
+/*블릿버튼*/
+.indic {
+    display: flex;
+    /* 플렉스박스 */
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+}
+
+.indic li {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.indic li img {
+    position: absolute;
+    /*이미지 겹치게*/
+}
+
+.indic li img:last-child {
+    /*회색이미지만 투명하게*/
+    opacity: 0;
+}
+
+/*회색블릿이미지가 보이게하는 class*/
+.indic li.on img:last-child {
+    /*회색이미지만 투명하게*/
+    opacity: 1;
+    /*우선적용!*/
 }
 /* more버튼 */
 .btn-more{
@@ -432,6 +470,7 @@ Main
     width: 100%;
     height: 100%;
     border: 1px solid #052a20;
+    transition: .5s
 
 }
 .pro-box span:nth-child(1){
@@ -441,7 +480,7 @@ Main
 }
 .pro-box span:nth-child(2){
     background: url(../imgs/Cuda.jpg) no-repeat center/cover;
-    transform: rotateY(calc(72deg*1)) translateZ(25vw);
+    transform: /* rotateY(calc(72deg*1)) */ translateX(350px) scale(.7) translateZ(25vw);
     z-index: 1;
 }
 .pro-box span:nth-child(3){
@@ -454,7 +493,7 @@ Main
 }
 .pro-box span:nth-child(5){
     background: url(../imgs/Offset.jpg) no-repeat center/cover;
-    transform: rotateY(calc(72deg*4)) translateZ(25vw);
+    transform: /* rotateY(calc(72deg*4)) */ translateX(-350px) scale(.7) translateZ(25vw);
     z-index: 1;
 }
 .pro-box span p{
