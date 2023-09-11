@@ -304,6 +304,7 @@ Main
 .slide-img-info p img{
     width: min(160px,13vw);
     animation: fadeIn ease-in-out 2s forwards;
+    height: min(81px,14vh);
 }
 /* 볼이름 */
 .ball-name{
