@@ -478,7 +478,7 @@ Main
 }
 .pro-box span:nth-child(2){
     background: url(../imgs/Cuda.jpg) no-repeat center/cover;
-    transform: /* rotateY(calc(72deg*1)) */ translateX(350px) scale(.7) translateZ(25vw);
+    transform: /* rotateY(calc(72deg*1)) */ translateX(350px) scale(.9) translateZ(25vw);
     z-index: 1;
 }
 .pro-box span:nth-child(3){
@@ -491,7 +491,7 @@ Main
 }
 .pro-box span:nth-child(5){
     background: url(../imgs/Offset.jpg) no-repeat center/cover;
-    transform: /* rotateY(calc(72deg*4)) */ translateX(-350px) scale(.7) translateZ(25vw);
+    transform: /* rotateY(calc(72deg*4)) */ translateX(-350px) scale(.9) translateZ(25vw);
     z-index: 1;
 }
 .pro-box span p{
