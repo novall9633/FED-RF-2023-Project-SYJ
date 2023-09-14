@@ -152,20 +152,22 @@ function loadFn() {
     
     for (let x in center) {
         hcode += `
-        <div class="center-info-img center-info-wrap">
-        <img src="./imgs/main_${center[x].img}.jpg" alt="${center[x]}점" />
-        </div>
-        <div class="center-info-txt center-info-wrap">
-        <div class="txt-wrap">
-        <p class="tEName">${center[x].eName}</p>
-        <p class="tName">${x}점</p>
-        <p class="tHInfo">${center[x].hInfo}</p>
-        <p class="tBInfo">
-        ${center[x].bInfo}
-        </p>
-        </div>
-        <div class="btnMore">READ MORE</div>
-        </div>
+        <section>
+            <div class="center-info-img center-info-wrap">
+                <img src="./imgs/main_${center[x].img}.jpg" alt="${center[x]}점" />
+            </div>
+            <div class="center-info-txt center-info-wrap">
+            <div class="txt-wrap">
+                <p class="tEName">${center[x].eName}</p>
+                <p class="tName">${x}점</p>
+                <p class="tHInfo">${center[x].hInfo}</p>
+                <p class="tBInfo">
+                    ${center[x].bInfo}
+                </p>
+            </div>
+            <div class="btnMore">READ MORE</div>
+            </div>        
+        </section>
         `;
     }
     cenInfo.innerHTML = hcode;
@@ -217,7 +219,7 @@ function loadFn() {
             // 4.cenSlide left값 0
             cenSlide.style.left = "0";
             // 5.트랜지션 없애기
-            cenSlide.style.transition = "none";
+            // cenSlide.style.transition = "none";
     },0);
     }
 

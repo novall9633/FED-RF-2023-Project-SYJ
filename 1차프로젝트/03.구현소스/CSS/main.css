@@ -321,6 +321,7 @@ Main
 .dtimg img{
     width: 100vw;
     height: 100vh;
+    object-fit: cover;
     aspect-ratio: 1;
 }
 /*블릿버튼*/
@@ -448,7 +449,8 @@ Main
 }
 .pro-cont{
     width: 80%;
-    height: 60%;
+    aspect-ratio: 2/0.7;
+    /* height: 60%; */
     margin: 0 auto;
 }
 .pro-box{
@@ -466,24 +468,24 @@ Main
 
 }
 .pro-box li:nth-child(1){
-    background: url(../imgs/DarkWeb.jpg) no-repeat center/100% 60%;
+    background: url(../imgs/DarkWeb.jpg) no-repeat center/100%;
 
 }
 .pro-box li:nth-child(2){
-    background: url(../imgs/Cuda.jpg) no-repeat center/100% 60%;
+    background: url(../imgs/Cuda.jpg) no-repeat center/100%;
    
 
 }
 .pro-box li:nth-child(3){
-    background: url(../imgs/Margenta.jpg) no-repeat center/100% 60%;
+    background: url(../imgs/Margenta.jpg) no-repeat center/100%;
 
 }
 .pro-box li:nth-child(4){
-    background: url(../imgs/Purple.jpg) no-repeat center/100% 60%;
+    background: url(../imgs/Purple.jpg) no-repeat center/100%;
 
 }
 .pro-box li:nth-child(5){
-    background: url(../imgs/Offset.jpg) no-repeat center/100% 60%;
+    background: url(../imgs/Offset.jpg) no-repeat center/100%;
 }
 .pro-box li:hover{
     flex: 1.4;
@@ -498,7 +500,7 @@ Main
     transition: .4s ease-out;
 }
 .pro-box li:hover .pro-box-intro{
-    top: 60%;
+    top: 80%;
 }
 .pro-box-intro p{
     font-size: 20px;
@@ -544,11 +546,17 @@ Center section
     position: relative;
 }
 .center-info{
+    position: relative;
+    left: 0;
     display: flex;
-    flex-wrap: nowrap;
+    width: 100%;
 }
-.center-info>div{
+.center-info>section{
     flex-shrink: 0;
+    width: 100%;
+    display: flex;
+}
+.center-info>section>div{
     flex-basis: 50%;
 }
 
