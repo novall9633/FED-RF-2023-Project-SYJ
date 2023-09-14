@@ -599,12 +599,35 @@ Center section
 }
 .cbtn{
     position: absolute;
+    top: 50%;
 }
 .cen-prev{
     left: 0;
-    top: 50%;
 }
 .cen-next{
     right: 0;
+}
+.cen-bnr ul{
+    display: flex;
+    justify-content: center;
+}
+.cen-bnr li{
+    position: relative;
+    background-color: #04071d;
+    margin: 0 5vw;
+    width: 30%;
+    height: min(120px, 8vh);
+}
+.cen-bnr li p:first-child{
+    padding-top: 20px;
+}
+.cen-bnr li p:last-child{
+    padding-top: 5px;
+}
+.cen-bnr li .cen-icon{
+    display: inline-block;
+    position: absolute;
     top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
 }

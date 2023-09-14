@@ -187,13 +187,13 @@ function loadFn() {
             rightSlide();
         }
         else{
-            // 텍스트 첫번째로 보내기
-            cenSlide.insertBefore(eachOne[eachOne.length - 2], eachOne[0]);
             // 이미지 첫번째로 보내기
+            cenSlide.insertBefore(eachOne[eachOne.length - 2], eachOne[0]);
+            // 텍스트 첫번째로 보내기
             cenSlide.insertBefore(eachOne[eachOne.length - 1], eachOne[0]);
 
             cenSlide.style.left = "-100%";
-            cenSlide.style.transition = "none";
+            // cenSlide.style.transition = "none";
             setTimeout(() => {
                 // 4. left값 0으로 들어오기
                 cenSlide.style.left = "0";
