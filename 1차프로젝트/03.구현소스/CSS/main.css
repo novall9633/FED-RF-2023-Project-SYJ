@@ -255,10 +255,10 @@ Main
     background-image: url(../imgs/bolling_back.jpg);
 }
 .pg3{
-    background-color: #fff;
+    background-image: url(../imgs/comm_back.jpg);
 }
 .pg4{
-    background-image: url(../imgs/comm_back.jpg);
+    background-image: url(../imgs/pro_back.jpg);
 }
 
 /* 공통 끝 */
@@ -585,16 +585,17 @@ Center section
     line-height: 2;
 }
 .center-info-txt .tHInfo{
-    font-size: min(5vw,16px);
+    font-size: min(5vw,20px);
     font-weight: bold;
 }
 .center-info-txt .tBInfo{
     color: #000000b8;
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: min(4vw,14px);
 }
 .center-info-txt .btnMore{
-    margin: 0 0 0 30px;
+    margin: 5vh 0 0 30px;
     font-size: 14px;
     border: 1px solid grey;
     display: inline-block;
@@ -624,13 +625,24 @@ Center section
     background-color: #04071d;
     margin: 0 5vw;
     width: 30%;
-    height: min(120px, 8vh);
+    height: min(120px, 10vh);
+}
+.cen-bnr li:hover{
+    background-color: rgb(189, 20, 20);
+}
+.cen-bnr li p{
+    text-align: left;
+    padding-left: 40px;
+    color: #fff;
 }
 .cen-bnr li p:first-child{
     padding-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
 }
-.cen-bnr li p:last-child{
-    padding-top: 5px;
+.cen-bnr li p:nth-child(2){
+    padding-top: 15px;
+    font-size: 12px;
 }
 .cen-bnr li .cen-icon{
     display: inline-block;

@@ -126,33 +126,14 @@ function loadFn() {
         });
     } /////////////////////////onSlide함수///////////
 
-    let autoI;
-    let autoT;
-
-    // 자동 슬라이드 함수//////////////
-    function slideAuto() {
-        autoI = setInterval(() => {
-            onSlide(1);
-        }, 5000);
-    } //////////slideAuto함수//////////
-
-    slideAuto();
-
-    // 자동 슬라이드 방지 함수
-    function clearAuto() {
-        clearInterval(autoI);
-        clearTimeout(autoT);
-        autoT = setTimeout(slideAuto, 5000);
-    } //clearAuto함수/////////////////
-
     // 초기화
     hcode = "";
     let cbtn = domFn.qsa(".cbtn");
     let cenInfo = domFn.qs(".center-info");
-    
+
     for (let x in center) {
         hcode += `
-        <section>
+        <section class="center-info-wr">
             <div class="center-info-img center-info-wrap">
                 <img src="./imgs/main_${center[x].img}.jpg" alt="${center[x]}점" />
             </div>
@@ -172,57 +153,68 @@ function loadFn() {
     }
     cenInfo.innerHTML = hcode;
 
-    let cenSlide = domFn.qs('.center-info');
-    let cenSlideImg = domFn.qsa('.center-info-img');
-    let cenSlideTxt = domFn.qsa('.center-info-txt');
-    cbtn.forEach((ele)=> domFn.addEvt(ele, 'click', goCenSlide));
-    
-    function goCenSlide(){
-        if(clickSts) return;
+    cbtn.forEach((ele) => domFn.addEvt(ele, "click", goCenSlide));
+
+    function goCenSlide() {
+        if (clickSts) return;
         clickSts = 1;
         setTimeout(() => (clickSts = 0), TIME_SLIDE);
-        
-        let eachOne = cenSlide.querySelectorAll('.center-info-wrap');
-        
-        isRight = this.classList.contains("cen-next");
-        if(isRight){
-            rightSlide();
-        }
-        else{
-            // 이미지 첫번째로 보내기
-            cenSlide.insertBefore(eachOne[eachOne.length - 2], eachOne[0]);
-            // 텍스트 첫번째로 보내기
-            cenSlide.insertBefore(eachOne[eachOne.length - 1], eachOne[0]);
 
-            cenSlide.style.left = "-100%";
-            // cenSlide.style.transition = "none";
+        let eachOne = cenInfo.querySelectorAll(".center-info-wr");
+
+        isRight = this.classList.contains("cen-next");
+        if (isRight) {
+            rightSlide();
+        } else {
+            cenInfo.insertBefore(eachOne[eachOne.length - 1], eachOne[0]);
+
+            cenInfo.style.left = "-100%";
+            cenInfo.style.transition = "none";
             setTimeout(() => {
                 // 4. left값 0으로 들어오기
-                cenSlide.style.left = "0";
+                cenInfo.style.left = "0";
 
                 // 5. 트랜지션주기
-                cenSlide.style.transition = TIME_SLIDE + "ms ease-in-out";
+                cenInfo.style.transition = TIME_SLIDE + "ms ease-in-out";
             }, 0);
         }
-        
-    } //////goCenSlide함수/////////////// 
-    function rightSlide(){
-        cenSlide.style.left = "-100%";
+        clearAuto();
+    } //////goCenSlide함수///////////////
+    function rightSlide() {
+        cenInfo.style.left = "-100%";
         //2.트랜지션주기
-        cenSlide.style.transition = TIME_SLIDE + "ms ease-in-out";
+        cenInfo.style.transition = TIME_SLIDE + "ms ease-in-out";
         // 이동시간 후 맨앞li 잘라서 맨뒤로 이동하기
         // appendChild(요소)
         setTimeout(() => {
             // 3.맨앞li 맨뒤로 이동
-            cenSlide.appendChild(cenSlide.querySelectorAll(".center-info-wrap")[0]);
-            cenSlide.appendChild(cenSlide.querySelectorAll(".center-info-wrap")[0]);
-            // 4.cenSlide left값 0
-            cenSlide.style.left = "0";
+            cenInfo.appendChild(cenInfo.querySelectorAll(".center-info-wr")[0]);
+            // 4.cenInfo left값 0
+            cenInfo.style.left = "0";
             // 5.트랜지션 없애기
-            // cenSlide.style.transition = "none";
-    },0);
+            cenInfo.style.transition = "none";
+        }, TIME_SLIDE);
     }
 
+    let autoI;
+    let autoT;
+
+    // 자동 슬라이드 함수//////////////
+    function slideAuto() {
+        autoI = setInterval(() => {
+            onSlide(1);
+            rightSlide();
+        }, 5000);
+    } //////////slideAuto함수//////////
+
+    slideAuto();
+
+    // 자동 슬라이드 방지 함수
+    function clearAuto() {
+        clearInterval(autoI);
+        clearTimeout(autoT);
+        autoT = setTimeout(slideAuto, 5000);
+    } //clearAuto함수/////////////////
 } /////////loadFn함수////////////////////////////
 
 /******************************************************************** 
