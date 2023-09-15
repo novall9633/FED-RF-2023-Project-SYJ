@@ -651,3 +651,7 @@ Center section
     right: 5%;
     transform: translateY(-50%);
 }
+.comp-wrap video{
+    width: 100%;
+    opacity: .8;
+}
