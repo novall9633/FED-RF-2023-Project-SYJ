@@ -215,6 +215,16 @@ function loadFn() {
         clearTimeout(autoT);
         autoT = setTimeout(slideAuto, 5000);
     } //clearAuto함수/////////////////
+
+    indiList = domFn.qsa('.indi li');
+    indiList.forEach((ele,idx)=>{
+        domFn.addEvt(ele,'click',()=>{
+            // 1. 전역 페이지 변수 업데이트 하기
+            pg_num = idx; //메뉴 순번으로 업데이트
+            // 2. 메뉴변경 함수 호출
+            chgMenu();
+        }); /////////////////addEvt ////////////////
+    });/////////forEach//////////
 } /////////loadFn함수////////////////////////////
 
 /******************************************************************** 
@@ -240,6 +250,7 @@ function wheelFn(e) {
     if (pg_num == total_pg) pg_num = total_pg - 1;
 
     window.scrollTo(0, window.innerHeight * pg_num);
+    chgMenu();
 } // wheelFn 함수////////////////////////////
 
 //  터치시작 이벤트 호출 함수 /////////////
@@ -270,4 +281,27 @@ function movePage(dir) {
     if (pg_num == total_pg) pg_num = total_pg - 1;
 
     window.scrollTo(0, ele_page[pg_num].offsetTop);
+    
 } /////movePage함수 /////////////
+
+
+/******************************************************************** 
+    함수명 : chgMenu
+    기능 : 마우스 휠 작동/메뉴클릭 시 메뉴변경
+********************************************************************/
+
+
+    
+function chgMenu(){   
+    const comFn = (target) =>{ // target - 메뉴리스트요소
+        target.forEach((ele,idx)=>{
+            if(idx==pg_num)
+                ele.classList.add('on');
+            else{
+                ele.classList.remove('on');
+            }
+        });
+    }//////////////comFn함수///////////////
+    comFn(indiList);
+
+}//////chgMenu함수///////////////////
