@@ -1,6 +1,12 @@
 @charset "utf-8";
 @import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Sans+KR:wght@200;300;400;500;600;700&family=Orbit&display=swap');
 
+/* 
+font-family: 'Hahmlet', serif;
+font-family: 'IBM Plex Sans KR', sans-serif;
+font-family: 'Orbit', sans-serif;
+*/
 html{
     /* 스크롤 애니메이션 설정 */
     scroll-behavior:smooth;
@@ -48,6 +54,10 @@ ul,ol,li {
 
 a {
     text-decoration: none;
+}
+#body-wrapper{
+    min-height: 100%;
+    /* position: relative; */
 }
 .top-area {
     position: fixed;
@@ -300,18 +310,21 @@ Main
 }
 /* 볼이름 */
 .ball-name{
+    font-family: 'IBM Plex Sans KR', sans-serif;
     font-size: 6vw;
     line-height: 1;
     animation: fadeIn ease-in-out 1s forwards;
 }
 /* 볼 색깔 */
 .ball-color{
+    font-family: 'IBM Plex Sans KR', sans-serif;
     font-size: 3.5vw;
     line-height: 1.3;
     animation: fadeIn ease-in-out 1.5s forwards;
 }
 /* 볼 설명 */
 .ball-intro{
+    font-family: 'IBM Plex Sans KR', sans-serif;
     font-size: 1.3vw;
     line-height: 1.3;
     margin-top: 30px;
@@ -362,6 +375,7 @@ Main
     animation: fadeIn ease-in-out 3s forwards;
 }
 .btn-more a{
+    font-family: 'IBM Plex Sans KR', sans-serif;
     color: rgb(255, 255, 255);
     font-size: 2.4vw;
     font-weight: bold;
@@ -655,6 +669,7 @@ Center section
     position: relative;
 }
 .comp-text{
+    font-family: 'Hahmlet', serif;
     position: absolute;
     color: #fff;
     text-align: center;
@@ -687,10 +702,21 @@ Center section
     color: rgb(189, 20, 20);
 }
 .comp-wrap video{
-    width: 100%;
+    object-fit: cover;
     opacity: .8;
 }
+#footer{
+    position: relative;
+}
 
+.foot-top{
+    top: 70%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    background: #000;
+}
 
 /* 인디케이터 */
 .indi {
