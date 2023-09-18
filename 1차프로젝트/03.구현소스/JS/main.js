@@ -31,6 +31,24 @@ const domFn = {
 }; /////// domFn 객체 /////////////
 
 function loadFn() {
+    const sub_menu = domFn.qs('.gnb>ul');
+    for(let x in subMenu){
+        sub_menu.innerHTML += 
+        `
+        <li>
+            <a href="#">${x}</a>
+            <div class="sub-menu">
+                <ol>
+                ${subMenu[x].map(val=>`
+                    <li>
+                        <a href="#">${val}</a>
+                    </li>
+                `).join('')}
+                </ol>
+            </div>
+        </li>
+        `;
+    }
     ele_page = domFn.qsa(".page");
     total_pg = ele_page.length;
     // 이동버튼
@@ -41,10 +59,50 @@ function loadFn() {
     icode += `<ol class="indic">`;
     liveData.forEach((ele, idx) => {
         if (idx == 0) {
-            hcode += `<div class="slide-img on"><div class="slide-img-info"><p class="manu-comp"><img src="./imgs/main_visual_icon_${ele.img}.png" /></p><h1 class="ball-name info">${ele.ballName}</h1><h2 class="ball-color info">${ele.color}</h2><h3 class="ball-intro info">${ele.info}</h3><div class="btn-more info"><a href="#"> MORE <img src="imgs/pin.png" alt="볼링핀"></a></div></div><div class="bgimg"><div class="dtimg"><img src="./imgs/main_visual${ele.bImg}.jpg" alt="${ele.ballName}" /></div></div></div>`;
+            hcode += `<div class="slide-img on">
+            <div class="slide-img-info">
+                <p class="manu-comp"><img src="./imgs/main_visual_icon_${ele.img}.png" /></p>
+                <h1 class="ball-name info">${ele.ballName}</h1>
+                <h2 class="ball-color info">${ele.color}</h2>
+                <h3 class="ball-intro info">${ele.info}</h3>
+                <a href="#"> 
+                <div class="btn-more info">
+                        MORE 
+                        <img src="imgs/pin.png" alt="볼링핀" />
+                    </a>
+                </div>
+            </div>
+            <div class="bgimg">
+                <div class="dtimg"><img src="./imgs/main_visual${ele.bImg}.jpg" alt="${ele.ballName}" /><img
+                src="./imgs/main_visual${ele.bImg}_m.jpg"
+                alt="${ele.ballName}_m"
+            /></div>
+            </div>
+        </div>`;
             icode += `<li class="on"><img src="./imgs/dot1.png" alt="흰색"><img src="./imgs/dot2.png" alt="회색"></li>`;
         } else {
-            hcode += `<div class="slide-img"><div class="slide-img-info"><p class="manu-comp"><img src="./imgs/main_visual_icon_${ele.img}.png" /></p><h1 class="ball-name info">${ele.ballName}</h1><h2 class="ball-color info">${ele.color}</h2><h3 class="ball-intro info">${ele.info}</h3><div class="btn-more info"><a href="#"> MORE <img src="imgs/pin.png" alt="볼링핀"></a></div></div><div class="bgimg"><div class="dtimg"><img src="./imgs/main_visual${ele.bImg}.jpg" alt="${ele.ballName}" /></div></div></div>`;
+            hcode += `<div class="slide-img">
+            <div class="slide-img-info">
+                <p class="manu-comp"><img src="./imgs/main_visual_icon_${ele.img}.png" /></p>
+                <h1 class="ball-name info">${ele.ballName}</h1>
+                <h2 class="ball-color info">${ele.color}</h2>
+                <h3 class="ball-intro info">${ele.info}</h3>
+                <a href="#">
+                <div class="btn-more info">
+                         MORE 
+                    <img src="imgs/pin.png" alt="볼링핀" />
+                </a>
+                </div>
+            </div>
+            <div class="bgimg">
+                <div class="dtimg">
+                    <img src="./imgs/main_visual${ele.bImg}.jpg" alt="${ele.ballName}" /><img
+                        src="./imgs/main_visual${ele.bImg}_m.jpg"
+                        alt="${ele.ballName}_m"
+                    />
+                </div>
+            </div>
+        </div>`;
             icode += `<li><img src="./imgs/dot1.png" alt="흰색"><img src="./imgs/dot2.png" alt="회색"></li>`;
         }
     });
@@ -216,15 +274,15 @@ function loadFn() {
         autoT = setTimeout(slideAuto, 5000);
     } //clearAuto함수/////////////////
 
-    indiList = domFn.qsa('.indi li');
-    indiList.forEach((ele,idx)=>{
-        domFn.addEvt(ele,'click',()=>{
+    indiList = domFn.qsa(".indi li");
+    indiList.forEach((ele, idx) => {
+        domFn.addEvt(ele, "click", () => {
             // 1. 전역 페이지 변수 업데이트 하기
             pg_num = idx; //메뉴 순번으로 업데이트
             // 2. 메뉴변경 함수 호출
             chgMenu();
         }); /////////////////addEvt ////////////////
-    });/////////forEach//////////
+    }); /////////forEach//////////
 } /////////loadFn함수////////////////////////////
 
 /******************************************************************** 
@@ -281,27 +339,22 @@ function movePage(dir) {
     if (pg_num == total_pg) pg_num = total_pg - 1;
 
     window.scrollTo(0, ele_page[pg_num].offsetTop);
-    
 } /////movePage함수 /////////////
-
 
 /******************************************************************** 
     함수명 : chgMenu
     기능 : 마우스 휠 작동/메뉴클릭 시 메뉴변경
 ********************************************************************/
 
-
-    
-function chgMenu(){   
-    const comFn = (target) =>{ // target - 메뉴리스트요소
-        target.forEach((ele,idx)=>{
-            if(idx==pg_num)
-                ele.classList.add('on');
-            else{
-                ele.classList.remove('on');
+function chgMenu() {
+    const comFn = (target) => {
+        // target - 메뉴리스트요소
+        target.forEach((ele, idx) => {
+            if (idx == pg_num) ele.classList.add("on");
+            else {
+                ele.classList.remove("on");
             }
         });
-    }//////////////comFn함수///////////////
+    }; //////////////comFn함수///////////////
     comFn(indiList);
-
-}//////chgMenu함수///////////////////
+} //////chgMenu함수///////////////////

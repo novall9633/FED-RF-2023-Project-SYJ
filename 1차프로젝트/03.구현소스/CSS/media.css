@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+@media screen and (max-width:950px) {
+    :root{
+        --header-height: 60px;
+    }
+    html{
+        font-size: 6px;
+    }
+    html,body{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .top-area{
+        background-color: #fff;
+    }
+    .top-area::before{
+        display: none;
+    }
+    .top-area .logo{
+        display: none;
+    }
+    .top-area .m_logo{
+        display: block;
+    }
+    /* 로고 위치 조정 */
+    .top-area .m_logo img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: min(240px, 34vw);
+        height: var(--header-height);
+        transform: translateY(-50%);
+    }
+    
+    .menu > ul > li {
+        position: relative;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+    .dtimg img:first-child{
+        display: none;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 1;
+    }
+    .dtimg img:last-child{
+        display: block;
+        width: 100vw;
+        height: auto;
+    }
+    .sn{
+        display: none;
+    }
+    .sn_m{
+        display: block;
+    }
+    .snm_menu{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .abtn{
+        display: none;
+    }
+
+    .page .swip-container{
+        height: auto;
+    }
+    .slide-img-info p img{
+        width: min(100px,15vw);
+        height: min(40px,12vh);
+        line-height: 0;
+    }
+    .ball-name{
+        font-size: 8vw;
+    }
+    .ball-color{
+        font-size: 6vw;
+        line-height: 1;
+    }
+    .ball-intro{
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 3vw;
+        line-height: 1.3;
+        margin-top: 10px;
+    }
+    .btn-more{
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .btn-more{
+        content: '';
+        display: inline-block;
+        border: 1px solid #fff;
+        padding: min(10px,2vh) min(10px, 1.5vw);
+    }
+    .btn-more a::after{
+        content: "";
+        display: none;
+    }
+    .btn-more img{
+        display: none;
+    }
+
+    /**********************************************
+        2번째 section 
+    **********************************************/
+
+    .img-com {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 0;
+        padding-bottom: 10px;
+        height: auto;
+    }
+    .pro-tit{
+        padding: 5vh 0 3vh;
+    }
+    .pro-cont {
+        width: 80%;
+        aspect-ratio: 2/0.7;
+        margin: 1vh auto 10vh;
+    }
+    .pro-box{
+        flex-wrap: wrap;
+    }
+    .pro-box li {
+        position: relative;
+        flex:1;
+        border: 1px solid #eee;
+        transition: .4s ease-out;
+        cursor: pointer;
+    }
+    .pro-box li:hover{
+        flex: 1;
+        background-position: center;
+    }
+    .pro-box li:hover h3{
+        display: none;
+    }
+
+
+
+    /* 인디케이터 안보이게 설정 */
+    .indi{
+        display: none;
+    }
+}
