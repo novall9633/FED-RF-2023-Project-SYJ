@@ -462,8 +462,6 @@ Main
 }
 .pro-cont{
     width: 80%;
-    aspect-ratio: 2/0.7;
-    /* height: 60%; */
     margin: 0 auto;
 }
 .pro-box{
@@ -471,34 +469,30 @@ Main
     width: 100%;
     height: 100%;
     justify-content: space-evenly;
+    aspect-ratio: 2/.7;
 }
 .pro-box li{
     position: relative;
     flex: 1;
     border: 1px solid #eee;
     transition : .4s ease-out;
-    cursor: pointer;
-
 }
-.pro-box li:nth-child(1){
-    background: url(../imgs/DarkWeb.jpg) no-repeat center/100%;
-
+.pro-box-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
 }
-.pro-box li:nth-child(2){
-    background: url(../imgs/Cuda.jpg) no-repeat center/100%;
-   
-
-}
-.pro-box li:nth-child(3){
-    background: url(../imgs/Margenta.jpg) no-repeat center/100%;
-
-}
-.pro-box li:nth-child(4){
-    background: url(../imgs/Purple.jpg) no-repeat center/100%;
-
-}
-.pro-box li:nth-child(5){
-    background: url(../imgs/Offset.jpg) no-repeat center/100%;
+.pro-box-img img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    transform: scale(.7);
+    
 }
 .pro-box li:hover{
     flex: 1.4;
@@ -512,25 +506,13 @@ Main
     width: 100%;
     transition: .4s ease-out;
 }
-.pro-box li:hover .pro-box-intro{
-    top: 80%;
-}
+
 .pro-box-intro p{
     font-size: min(2vw,20px);
     color: #fff;
     background-color: #000;
 }
-.pro-box-intro h3{
-    display: none;
-    transition: ease-out .4s;
-}
-.pro-box li:hover h3{
-    display: block;
-}
-.pro-box li h3{
-    text-align: center;
-    transition : ease-out .4s;
-}
+
 
 /***************************************************** 
 Center section

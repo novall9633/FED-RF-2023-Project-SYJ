@@ -65,7 +65,7 @@ function loadFn() {
                 <h1 class="ball-name info">${ele.ballName}</h1>
                 <h2 class="ball-color info">${ele.color}</h2>
                 <h3 class="ball-intro info">${ele.info}</h3>
-                <a href="#"> 
+                <a href="./sub.html?pro=${ele.getNum}"> 
                 <div class="btn-more info">
                         MORE 
                         <img src="imgs/pin.png" alt="볼링핀" />
@@ -87,7 +87,7 @@ function loadFn() {
                 <h1 class="ball-name info">${ele.ballName}</h1>
                 <h2 class="ball-color info">${ele.color}</h2>
                 <h3 class="ball-intro info">${ele.info}</h3>
-                <a href="#">
+                <a href="./sub.html?pro=${ele.getNum}">
                 <div class="btn-more info">
                          MORE 
                     <img src="imgs/pin.png" alt="볼링핀" />
@@ -137,6 +137,23 @@ function loadFn() {
                 clearAuto();
             });
         });
+    });
+
+    // product 볼 소개
+    let proBox = domFn.qs('.pro-cont .pro-box');
+    product.forEach(ele=>{
+        proBox.innerHTML += `
+        <li>
+            <a href="./sub.html?pro=${ele.getNum}">
+                <div class="pro-box-img">
+                    <img src="./imgs/${ele.img}.jpg" alt="${ele.ballName}">
+                </div>
+                <div class="pro-box-intro">
+                    <p>${ele.ballName}</p>
+                </div>
+            </a>
+        </li>
+        `
     });
 
     //화살표 클릭시 발생되는 함수/
