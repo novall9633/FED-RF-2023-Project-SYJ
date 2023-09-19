@@ -123,8 +123,8 @@
         padding: 5vh 0 3vh;
     }
     .pro-cont {
-        width: 80%;
-        aspect-ratio: 2/0.7;
+        width: 95%;
+        aspect-ratio: 2/.7;
         margin: 1vh auto 10vh;
     }
     .pro-box{
@@ -144,9 +144,96 @@
     .pro-box li:hover h3{
         display: none;
     }
-
-
-
+    .pro-box li:nth-child(1){
+        background-size: 100%;
+    }
+    .pro-box li:nth-child(2){
+        background-size: 100%;
+    }
+    .pro-box li:nth-child(3){
+        background-size: 100%;
+    }
+    .pro-box li:nth-child(4){
+        background-size: 100%;
+    }
+    .pro-box li:nth-child(5){
+        background-size: 100%;
+    }
+    .center-info>section{
+        flex-direction:column;
+    }
+    .center-info-txt .tBInfo {
+        margin-bottom: 7vh;
+    }
+    .cen-bnr ul{
+        flex-direction:column;
+        align-items: center
+    }
+    .cen-bnr li{
+        width: 80%;
+        margin: 2vh 5vw;
+    }
+    .cbtn{
+        top:30%;
+        transform: translateY(-50%);
+    }
+    .cen-prev{
+        left:7%;
+    }
+    .cen-next{
+        right: 7%;
+    }
+    .comp-wrap video {
+        height: 50vh;
+        width: 110%;
+    }
+    .news-head{
+        font-size: min(36px, 7vw);
+    }
+    .nu{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .news-area {
+        height: 50vh;
+    }
+    .news-more{
+        width: 30%;
+    }
+    .news-wrap{
+        margin-bottom: 30%;
+    }
+    #footer{
+        height: 50vh;
+    }
+    .foot-top{
+        flex-direction: column;
+        height: 30%;
+    }
+    .foot-top ul{
+        justify-content: center;
+    }
+    .foot-info{
+        width: 100%;
+        height: 50%;
+    }
+    .foot-info ul {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    .foot-sns{
+        width: 100%;
+        height: 50%;
+    }
+    .foot-sns ul {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    .foot-warp {
+        top: 30%;
+        height: 70%;
+    }
     /* 인디케이터 안보이게 설정 */
     .indi{
         display: none;
