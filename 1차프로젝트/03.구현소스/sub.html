@@ -3,17 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-    let data = function(name){
-        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-        return results[1];
+    <title></title>
+    <script src="./JS/data.js"></script>
+    <script src="./JS/sub.js" defer></script>
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/media.css">
+    <style>
+        html,body{
+        overflow-y: visible;
+        overflow-x: hidden;
     }
-    console.log(data('pro'));
-    </script>
+    </style>
 </head>
 <body>
+    <header class="top-area clb">
+        <div class="part-box col-3">
+            <div class="logo">
+                <h1>
+                    <a href="#">
+                        <img src="./imgs/top_logo_01.png" alt="MK 트레이딩" />
+                        <img src="./imgs/top_logo_02.png" alt="MK 트레이딩2" />
+                    </a>
+                </h1>
+            </div>
+            <div class="m_logo">
+                <h1>
+                    <a href="#">
+                        <img src="./imgs/top_logo_m_01.png" alt="MK 트레이딩" />
+                        <img src="./imgs/top_logo_m_02.png" alt="MK 트레이딩2" />
+                    </a>
+                </h1>
+            </div>
+        </div>
+        <div class="part-box col-7">
+            <nav class="gnb menu">
+                <ul></ul>
+            </nav>
+        </div>
+        <div class="part-box col-2">
+            <nav class="sn menu">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">MK Mall</a></li>
+                </ul>
+            </nav>
+            <nav class="sn_m">
+                <a href="#">
+                    <div class="snm_menu">
+                        <img src="./imgs/side_button_black.png" alt="모바일 전체메뉴" />
+                    </div>
+                </a>
+            </nav>
+        </div>
+    </header>
+    <section id="sub_vis">
+        <div class="sub_vis">
+            <div class="sub_prod_intro">
+                <p>제품소개</p>
+            </div>
+        </div>
+    </section>
+    <section id="sub_wrap">
+        <div class="sub_wrap">
+            <div class="sub_tit">
+                <p>볼링 볼</p>
+            </div>
+            <div class="sub_ball_all">
+                <div class="sub_ball_img">
+                    <div class="sub_img_sumb">
 
+                    </div>
+                    <ul>
+
+                    </ul>
+
+                </div>
+                <div class="sub_ball_info">
+
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
