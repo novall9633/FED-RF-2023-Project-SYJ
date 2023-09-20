@@ -1,90 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <script src="./JS/data.js"></script>
-    <script src="./JS/sub.js" defer></script>
-    <link rel="stylesheet" href="./CSS/main.css">
-    <link rel="stylesheet" href="./CSS/media.css">
-    <style>
-        html,body{
-        overflow-y: visible;
-        overflow-x: hidden;
-    }
-    </style>
-</head>
-<body>
-    <header class="top-area clb">
-        <div class="part-box col-3">
-            <div class="logo">
-                <h1>
-                    <a href="#">
-                        <img src="./imgs/top_logo_01.png" alt="MK 트레이딩" />
-                        <img src="./imgs/top_logo_02.png" alt="MK 트레이딩2" />
-                    </a>
-                </h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <script src="./JS/sub.js" type="module"></script>
+        <link rel="stylesheet" href="./CSS/main.css" />
+        <link rel="stylesheet" href="./CSS/media.css" />
+        <style>
+            html,
+            body {
+                overflow-x: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="top-area clb">
+            <div class="part-box col-3">
+                <div class="logo">
+                    <h1>
+                        <a href="./index.html">
+                            <img src="./imgs/top_logo_01.png" alt="MK 트레이딩" />
+                            <img src="./imgs/top_logo_02.png" alt="MK 트레이딩2" />
+                        </a>
+                    </h1>
+                </div>
+                <div class="m_logo">
+                    <h1>
+                        <a href="./index.html">
+                            <img src="./imgs/top_logo_m_01.png" alt="MK 트레이딩" />
+                            <img src="./imgs/top_logo_m_02.png" alt="MK 트레이딩2" />
+                        </a>
+                    </h1>
+                </div>
             </div>
-            <div class="m_logo">
-                <h1>
-                    <a href="#">
-                        <img src="./imgs/top_logo_m_01.png" alt="MK 트레이딩" />
-                        <img src="./imgs/top_logo_m_02.png" alt="MK 트레이딩2" />
-                    </a>
-                </h1>
+            <div class="part-box col-7">
+                <nav class="gnb menu">
+                    <ul></ul>
+                </nav>
             </div>
-        </div>
-        <div class="part-box col-7">
-            <nav class="gnb menu">
-                <ul></ul>
-            </nav>
-        </div>
-        <div class="part-box col-2">
-            <nav class="sn menu">
-                <ul>
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
-                    <li><a href="#">MK Mall</a></li>
-                </ul>
-            </nav>
-            <nav class="sn_m">
-                <a href="#">
-                    <div class="snm_menu">
-                        <img src="./imgs/side_button_black.png" alt="모바일 전체메뉴" />
-                    </div>
-                </a>
-            </nav>
-        </div>
-    </header>
-    <section id="sub_vis">
-        <div class="sub_vis">
-            <div class="sub_prod_intro">
-                <p>제품소개</p>
-            </div>
-        </div>
-    </section>
-    <section id="sub_wrap">
-        <div class="sub_wrap">
-            <div class="sub_tit">
-                <p>볼링 볼</p>
-            </div>
-            <div class="sub_ball_all">
-                <div class="sub_ball_img">
-                    <div class="sub_img_sumb">
-
-                    </div>
+            <div class="part-box col-2">
+                <nav class="sn menu">
                     <ul>
-
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">MK Mall</a></li>
                     </ul>
-
+                </nav>
+                <nav class="sn_m">
+                    <a href="#">
+                        <div class="snm_menu">
+                            <img src="./imgs/side_button_black.png" alt="모바일 전체메뉴" />
+                        </div>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <section id="sub_vis">
+            <div class="sub_vis">
+                <div class="sub_prod_intro">
+                    <p>제품소개</p>
                 </div>
-                <div class="sub_ball_info">
-
+            </div>
+        </section>
+        <section id="sub_wrap">
+            <div class="sub_wrap">
+                <div class="sub_tit">
+                    <p>볼링 볼</p>
+                </div>
+                <div class="sub_ball_all">
+                    <div class="sub_ball_img">
+                        <div class="sub_img_thumb">
+                           
+                        </div>
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                    <div class="sub_ball_info">
+                        <div class="sub_tb_head">
+                            <div class="sub_info_th">
+                                
+                            </div>
+                        </div>
+                        <table class="sub_info_tb">
+                            
+                        </table>
+                    </div>
+                </div>
+                <div class="sub_nav">
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="sub_det">
+                    <div class="sub_det_tit">
+                        <p>Detail view</p>
+                    </div>
+                    <div class="sub_det_cont">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="footer">
+            <div class="foot-top">
+                <div class="foot-info">
+                    <ul>
+                        <li>회사소개</li>
+                        <li>제품소개</li>
+                        <li>오시는길</li>
+                        <li>개인정보처리방침</li>
+                    </ul>
+                </div>
+                <div class="foot-sns">
+                    <ul>
+                        <li><img src="./imgs/icon_sns1.png" alt="youtube" /></li>
+                        <li><img src="./imgs/icon_sns2.png" alt="instagram" /></li>
+                        <li><img src="./imgs/icon_sns3.png" alt="facebook" /></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot-warp">
+                <div class="foot-comp-info">
+                    <h1>(주)엠케이트레이딩</h1>
+                    <p>대표이사 : 홍길동 | 사업자등록번호 : 000-00-00000</p>
+                    <p>경기도 김포시 월곶면 월하로 212</p>
+                    <p>Copyright ⓒ MK TRADING CO.,LTD. All rights reserved.</p>
                 </div>
             </div>
         </div>
-    </section>
-</body>
-
+    </body>
 </html>

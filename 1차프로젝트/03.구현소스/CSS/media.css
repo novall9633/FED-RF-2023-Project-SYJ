@@ -223,4 +223,28 @@
     .indi{
         display: none;
     }
+    /***********************************
+    서브
+    ***********************************/
+    .sub_ball_all {
+        flex-direction: column;
+    }
+    .sub_ball_img {
+        width: 100%;
+    }
+    .sub_ball_img ul {
+        flex-wrap: wrap;
+    }
+    .sub_ball_info {
+        width: 100%;
+    }
+    .sub_nav ul {
+        flex-direction: column;
+    }
+    .sub_nav li {
+        width: 100%;
+    }
+    .sub_nav li p {
+        font-size: min(18px,3vw);
+    }
 }

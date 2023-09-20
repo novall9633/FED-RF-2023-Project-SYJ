@@ -1,3 +1,6 @@
+import domFn from "./dom.js";
+import { liveData, center, subMenu, product, subData} from "./data.js";
+
 let pg_num = 0;
 let sts_wheel = 0;
 let total_pg = 0;
@@ -19,16 +22,7 @@ window.addEventListener("touchend", touchEnd);
 window.addEventListener("wheel", wheelFn);
 window.addEventListener("DOMContentLoaded", loadFn);
 
-const domFn = {
-    // 요소선택함수 ////////
-    qs: (x) => document.querySelector(x),
-    qsEl: (el, x) => el.querySelector(x),
-    qsa: (x) => document.querySelectorAll(x),
-    qsaEl: (el, x) => el.querySelectorAll(x),
 
-    // 이벤트셋팅함수
-    addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
-}; /////// domFn 객체 /////////////
 
 function loadFn() {
     const sub_menu = domFn.qs('.gnb>ul');

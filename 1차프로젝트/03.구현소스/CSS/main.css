@@ -868,13 +868,146 @@ indicator
     width: 100%;
     height: auto;
     margin: 0 auto;
-    background-color: #000;
 }
 .sub_tit{
-    top: 0;
-    left: 0;
+    width: 80%;
+    margin: 5vh auto;
+    text-align: center;
+}
+.sub_tit::after{
+    content: '';
+    display: block;
+    border-bottom: 1px solid #000;
+    width: 5%;
+    margin: 2vh auto;
 }
 .sub_tit p{
     font-size: 36px;
     font-weight: bold;
+}
+.sub_ball_all{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+.sub_ball_img{
+    width: 50%;
+}
+.sub_img_thumb{
+    width: 100%;
+    border: 1px solid #777;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.sub_img_thumb img{
+    width: 100%;
+}
+.sub_ball_img ul{
+    display: flex;
+}
+.sub_ball_img li{
+    border: 1px solid #777;
+    margin: 5px 5px 5px 0;
+}
+.sub_ball_img li img{
+    opacity: .7;
+}
+.sub_ball_info{
+    width: 40%;
+    margin: 0 auto;
+}
+.sub_tb_head{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #eee;
+    padding: 15px 5px;
+    margin-bottom: 30px;
+}
+.sub_tb_head p:first-child{
+    font-size: min(28px,5vw);
+}
+.sub_tb_head p:last-child{
+    line-height: 2;
+}
+.sub_tb_head span{
+    background-color: #777;
+    border: 1px solid #777;
+    color: #fff;
+    border-radius: 1px;
+    padding: 0 5px;
+    margin-right: 5px;
+}
+.sub_info_tb{
+    width: 100%;
+    line-height: 2;
+}
+.sub_info_tb tr{
+    width: 100%;
+}
+.sub_info_tb td{
+    font-size: min(5vw,16px);
+}
+.sub_info_tb td:first-child{
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.sub_info_tb td:last-child{
+    border-bottom: 1px solid #ddd;
+}
+.sub_nav{
+    width: 80%;
+    margin: 3vh auto;
+}
+.sub_nav ul{
+    display: flex;
+}
+.sub_nav li{
+    width: 50%;
+    border: 1px solid #777;
+    text-align: left;
+    padding: 1vh 0;
+}
+.sub_nav li:hover{
+    background-color: #eee;
+}
+.sub_nav li p{
+    display: inline-block;
+    font-size: 18px;
+    color: #777;
+}
+.sub_nav li a{
+    margin-left: 30px;
+    color: #000;
+}
+.sub_nav li:first-child:before{
+    content: '△';
+    display: inline-block;
+    vertical-align: center;
+}
+.sub_nav li:last-child:before{
+    content: '▽';
+    display: inline-block;
+    vertical-align: center;
+}
+.sub_det{
+    width: 80%;
+    margin: 0 auto;
+}
+.sub_det_tit{
+    width: 100%;
+    border-bottom: 1px solid #777;
+    margin-bottom: 10vh;
+}
+.sub_det_tit p{
+    font-size: 32px;
+    padding: 15px 0 15px 0;
+}
+.sub_det_cont img{
+    width: 100%;
+}
+.sub_det_cont img:last-child{
+    margin-bottom: 20vh;
 }
