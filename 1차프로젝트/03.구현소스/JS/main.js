@@ -12,6 +12,7 @@ let icode = "";
 let clickSts = 0;
 const TIME_SLIDE = 400;
 let nextSeq = 0;
+let indiList;
 
 setTimeout(() => {
     window.scrollTo(0, 0);
