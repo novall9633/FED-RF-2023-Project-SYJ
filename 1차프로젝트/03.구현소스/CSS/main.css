@@ -55,7 +55,7 @@ body{
     flex-direction: row;
     align-items: center;
     z-index: 100;
-    border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+    border-bottom: 1px solid #ffffff33;
 }
 .top-area::before{
     content: '';
@@ -63,7 +63,7 @@ body{
     top: 100%;
     width: 100%;
     height: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #000000e6;
     /* 트랜지션 */
     transition: 0.4s ease-in-out;
 }
@@ -71,7 +71,7 @@ body{
     content: '';
     position: absolute;
     height: 300px;
-    border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+    border-bottom: 1px solid #ffffff33;
 }
 .part-box {   
     position: relative;
@@ -368,7 +368,7 @@ Main
 }
 .btn-more a{
     font-family: 'IBM Plex Sans KR', sans-serif;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-size: 2.4vw;
     font-weight: bold;
 }
@@ -589,12 +589,12 @@ Center section
 .center-info-txt .btnMore{
     margin: 5vh 0 0 30px;
     font-size: 14px;
-    border: 1px solid grey;
+    border: 1px solid #808080;
     display: inline-block;
     padding: 20px;
 }
 .center-info-txt .btnMore:hover{
-    background-color:rgb(189, 20, 20) ;
+    background-color:#bd1414 ;
     color: #fff;
     cursor: pointer;
 }
@@ -614,7 +614,7 @@ Center section
 }
 .cen-bnr li{
     position: relative;
-    background-color: #04071d;
+    background-color: rgb(4, 6, 27);
     margin: 0 5vw;
     width: 30%;
     height: min(120px, 10vh);

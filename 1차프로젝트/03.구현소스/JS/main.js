@@ -13,6 +13,7 @@ let clickSts = 0;
 const TIME_SLIDE = 400;
 let nextSeq = 0;
 let indiList;
+let isRight;
 
 setTimeout(() => {
     window.scrollTo(0, 0);
@@ -226,6 +227,7 @@ function loadFn() {
     cbtn.forEach((ele) => domFn.addEvt(ele, "click", goCenSlide));
 
     function goCenSlide() {
+        console.log(this);
         if (clickSts) return;
         clickSts = 1;
         setTimeout(() => (clickSts = 0), TIME_SLIDE);
