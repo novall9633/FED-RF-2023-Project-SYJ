@@ -602,6 +602,7 @@ Center section
 .cbtn{
     position: absolute;
     top: 50%;
+    cursor: pointer;
 }
 .cen-prev{
     left: 0;
@@ -668,6 +669,7 @@ font-family: 'Orbit', sans-serif;
     left: 50%;
     transform: translate(-50%, -50%);
     outline: 1px solid #fff;
+    padding: 0 10px;
 }
 .comp-text h1{
     margin: 20px 0;
@@ -684,13 +686,19 @@ font-family: 'Orbit', sans-serif;
     font-weight: bold;
     font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
+
 .comp-more{
     color: #fff;
     font-size: min(36px,7vw);
     width: 100%;
+    transition: .3s;
+    transform: scale(0.8);
+    padding-bottom: 20px;
 }
+
 .comp-text a:hover .comp-more{
     color: rgb(189, 20, 20);
+    transform: scale(1);
 }
 .comp-wrap video{
     object-fit: cover;
@@ -920,7 +928,9 @@ indicator
 .sub_ball_info{
     width: 40%;
     margin: 0 auto;
+    font-family: 'IBM Plex Sans KR', sans-serif;
 }
+
 .sub_tb_head{
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
