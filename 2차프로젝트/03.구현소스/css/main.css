@@ -1,22 +1,22 @@
 @charset "utf-8";
 
-#ham{
+/* #ham{
     width: 64px; height: 57px;
     padding: 22px;
     background-color: #ff9c78;
-    overflow: hidden; /*넘치지 않게 처리*/
-    cursor: pointer; /*마우스커서 손 모양 변경*/
-}
+    overflow: hidden; 
+    cursor: pointer; 
+} */
 
 .line{
     background-color: black;
-    width: 56px; height: 5px;
-    margin: 10px 0px; /*상하10, 좌우0*/
+    width: 20px; height: 5px;
+    margin: 5px 0px; /*상하10, 좌우0*/
     transition-duration: 0.5s;
 }
 /*첫 번째 줄*/
 #ham:hover #top{
-    transform: translateY(15px) rotate(45deg);
+    transform: translateY(5px) rotate(45deg);
     transform-origin: center;
 }
 
@@ -29,6 +29,9 @@
 #ham:hover #btm{
     transform: translateY(-15px) rotate(-45deg);
     transform-origin: center;
+}
+.header p a{
+    
 }
 
 
