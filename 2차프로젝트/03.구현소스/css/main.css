@@ -4,11 +4,17 @@
 /********************************************************************* 
     헤더 
 *********************************************************************/
+header{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
 .header{
     position: relative;
     display: flex;
-    align-items: center;
-    margin: 7vh 0;        
+    align-items: center;   
     min-height: 35px;
     overflow: hidden;
     
@@ -75,4 +81,7 @@
 .inner ul{
     display: flex;
     flex-direction: row;
+}
+.inner li img{
+    max-width: 1900px;
 }
