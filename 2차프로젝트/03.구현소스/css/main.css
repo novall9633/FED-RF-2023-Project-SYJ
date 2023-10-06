@@ -93,13 +93,25 @@ header{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% -50%);
+    transform: translate(-50%, -50%);
 }
-.main-txt-area span{
-    color: #fff;
-    text-decoration: 1px solid #000;
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+.main-txt-area{
+
+}
+.main-txt-area h2{
     font-size: 70px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
+}
+.main-txt-area span{
+    color: transparent;
+    text-decoration: 1px solid #000;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+.main-bul{
+    position: absolute;
+    top: 80%;
+}
+.main-bul ul{
+    display: flex;
 }
