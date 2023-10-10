@@ -109,8 +109,11 @@ header{
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
 .main-bul{
+    display: block;
     position: absolute;
     top: 80%;
+    margin: 0 auto;
+    left: 50%;
 }
 .main-bul ul{
     display: flex;
