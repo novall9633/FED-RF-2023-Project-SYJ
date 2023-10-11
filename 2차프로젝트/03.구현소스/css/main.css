@@ -64,6 +64,12 @@ header {
     transform: translateY(-8px) rotate(-45deg);
     transform-origin: center;
 }
+.menu-open{
+    color: #a5916f;
+}
+.menu-close{
+    color: white;
+}
 .menu-open,
 .menu-close.on {
     transform: translateY(0);
@@ -73,6 +79,7 @@ header {
 .menu-close {
     transform: translateY(200%);
 }
+
 
 /******************************************************************** 
     메인 비주얼
@@ -178,4 +185,28 @@ header {
 .main-bul li.active:first-child a:before,
 .main-bul li.active:last-child a:after {
     display: none;
+}
+/******************************************************************** 
+    비즈니스
+********************************************************************/
+.busi{
+    position: relative;
+    margin: 100px 0;
+    display: flex;
+}
+.busi-info{
+    width: 75%;
+}
+.busi-gallery{
+    width: 25%;
+    height: 458px;
+    background: url(../imgs/mod_link_bg1.jpg) no-repeat top/100%;
+}
+.busi-gallery-txt{
+    position: absolute;
+    z-index: 50;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(../imgs/mod_link_txt.jpg) no-repeat 100%/100%;
 }
