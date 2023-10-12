@@ -189,21 +189,33 @@ header {
 /******************************************************************** 
     비즈니스
 ********************************************************************/
+.main2{
+    margin: 100px auto 0;
+    height: auto;
+    overflow: hidden;
+}
 .busi{
     position: relative;
-    margin: 100px 0;
-    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+
 }
 .busi-info{
-    width: 75%;
+    display: inline-block;
+    text-align: right;
 }
 .busi-gallery{
+    position: relative;
+    right: 0;
     width: 25%;
-    height: 458px;
-    background: url(../imgs/mod_link_bg1.jpg) no-repeat top/100%;
+    height: 400px;
+    background: url(../imgs/mod_link_bg1.jpg) no-repeat 100%/100%;
+    cursor: pointer;
 }
 .busi-gallery-txt{
     position: absolute;
+    width: 70%;
+    height: 100%;
     z-index: 50;
     top: 50%;
     left: 50%;
