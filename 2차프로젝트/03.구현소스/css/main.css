@@ -263,5 +263,14 @@ header {
     left: 50%;
     transform: translate(-50%,-50%);
     color: #fff;
+    text-align: center;
 }
-.busi-slide-box
+.busi-slide-box h2{
+    font-family: 'Josefin Sans', sans-serif;
+    /* text-align: center; */
+
+}
+.busi-slide-box h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    /* text-align: center; */
+}
