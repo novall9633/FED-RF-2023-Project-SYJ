@@ -265,6 +265,9 @@ header {
 .busi-slide-img{
     position: relative;
 }
+.busi-slide-img img{
+    transition: .5s;
+}
 .busi-slide-box{
     position: absolute;
     top: 50%;
@@ -273,11 +276,31 @@ header {
     color: #fff;
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+.busi-slide-img img:hover{
+    transform:scale(1.05);
 }
 .busi-slide-box h2{
-    font-size: min(32px,17vw);
+    font-size: min(36px,17vw);
     line-height: 1.5;
 }
 .busi-slide-box h3{
     font-size: min(24px,8vw);
+}
+.abtn{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform:translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 55;
+}
+.ab1{
+    background: url(../imgs/prev1.jpg) no-repeat 100%/100%;
+}
+.ab2{
+    background: url(../imgs/next1.jpg) no-repeat 100%/100%;
 }
