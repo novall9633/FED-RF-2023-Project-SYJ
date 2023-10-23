@@ -252,7 +252,9 @@ header {
     height: 100%;
     background: url(../imgs/mod_link_txt.jpg) no-repeat 50%/65%;
 }
-
+.busi-slide{
+    position: relative;
+}
 .busi-slide ul{
     display: flex;
     overflow: hidden;
@@ -281,6 +283,11 @@ header {
 .busi-slide-img img:hover{
     transform:scale(1.05);
 }
+.busi-slide:hover .abtn{
+    display: block;
+    transition: .3s;
+    opacity: 1;
+}
 .busi-slide-box h2{
     font-size: min(36px,17vw);
     line-height: 1.5;
@@ -291,16 +298,21 @@ header {
 .abtn{
     position: absolute;
     top: 50%;
-    left: 5%;
     transform:translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: min(50px,5vw);
+    height: min(50px,5vh);
     border-radius: 50%;
     z-index: 55;
+    cursor: pointer;
+    display: none;
+    opacity: 0;
 }
 .ab1{
-    background: url(../imgs/prev1.jpg) no-repeat 100%/100%;
+    background: #0000006d url(../imgs/prev1.jpg) no-repeat 50%/30%;
+    left: 5%;
 }
 .ab2{
-    background: url(../imgs/next1.jpg) no-repeat 100%/100%;
+    background: #0000006d url(../imgs/next1.jpg) no-repeat 50%/30%;
+    right: 5%;
 }
+
