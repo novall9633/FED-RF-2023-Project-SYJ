@@ -316,3 +316,16 @@ header {
     right: 5%;
 }
 
+/******************************************************************** 
+    트랜드
+********************************************************************/
+.trends-wrap{
+    position: relative;
+    height: 770px;
+    background-color: #000;
+}
+.trends-img{
+    background: url(../imgs/img_value2.jpg) no-repeat left/80%;
+    aspect-ratio: 5/2;
+    /* transform: translateX(20%); */
+}
