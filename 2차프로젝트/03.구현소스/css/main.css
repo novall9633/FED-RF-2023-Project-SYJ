@@ -324,8 +324,24 @@ header {
     height: 770px;
     background-color: #000;
 }
+.trends-txt{
+    font-family: 'Josefin Sans', 'Noto Sans KR';
+    color: #fff;
+}
+.trends-txt span{
+    text-shadow:  0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    color: #000;
+}
+.trends-txt p{
+    
+}
 .trends-img{
+    position: absolute;
+    top: -10%;
+    left: 20%;
+    width: 60%;
+    min-height: 120%;
     background: url(../imgs/img_value2.jpg) no-repeat left/80%;
+    /* transform: translateZ(10px) scale(1.2); */
     aspect-ratio: 5/2;
-    /* transform: translateX(20%); */
 }
