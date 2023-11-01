@@ -382,6 +382,13 @@ header {
     background-color: #555;
     border-radius: 50%;
     z-index: 1;
+    margin: 0 10px;
+    transition: .5s;
+    border: 5px solid transparent;
+    box-sizing: border-box;
+}
+.trends-slogan li:hover{
+    border: 100px solid rgba(255,255,255,.3);
 }
 .trends-slogan-cir{
     display: flex;
@@ -408,9 +415,6 @@ header {
     font-size: min(16px,10vw);
     color: #fff;
 }
-.trends-wrap::after{
-    content: '';
-    display: block;
-}
+
 
 
