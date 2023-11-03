@@ -427,6 +427,19 @@ header {
     font-size: min(12px,5vw);
     color: #fff;
 }
-
-
+/******************************************************************** 
+    Request
+********************************************************************/
+.main4{
+    position: relative;
+}
+.request-info{
+    position: absolute;
+    bottom: 80%;
+    width: 150px;
+    height: 150px;
+    left : 10%;
+    color: #fff;
+    outline: 1px solid red;
+}
 
