@@ -432,14 +432,56 @@ header {
 ********************************************************************/
 .main4{
     position: relative;
+    height: 100vh;
 }
 .request-info{
     position: absolute;
-    bottom: 80%;
-    width: 150px;
-    height: 150px;
+    bottom: calc(100% - 200px/2);
+    width: 200px;
+    height: 200px;
     left : 10%;
     color: #fff;
-    outline: 1px solid red;
+    background-color: #a5916f;
+    box-shadow: 3px 3px 3px #000000a3;
 }
-
+.request-info p{
+    font-size: min(24px,10vw);
+    font-weight: 700;
+    line-height: 3;
+    margin-left: 10%;
+}
+.request-info h3{
+    font-size: min(14px,8vw);
+    margin-left: 10%;
+}
+.request-info h4{
+    font-size: min(14px, 8vw);
+    line-height: 4;
+    margin-left: 10%;
+    cursor:pointer;
+}
+.request-info h4::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background: url(../imgs/icon_arrow.gif) no-repeat;
+    top: 56%;
+    left: 80%;
+    width: 26px;
+    height: 27px;
+}
+.request-info h4::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0%;
+    /* color: #fff; */
+    height: 1px;
+    top: 75%;
+    left: 5%;
+    background-color: #fff;
+    transition: .3s;
+}
+.request-info h4:hover::after{
+    width: 90%;
+}
