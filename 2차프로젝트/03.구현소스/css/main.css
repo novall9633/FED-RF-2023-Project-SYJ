@@ -417,8 +417,8 @@ header {
 .trends-slogan-cir p::after{
     content: '';
     display: block;
-    width: 20px;
-    height: 3px;
+    width: 50px;
+    height: 2px;
     background-color: #fff;
     margin: 5px auto;
 }
@@ -484,4 +484,7 @@ header {
 }
 .request-info h4:hover::after{
     width: 90%;
+}
+.request-wrap form{
+    padding-top: 200px;
 }
