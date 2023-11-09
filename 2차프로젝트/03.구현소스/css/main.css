@@ -9,6 +9,7 @@ font-family: 'Noto Sans KR', sans-serif;
 
 :root{
     --circle-size : 200px;
+    --main-color : #a5916f;
 }
 body *{
     font-family: 'Josefin Sans','Noto Sans KR';
@@ -153,12 +154,9 @@ header {
 .main-bul ul {
     display: flex;
 }
-.main-bul li {
-    /* font-family: "Josefin Sans", sans-serif; */
-}
+
 .main-bul li a {
     font-size: 15px;
-    /* color: #a5916f; */
     color: rgba(35, 31, 32, 0.5);
     line-height: 20px;
     position: relative;
@@ -166,7 +164,7 @@ header {
     padding: 0 20px;
 }
 .main-bul li.active a {
-    color: #a5916f;
+    color: var(--main-color);
     font-size: 20px;
     font-weight: 700;
 }
@@ -175,7 +173,7 @@ header {
     display: block;
     width: 30px;
     height: 1px;
-    background: #a5916f;
+    background: var(--main-color);
     position: absolute;
     top: 8px;
     right: 48px;
@@ -186,7 +184,7 @@ header {
     display: block;
     width: 30px;
     height: 1px;
-    background: #a5916f;
+    background: var(--main-color);
     position: absolute;
     top: 8px;
     left: 48px;
@@ -236,7 +234,7 @@ header {
 .busi-info h3{
     font-family: 'Noto Sans KR', sans-serif; 
     font-size: min(28px,20vw);
-    color : #a5916f;
+    color : var(--main-color);
     line-height: 2;
 }
 .busi-info p{
@@ -441,7 +439,7 @@ header {
     height: 200px;
     left : 10%;
     color: #fff;
-    background-color: #a5916f;
+    background-color: var(--main-color);
     box-shadow: 3px 3px 3px #000000a3;
 }
 .request-info p{
@@ -475,7 +473,6 @@ header {
     display: block;
     position: absolute;
     width: 0%;
-    /* color: #fff; */
     height: 1px;
     top: 75%;
     left: 5%;
@@ -485,6 +482,44 @@ header {
 .request-info h4:hover::after{
     width: 90%;
 }
-.request-wrap form{
+.request-wrap{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding-top: 200px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.request-project-req, .request-project-img{
+    max-width: 650px;
+}
+.request-project-req h2{
+    font-size: min(52px,10vw);
+    font-weight: 700;
+}
+.request-project-req h2>span{
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    color: white;
+}
+.request-project-req h4{
+    font-size: min(18px,2vw);
+    margin: 20px 0;
+}
+.request-project-req .ess{
+    text-align: right;
+    margin: 10px 0;
+}
+.request-project-req i{
+    color: var(--main-color);
+}
+.list li{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.list li input{
+    border:none;
+}
+.request-inq .captcha .request-input-data{
+    justify-content: space-around;
 }
