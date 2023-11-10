@@ -484,10 +484,10 @@ header {
 }
 .request-wrap{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     padding-top: 200px;
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 .request-project-req, .request-project-img{
@@ -519,6 +519,11 @@ header {
 }
 .list li input{
     border:none;
+    width: 100%;
+    text-align: right;
+}
+.request-input-data{
+    width: 50%;
 }
 .request-inq .captcha .request-input-data{
     justify-content: space-around;
