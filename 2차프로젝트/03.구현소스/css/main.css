@@ -522,6 +522,9 @@ header {
     width: 100%;
     text-align: right;
 }
+.list li input:focus{
+    outline: none;
+}
 .request-input-data{
     width: 50%;
 }
