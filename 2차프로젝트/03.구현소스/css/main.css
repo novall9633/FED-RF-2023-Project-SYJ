@@ -377,7 +377,7 @@ header {
     position: relative;
     width: var(--circle-size);
     height: var(--circle-size);
-    background-color: #555;
+    background-color: var(--main-color);
     border-radius: 50%;
     z-index: 1;
     margin: 0 10px;
@@ -393,7 +393,7 @@ header {
     transition: .5s;
 }
 .trends-slogan li:hover::before{
-    border: 100px solid rgba(255,255,255,.3);
+    border: 100px solid rgba(0,0,0,.2);
 }
 
 .trends-slogan-cir{
@@ -617,7 +617,7 @@ cursor:pointer;
     content: '＞';
     display: inline-block;
     top: 10%;
-    left: 150%;
+    left: 120%;
     border: 1px solid var(--main-color);
     border-radius: 50%;
     width: 25px;
@@ -637,5 +637,5 @@ cursor:pointer;
     transition: .3s;
 }
 .request-inq button:hover::after{
-    width: 170%;
+    width: 140%;
 }
