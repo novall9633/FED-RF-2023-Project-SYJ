@@ -724,7 +724,7 @@ footer{
 .footer-sns ul{
     display: flex;
 }
-.footer-sns li{
+.footer-sns>ul>li{
     position: relative;
 }
 .footer-sns a{
@@ -748,8 +748,7 @@ footer{
     height: 100%;
 }
 .footer-site ul{
-    position: absolute;
-    top: 100%;
+
     width: 100%;
     height: 200%;
 }
