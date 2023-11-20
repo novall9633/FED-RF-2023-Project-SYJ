@@ -75,3 +75,11 @@ export const pro_mem = {
         수상 : []
     },
 }
+
+export const footer ={
+    "About Company" : ["Greeting","Philosophy","History"],
+    "Business" : ["Domestic B2B sales","Import Business","Wall bed ORN"],
+    "Design Center" : ["Design Center"],
+    "Golf Team" : ["Golf Team"],
+    "Contact Us" : ["Contact Us"]
+}
