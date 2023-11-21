@@ -39,12 +39,12 @@ header {
 .header h1 img {
     height: 20px;
 }
-.menu {
+.menuBtn {
     position: absolute;
     right: 5%;
 }
 
-.menu a {
+.menuBtn a {
     display: flex;
     align-items: center;
 }
@@ -59,18 +59,18 @@ header {
     transition-duration: 0.5s;
 }
 /*첫 번째 줄*/
-.menu:hover #top {
+.menuBtn:hover #top {
     transform: translateY(8px) rotate(45deg);
     transform-origin: center;
 }
 
 /*두 번째 줄*/
-.menu:hover #mid {
+.menuBtn:hover #mid {
     opacity: 0;
 }
 
 /*세 번째 줄*/
-.menu:hover #btm {
+.menuBtn:hover #btm {
     transform: translateY(-8px) rotate(-45deg);
     transform-origin: center;
 }
@@ -89,7 +89,47 @@ header {
 .menu-close {
     transform: translateY(200%);
 }
+/********************************************************************** 
+    메뉴
+**********************************************************************/
+#menu{
+    width: 80%;
+    margin: 0 0 0 20%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color: var(--main-color);
+}
+.menu{
+    position: relative;
+    top: 50%;
+    transform: translate(0,-50%);
+}
 
+#menu::before{
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+}
+.menu dl{
+    width: 50%;
+}
+.menu dl *{
+    font-size: 40px;
+    color: #fff;
+    line-height: 2.5;
+}
+
+.menu dl dd{
+    position: absolute;
+    left: 50%;
+}
 
 /******************************************************************** 
     메인 비주얼
@@ -430,7 +470,7 @@ header {
 ********************************************************************/
 .main4{
     position: relative;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .request-info{
     position: absolute;
@@ -642,6 +682,9 @@ cursor:pointer;
 /******************************************************************** 
     golf
 ********************************************************************/
+#main5{
+    margin-top: 50px;
+}
 .main5{
     position: relative;
     height: 100vh;
@@ -694,7 +737,7 @@ cursor:pointer;
     footer
 ********************************************************************/
 footer{
-    height: 50vh;
+    height: 40vh;
     background-color: #000;
     color: #fff;
 }
@@ -715,19 +758,21 @@ footer{
 .footer-sns{
     display: flex;
 }
-.footer-sns li{
+.footer-sns>ul>li{
     width: 25px;
     height: 25px;
     border-radius: 50%;
     border: 1px solid #fff;
 }
-.footer-sns ul{
+.footer-sns>ul{
     display: flex;
+    padding: 0 40px 60px 0;
+    gap: 10px;
 }
-.footer-sns>ul>li{
+.footer-sns li{
     position: relative;
 }
-.footer-sns a{
+.footer-sns>a{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -738,20 +783,46 @@ footer{
     left: 50%;
     transform: translate(-50%,-50%);
 }
-.footer-site{
-    position: relative;
-    width: 200px;
-    border: 1px solid #555;
-}
-.footer-site a{
-    width: 100%;
-    height: 100%;
-}
-.footer-site ul{
 
-    width: 100%;
-    height: 200%;
+.footer-site a{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    border: 1px solid #555;
+    color: #fff;
+    line-height: 2;
 }
 .footer-site ul{
-    /* display: none; */
+    display: none;
+}
+.footer-site li{
+    background-color: #555;
+}
+.footer-comp{
+    text-align: right;
+    line-height: 2;
+}
+.footer-comp dt{
+    color: var(--main-color);
+}
+.footer-comp dt::before{
+    content: '*';
+    display: inline-block;
+    padding-right: 5px;
+}
+.footer-comp dd{
+    color: rgb(255, 255, 255,.5);
+}
+.footer-comp ul{
+    display: flex;
+    gap: 10px;
+    padding-top: 50px;
+}
+.footer-comp ul>li:nth-child(2)::before,.footer-comp ul>li:nth-child(3)::before{
+    content: '|';
+    display: inline-block;
+    padding-right: 5px;
+}
+.footer-comp li{
+    color: rgb(255, 255, 255,.8);
 }
