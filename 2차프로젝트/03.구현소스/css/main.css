@@ -58,19 +58,23 @@ header {
     margin: 5px 0px; /*상하5, 좌우0*/
     transition-duration: 0.5s;
 }
+.menu-close.on + #ham .line{
+    background-color: #fff;
+}
+
 /*첫 번째 줄*/
-.menuBtn:hover #top {
+.menu-close.on + #ham>#top {
     transform: translateY(8px) rotate(45deg);
     transform-origin: center;
 }
 
 /*두 번째 줄*/
-.menuBtn:hover #mid {
+.menu-close.on + #ham> #mid {
     opacity: 0;
 }
 
 /*세 번째 줄*/
-.menuBtn:hover #btm {
+.menu-close.on + #ham>#btm {
     transform: translateY(-8px) rotate(-45deg);
     transform-origin: center;
 }
@@ -80,14 +84,17 @@ header {
 .menu-close{
     color: white;
 }
-.menu-open,
+.menu-open.on,
 .menu-close.on {
     transform: translateY(0);
     transition: 0.5s;
+    display: block;
+    font-weight: 700;
 }
-.menu-open.on,
+.menu-open,
 .menu-close {
     transform: translateY(200%);
+    display: none;
 }
 /********************************************************************** 
     메뉴
@@ -98,8 +105,11 @@ header {
     height: 100%;
     position: fixed;
     z-index: 999;
+    left:100%;
     background-color: var(--main-color);
+    transition: .3s;
 }
+
 .menu{
     position: relative;
     top: 50%;
@@ -115,20 +125,71 @@ header {
     width: 1px;
     height: 100%;
     background-color: #fff;
-    z-index: 1000;
 }
 .menu dl{
+    position: relative;
     width: 50%;
 }
-.menu dl *{
-    font-size: 40px;
-    color: #fff;
+.menu dl dt *{
+    font-size: 30px;
+    color: rgb(255, 255, 255, .5);
     line-height: 2.5;
 }
-
+.menu dl:hover dt *, .menu dl.active dt *{
+    color: #fff;
+}
+.menu dl:hover dt a, .menu dl.active dt a{
+    margin-left: 20px;
+    transition: margin-left 1s;
+}
+.menu dl dd *{
+    line-height: 4;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+}
+.menu dl dt{
+    margin-left: 100px;
+    font-weight: 700;
+}
+.menu dl dt em{
+    font-size: 20px;
+}
 .menu dl dd{
+    display: none;
+}
+.menu dl.active dd{
+    display: block;
     position: absolute;
-    left: 50%;
+    left: 100%;
+    width: 100%;
+    top: 0;
+    margin-left: 100px;
+}
+.menu dl.active::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    vertical-align: middle;
+    right: -2.5px;
+    top: 50%;
+}
+
+.menu dl.active::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 80px;
+    height: 1px;
+    background-color: #fff;
+    left: calc(100% + 10px);
+    top: calc(50% + 2.5px);
+    vertical-align: middle;
+    transition: .3s;
 }
 
 /******************************************************************** 
