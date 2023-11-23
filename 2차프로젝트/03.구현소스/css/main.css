@@ -196,17 +196,30 @@ header {
     메인 비주얼
 ********************************************************************/
 #main-visual {
-    width: 100%;
-    position: relative;
+    max-width: 100vw;
+    height: 100vh;
     overflow: hidden;
 }
-.inner ul {
-    display: flex;
-    flex-direction: row;
+.inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.inner li>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .3s;
+    display: none;
 }
 
-.inner li.on img{
+.inner li.on>img{
     animation: scale 5s linear;
+    opacity: 1;
+    display: block;
 }
 @keyframes scale {
     from{
@@ -216,31 +229,28 @@ header {
         transform: scale(1);
     }
 }
-.main-txt {
+
+.main-txt-area {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-.main-txt-area {
     display: none;
     opacity: 0;
     transition: 1s ease-in;
 }
-.main-txt-area.on {
+li.on .main-txt-area {
     display: block;
     opacity: 1;
 }
 .main-txt-area h2 {
     font-size: 70px;
-    font-family: "Josefin Sans", sans-serif;
     font-weight: 700;
 }
 .main-txt-area span img{
     vertical-align: bottom;
 }
 .main-txt-area dd{
-    font-family: 'Noto Sans KR', sans-serif; 
     font-size: 17px;
     font-weight: 300;
 }

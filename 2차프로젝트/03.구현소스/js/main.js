@@ -41,3 +41,13 @@ $('.menu dl').mouseover(function(){
 /////////////////메뉴 마우스 오버 /////////////////////////////////
 
 ///////////////메인 비주얼 ////////////////////////////////////////
+for(let i=0; i<$('.inner ul li').length;i++){
+    setTimeout(() => {
+        $('.inner ul li').eq(i).addClass('on').siblings().removeClass('on');
+        console.log(i);
+    }, 5000);
+}
+
+function chgSlide(){
+    $(this).next().addClass('on').siblings().removeClass('on');
+}
