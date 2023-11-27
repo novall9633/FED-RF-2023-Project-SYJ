@@ -359,13 +359,13 @@ li.on .main-txt-area {
     top: 0;
     width: 35%;
     aspect-ratio: 16/9;
-    background: url(../imgs/mod_link_bg1.jpg) no-repeat 100%/100%;
+    background: url(/public/images/mod_link_bg1.jpg) no-repeat 100%/100%;
     cursor: pointer;
 }
 .busi-gallery-txt{
     width: 100%;
     height: 100%;
-    background: url(../imgs/mod_link_txt.jpg) no-repeat 50%/65%;
+    background: url(/public/images/mod_link_txt.jpg) no-repeat 50%/65%;
 }
 .busi-slide{
     position: relative;
@@ -423,11 +423,11 @@ li.on .main-txt-area {
     opacity: 0;
 }
 .ab1{
-    background: #0000006d url(../imgs/prev1.jpg) no-repeat 50%/30%;
+    background: #0000006d url(/public/images/prev1.jpg) no-repeat 50%/30%;
     left: 5%;
 }
 .ab2{
-    background: #0000006d url(../imgs/next1.jpg) no-repeat 50%/30%;
+    background: #0000006d url(/public/images/next1.jpg) no-repeat 50%/30%;
     right: 5%;
 }
 
@@ -471,7 +471,7 @@ li.on .main-txt-area {
     left: 0%;
     width: 100%;
     height: 100%;
-    background: url(../imgs/img_value2.jpg) no-repeat left/80%;
+    background: url(/public/images/img_value2.jpg) no-repeat left/80%;
     /* transform: translateZ(10px) scale(1.2); */
 }
 .trends-slogan{
@@ -573,7 +573,7 @@ li.on .main-txt-area {
     content: '';
     display: block;
     position: absolute;
-    background: url(../imgs/icon_arrow.gif) no-repeat;
+    background: url(/public/images/icon_arrow.gif) no-repeat;
     top: 56%;
     left: 80%;
     width: 26px;
