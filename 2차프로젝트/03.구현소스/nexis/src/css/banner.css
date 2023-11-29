@@ -1,0 +1,124 @@
+/******************************************************************** 
+    메인 비주얼
+********************************************************************/
+#main-visual {
+    max-width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.inner li>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .3s;
+    display: none;
+}
+
+.inner li.on>img{
+    animation: scale 5s linear;
+    opacity: 1;
+    display: block;
+}
+@keyframes scale {
+    from{
+        transform: scale(1.5);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+.main-txt-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    opacity: 0;
+    transition: 1s ease-in;
+}
+li.on .main-txt-area {
+    display: block;
+    opacity: 1;
+}
+.main-txt-area h2 {
+    font-size: 70px;
+    font-weight: 700;
+}
+.main-txt-area span img{
+    vertical-align: bottom;
+    margin-right: 1vw;
+}
+.main-txt-area dd{
+    font-size: 17px;
+    font-weight: 300;
+}
+.main-bul {
+    display: block;
+    position: absolute;
+    top: 80%;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.main-bul ul {
+    display: flex;
+}
+
+.main-bul li a {
+    font-size: 15px;
+    color: rgba(35, 31, 32, 0.5);
+    line-height: 20px;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+.main-bul li.active a {
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 700;
+}
+.main-bul li.active a:before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--main-color);
+    position: absolute;
+    top: 8px;
+    right: 48px;
+    animation: ani-width 2s;
+}
+.main-bul li.active a:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--main-color);
+    position: absolute;
+    top: 8px;
+    left: 48px;
+    z-index: 1;
+    animation: ani-width 2s;
+}
+@keyframes ani-width {
+    from{
+        width: 0;
+    }
+    to{
+        width : 30px;
+    }
+}
+
+.main-bul li.active:first-child a:before,
+.main-bul li.active:last-child a:after {
+    display: none;
+}

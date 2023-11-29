@@ -1,0 +1,116 @@
+/******************************************************************** 
+    비즈니스
+********************************************************************/
+.main2{
+    margin: 100px 0;
+    height: auto;
+    overflow: hidden;
+}
+.busi-wrap{
+    position: relative;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+.busi-info{
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.5;
+}
+.busi-info h2{
+    font-size: min(64px,30vw);
+    font-weight: 700;
+}
+.busi-info span:nth-of-type(1) ,span:nth-of-type(2) ,span:nth-of-type(3){
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    color: white;
+}
+.busi-info h3{
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size: min(28px,20vw);
+    color : var(--main-color);
+    line-height: 2;
+}
+.busi-info p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    line-height: 2;
+}
+.busi-gallery{
+    position: absolute;
+    left: 94%;
+    top: 0;
+    width: 35%;
+    aspect-ratio: 16/9;
+    background: url(/public/images/mod_link_bg1.jpg) no-repeat 100%/100%;
+    cursor: pointer;
+}
+.busi-gallery-txt{
+    width: 100%;
+    height: 100%;
+    background: url(/public/images/mod_link_txt.jpg) no-repeat 50%/65%;
+}
+.busi-slide{
+    position: relative;
+    overflow: hidden;
+}
+.busi-slide ul{
+    display: flex;
+    margin: 50px 0;
+    position: relative;
+}
+.busi-slide ul li{
+    width: 100vw;
+    height: auto;
+}
+.busi-slide-img{
+    position: relative;
+}
+.busi-slide-img img{
+    transition: .5s;
+}
+.busi-slide-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+.busi-slide-img img:hover{
+    transform:scale(1.05);
+}
+.busi-slide:hover .abtn{
+    display: block;
+    transition: .3s;
+    opacity: 1;
+}
+.busi-slide-box h2{
+    font-size: min(36px,17vw);
+    line-height: 1.5;
+}
+.busi-slide-box h3{
+    font-size: min(24px,8vw);
+}
+.abtn{
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    width: min(50px,5vw);
+    height: min(50px,5vh);
+    border-radius: 50%;
+    z-index: 55;
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+}
+.ab1{
+    background: #0000006d url(/public/images/prev1.jpg) no-repeat 50%/30%;
+    left: 5%;
+}
+.ab2{
+    background: #0000006d url(/public/images/next1.jpg) no-repeat 50%/30%;
+    right: 5%;
+}

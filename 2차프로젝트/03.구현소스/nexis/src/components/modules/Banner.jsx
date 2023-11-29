@@ -1,5 +1,7 @@
 import { visual } from "../data/visual";
 
+import "../../css/banner.css";
+
 export function Banner() {
     return (
         <>
@@ -18,8 +20,8 @@ export function Banner() {
                                                 </span>
                                                 {v.tit}
                                             </h2>
-                                            <dd>{v.stit}</dd>
                                         </dt>
+                                        <dd>{v.stit}</dd>
                                     </dl>
                                 </div>
                             </li>

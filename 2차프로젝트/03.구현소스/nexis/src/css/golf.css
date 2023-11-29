@@ -1,0 +1,130 @@
+/******************************************************************** 
+    golf
+********************************************************************/
+#main5{
+    margin-top: 50px;
+}
+.main5{
+    position: relative;
+    height: 100vh;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.golf{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15%;
+}
+.golf-info{
+    text-align: right;
+}
+.golf-info h2{
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.golf-info span{
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    color: white;
+}
+.golf-info h4{
+    font-size: 17px;
+    color: rgba(13,13,13,.8);
+    line-height: 180%;
+}
+.golf-btn{
+    display: flex;
+    align-items: flex-end;
+    gap : 20px;
+}
+.gBtn{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: .3s;
+}
+.gBtn img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gBtn:hover{
+    background-color: var(--main-color);
+}
+.golfMem{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 8vh 0;
+}
+.golfMem ul{
+    display: flex;
+    width: 100%;
+    position: relative;
+    gap: .5%;
+    background-color: #eee;
+}
+.golfMem li{
+    display: flex;
+    background-image: url(../../public/images/bg.jpg);
+    width: 50%;
+    flex-shrink: 0;
+    padding: 0 20px;
+    transition: .5s;
+}
+.golfMem li:hover{
+    transform: scale(1.1);
+}
+.golfMem-prof {
+    flex-basis: 50%;
+    margin-left: 10px;
+}
+.golfMem-prof p{
+    font-size: 55px;
+    padding-top: 40px;
+    font-weight: 200;
+}
+.golfMem-prof h2{
+    font-size: 40px;
+    padding-top: 40px;
+    font-weight: 200;
+}
+.golfMem-prof a{
+    color: var(--main-color);
+    position: relative;
+}
+.golfMem-prof a::before{
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: 120%;
+    left: 0%;
+    width: 0%;
+    height: 2px;
+    background-color: var(--main-color); 
+    transition: .3s; 
+}
+.golfMem-prof a:hover::before{
+    width: 95%;
+}
+.golfMem-prof a::after{
+    position: absolute;
+    content: '＞';
+    display: inline-block;
+    top: 50%;
+    left: 80%;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 1.8;
+
+}
+.golfMem-prof h4{
+    padding-top: 40px;
+}

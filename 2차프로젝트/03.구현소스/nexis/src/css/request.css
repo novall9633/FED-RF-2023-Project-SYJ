@@ -1,0 +1,215 @@
+/******************************************************************** 
+    Request
+********************************************************************/
+.main4{
+    position: relative;
+    /* height: 100vh; */
+}
+.request-info{
+    position: absolute;
+    bottom: calc(100% - 200px/2);
+    width: 200px;
+    height: 200px;
+    left : 10%;
+    color: #fff;
+    background-color: var(--main-color);
+    box-shadow: 3px 3px 3px #000000a3;
+}
+.request-info p{
+    font-size: min(24px,10vw);
+    font-weight: 700;
+    line-height: 3;
+    margin-left: 10%;
+}
+.request-info h3{
+    font-size: min(14px,8vw);
+    margin-left: 10%;
+}
+.request-info h4{
+    font-size: min(14px, 8vw);
+    line-height: 4;
+    margin-left: 10%;
+    cursor:pointer;
+}
+.request-info h4::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background: url(/public/images/icon_arrow.gif) no-repeat;
+    top: 56%;
+    left: 80%;
+    width: 26px;
+    height: 27px;
+}
+.request-info h4::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    top: 75%;
+    left: 5%;
+    background-color: #fff;
+    transition: .3s;
+}
+.request-info h4:hover::after{
+    width: 90%;
+}
+.request-wrap{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 200px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.request-project-req, .request-project-img{
+    max-width: 650px;
+}
+.request-project-req h2{
+    font-size: min(52px,10vw);
+    font-weight: 700;
+}
+.request-project-req h2>span{
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    color: white;
+}
+.request-project-req h4{
+    font-size: min(18px,2vw);
+    margin: 20px 0;
+}
+.request-project-req .ess{
+    text-align: right;
+    margin: 10px 0;
+    font-weight: 500;
+}
+.request-project-req i{
+    color: var(--main-color);
+}
+.list li{
+    outline: 1px solid rgba(0, 0, 0, 0.3);
+    display: flex;
+    height: 40px;
+}
+.list li input{
+    display: inline-block;
+    border:none;
+    width: 100%;
+    text-align: right;
+    height: 100%;
+}
+.list li input:focus{
+    outline: none;
+}
+.list li label{
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.request-input-data{
+    width: 50%;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.request-inq .captcha .request-input-data{
+    justify-content: space-around;
+}
+
+.captcha .request-input-data{
+    display: flex;
+}
+.captcha_img img{
+    height: 100%;
+}
+.btn{
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+}
+.btn li{
+    height: 30px;
+    border-radius: 10px;
+}
+.btn li a{
+    display: block;
+    width: 157px;
+    height: 37px;
+    line-height: 35px;
+    text-align: center;
+    background: #f7f7f7;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #757575;
+    transition: all .3s;
+}
+.btn li a:hover{
+    background: var(--main-color);
+    color: #fff;
+}
+/*input 은 숨겨주기*/
+.request-inq #check{
+    display:none;
+}
+/*.request-inq  바로 다음의 label*/
+.request-inq #check + label{
+cursor:pointer;
+}
+
+/*.request-inq  바로 다음의 label:before 에 체크하기 전 CSS 설정*/
+.request-inq #check + label:before{
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    line-height:17px;
+    border:1px solid #cbcbcb;
+    vertical-align:middle;/*체크 전과 체크 후 높이 차이 때문에 설정*/
+}
+
+/*checked된 .request-inq  바로 다음의 label:before 에 체크 후 CSS 설정*/  
+.request-inq #check:checked + label:before{
+    content:"✔";
+    color:#fff;
+    background-color:var(--main-color);
+    font-size:13px;
+    text-align:center;
+}
+.request-inq p{
+    line-height: 3.5;
+}
+.request-inq button{
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    font-size: 20px;
+    color: var(--main-color);
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+.request-inq button::before{
+    position: absolute;
+    content: '＞';
+    display: inline-block;
+    top: 10%;
+    left: 120%;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+}
+
+.request-inq button::after{
+    position: absolute;
+    content: '';
+    display: block;
+    top: 170%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: .3s;
+}
+.request-inq button:hover::after{
+    width: 140%;
+}

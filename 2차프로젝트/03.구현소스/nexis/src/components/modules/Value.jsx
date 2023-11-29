@@ -1,3 +1,5 @@
+import "../../css/value.css"
+
 export function Value() {
     return (
         <>

@@ -1,3 +1,5 @@
+import "../../css/request.css";
+
 export function Request(){
     function RefreshImage(){
 
@@ -22,33 +24,33 @@ export function Request(){
                                         <li>
                                             <label>Your Name <i>*</i></label>
                                             <div className="request-input-data">
-                                                <input type="text" name="m-name" value="" placeholder="성함을 입력해주세요." required />
+                                                <input type="text" name="m-name" defaultValue="" placeholder="성함을 입력해주세요." required />
                                             </div>
                                         </li>
                                         <li>
                                             <label>Company Name <i>*</i></label>
                                             <div className="request-input-data">
-                                                <input type="text" name="addtext1" value="" placeholder="회사명을 입력해주세요." required />
+                                                <input type="text" name="addtext1" defaultValue="" placeholder="회사명을 입력해주세요." required />
                                             </div>
                                         </li>
                                         <li>
                                             <label>Project Name</label>
                                             <div className="request-input-data">
-                                                <input type="text" name="addtext2" value="" placeholder="(지역, 아파트/빌라/상업시설 등)" />
+                                                <input type="text" name="addtext2" defaultValue="" placeholder="(지역, 아파트/빌라/상업시설 등)" />
                                             </div>
                                         </li>
                                         <li>
                                             <label>E-Mail Address <i>*</i></label>
                                             <div className="request-input-data">
-                                                <input type="text" name="m-email" value="" placeholder="이메일 주소를 입력해주세요." required />
+                                                <input type="text" name="m-email" defaultValue="" placeholder="이메일 주소를 입력해주세요." required />
                                             </div>
                                         </li>
                                         <li className="captcha">
                                             <label>Captcha <i>*</i></label>
                                             <div className="request-input-data">
                                                 <p className="captcha_img"><img src="./images/captcha.bmp" id="imgCaptcha" className="vmiddle" /></p>
-                                                <input type="button" value="새로고침" onclick={RefreshImage('imgCaptcha')} />
-                                                <input type="text" name="txtCaptcha" value="" placeholder="코드입력" maxlength="5" required />
+                                                <input type="button" defaultValue="새로고침" onClick={RefreshImage('imgCaptcha')} />
+                                                <input type="text" name="txtCaptcha" defaultValue="" placeholder="코드입력" maxLength="5" required />
                                             </div>
                                         </li>
                                     </ul>
@@ -58,7 +60,7 @@ export function Request(){
                                     </ul>
                                     <p className="txt">
                                         <input type="checkbox" id="check" name="check" required />
-                                        <label for="check">&nbsp;<span></span> 위의 모든 약관의 내용을 확인하였으며 이에 동의합니다.</label>
+                                        <label htmlFor="check">&nbsp;<span></span> 위의 모든 약관의 내용을 확인하였으며 이에 동의합니다.</label>
                                     </p>
                                     <button>문의사항 작성하기</button>
                                 
