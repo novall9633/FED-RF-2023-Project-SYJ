@@ -2,18 +2,16 @@ import { visual } from "../data/visual";
 import $ from "jquery";
 
 import "../../css/banner.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function Banner() {
-  const [idx, setIdx] = useState(0);
-  const A_TM = 4000;
+  const A_TM = 5000;
   const autoI = useRef(null);
   const autoT = useRef(null);
 
   const mySeq = useRef(0);
 
   const bulBtn = (e) => {
-    console.log("버튼!");
     // 선택 불릿
     let btn = $(e.currentTarget).parent();
     // 불릿 순서
@@ -24,7 +22,6 @@ export function Banner() {
     $(btn).addClass("active").siblings().removeClass("active");
     $(".inner ul li").eq(Btnidx).addClass("on").siblings().removeClass("on");
 
-    setIdx(++Btnidx);
   };
   const makeBull = () => {
     let hcode = [];
@@ -41,7 +38,6 @@ export function Banner() {
   };
 
   const autoSlide = () => {
-    console.log("요기", mySeq.current);
     $(".main-bul li")
       .eq(mySeq.current)
       .addClass("active")
@@ -57,7 +53,7 @@ export function Banner() {
     if (mySeq.current > 3) mySeq.current = 0;
 
     clearTimeout(autoT.current);
-    autoT.current = setTimeout(autoSlide, 6000);
+    autoT.current = setTimeout(autoSlide, A_TM);
   };
 
   useEffect(() => {
@@ -67,22 +63,6 @@ export function Banner() {
     autoSlide();
   }, []);
 
-  // // 자동 슬라이드 함수//////////////
-  // function slideAuto() {
-  //     autoI = setInterval(() => {
-  //         // onSlide(1);
-  //         // rightSlide();
-  //     }, 5000);
-  // } //////////slideAuto함수//////////
-
-  // slideAuto();
-
-  // // 자동 슬라이드 방지 함수
-  // function clearAuto() {
-  //     clearInterval(autoI);
-  //     clearTimeout(autoT);
-  //     autoT = setTimeout(slideAuto, 5000);
-  // } //clearAuto함수/////////////////
 
   return (
     <>

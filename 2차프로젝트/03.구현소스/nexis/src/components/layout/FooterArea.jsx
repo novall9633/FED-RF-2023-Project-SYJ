@@ -22,7 +22,6 @@ export function FooterArea(){
                                 </tr>
                                 </thead>
                                 <tbody>
-
                                 <tr>
                                     <td><Link to="/greeting">Greeting</Link></td>
                                     <td><Link to="/b2b">Domestic B2B sales</Link></td>

@@ -4,6 +4,7 @@ import $ from 'jquery';
 import "jquery-ui-dist/jquery-ui";
 
 import "../../css/busi.css"
+import { useEffect } from "react";
 
 export function Busi() {
     // 애니시간
@@ -50,17 +51,27 @@ export function Busi() {
             if(sNum<0) sNum=sCnt-1;
           } /////// else /////////
     }
+
+    const makeArr = () =>{
+        let arr = "Our Business".split("");
+        const hcode = [];
+        for(let i =0;i<arr.length;i++){
+            hcode[i] =  (
+                <span>{arr[i]}</span>
+            )
+        }
+        return hcode;
+    }
+    useEffect(()=>{
+        
+    })
     return (
         <>
             <div id="main2">
                 <article className="main2">
                     <div className="busi-wrap">
                         <div className="busi-info">
-                            <h2>
-                                <span>O</span>
-                                <span>u</span>
-                                <span>r</span> Business
-                            </h2>
+                            <h2>{makeArr()}</h2>
                             <h3>넥시스는 주거 환경과 생활 품격을 향상시키는 특판 가구 전문 기업입니다.</h3>
                             <p>
                                 국내 제조 가구와 프리미엄 수입 브랜드, 특허 기반 폴딩 베드까지 <br />

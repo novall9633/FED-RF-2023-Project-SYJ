@@ -19,7 +19,7 @@ function App(){
           - path대신 index만 쓰면 첫페이지로 로딩함! 
           -> path는 Layout의 Link to="/" 에 해당하는 셋팅*/}
           <Route index element={<Main />} />
-          <Route path='b2b' element={<Business cat="1"  />} />
+          <Route path='b2b' element={<Business cat="b2b"  />} />
           <Route path='import' element={<Business cat="2"  />} />
           <Route path='wall' element={<Business cat="3"  />} />
         </Route>

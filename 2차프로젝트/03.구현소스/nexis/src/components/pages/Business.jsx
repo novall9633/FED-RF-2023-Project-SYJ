@@ -1,7 +1,9 @@
+import { VisiImg } from "../modules/VisiImg";
+
 export function Business(props){
     return(
         <>
-        <h1>{props.cat}</h1>
+            <VisiImg cat={props.cat} />
         </>
     )
 }

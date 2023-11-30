@@ -23,7 +23,7 @@
 }
 
 .inner li.on>img{
-    animation: scale 5s linear;
+    animation: scale 4s linear;
     opacity: 1;
     display: block;
 }
@@ -99,7 +99,7 @@ li.on .main-txt-area {
     position: absolute;
     top: 8px;
     right: 48px;
-    animation: ani-width 2s;
+    animation: ani-width 4s;
 }
 .main-bul li.active a:after {
     content: "";
@@ -111,7 +111,7 @@ li.on .main-txt-area {
     top: 8px;
     left: 48px;
     z-index: 1;
-    animation: ani-width 2s;
+    animation: ani-width 4s;
 }
 @keyframes ani-width {
     from{
