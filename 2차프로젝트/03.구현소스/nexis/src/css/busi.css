@@ -11,6 +11,7 @@
     max-width: 1200px;
     height: auto;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 .busi-info{
     display: inline-block;
@@ -56,7 +57,7 @@
 }
 .busi-slide ul{
     display: flex;
-    margin: 50px 0;
+
     position: relative;
 }
 .busi-slide ul li{

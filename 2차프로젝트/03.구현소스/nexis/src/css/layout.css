@@ -208,6 +208,9 @@ footer{
 .footer-dt td a{
     color: rgb(255, 255, 255,.5);
 }
+.footer-dt td a:hover{
+    color : var(--main-color);
+}
 .footer-menu p{
     color: rgb(255, 255, 255,.5);
 }
@@ -247,6 +250,10 @@ footer{
     border: 1px solid #555;
     color: #fff;
     line-height: 2;
+    cursor: pointer;
+}
+.footer-site ul a:hover{
+    color: var(--main-color);
 }
 .footer-site ul{
     display: none;

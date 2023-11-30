@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { menu } from "../data/gnb";
+import $ from 'jquery';
 
 export function FooterArea(){
+    const viewList = (e) =>{
+        $(e.currentTarget).next().slideToggle();
+    }
     return(
         <footer>
                 <div className="footer">
@@ -46,7 +50,7 @@ export function FooterArea(){
                                 <li><a href=""><img src="./images/icon_instagram.gif" alt="인스타그램"/></a></li>
                             </ul>
                             <div className="footer-site">
-                                <a href="#">+  Family Site</a>
+                                <a onClick={viewList}>+  Family Site</a>
                                 <ul>
                                     <li><a href="#">ORN</a></li>
                                     <li><a href="#">NEXIS GALLERY</a></li>

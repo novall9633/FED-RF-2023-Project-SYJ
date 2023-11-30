@@ -43,7 +43,10 @@
     transform: translate(-50%, -50%);
     display: none;
     opacity: 0;
-    transition: 1s ease-in;
+    transition: top 1s ease-in;
+}
+li:nth-child(2) .main-txt-area, li:nth-child(3) .main-txt-area{
+    left: 65%;
 }
 li.on .main-txt-area {
     display: block;
@@ -60,6 +63,7 @@ li.on .main-txt-area {
 .main-txt-area dd{
     font-size: 17px;
     font-weight: 300;
+    white-space:pre-wrap;
 }
 .main-bul {
     display: block;
