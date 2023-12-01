@@ -3,7 +3,7 @@ import { menu } from "../data/gnb";
 import $ from 'jquery'
 
 export function TopArea() {
-    const viewMenu=(e)=>{
+    const toggleMenu=(e)=>{
         //////////// 메뉴 열기 / 닫기 //////////////
             if ($(".menu-open").hasClass("on") === true) {
                 $("#menu").css({
@@ -15,7 +15,7 @@ export function TopArea() {
                 $("#main-visual").css({
                     opacity: 0.7,
                 });
-                $(e.currentTarget).find(".menu-open").removeClass("on").siblings().addClass("on");
+                $(".menuBtn a").find(".menu-open").removeClass("on").siblings().addClass("on");
             } else {
                 $("#menu").css({
                     left: "100%",
@@ -26,7 +26,7 @@ export function TopArea() {
                 $("#main-visual").css({
                     opacity: 1,
                 });
-                $(e.currentTarget).find(".menu-close").removeClass("on").siblings().addClass("on");
+                $(".menuBtn a").find(".menu-close").removeClass("on").siblings().addClass("on");
             }
         
         // );
@@ -52,7 +52,7 @@ export function TopArea() {
                         </a>
                     </h1>
                     <div className="menuBtn">
-                        <a href="#" onClick={viewMenu}>
+                        <a href="#" onClick={toggleMenu}>
                             <div className="menu-open on">MENU</div>
                             <div className="menu-close">CLOSE</div>
                             <div id="ham">
@@ -70,13 +70,13 @@ export function TopArea() {
                         <dl key={i}>
                             <dt>
                                 <em>{"0" + (i + 1)}</em>
-                                <Link to={v.link}>{v.txt}</Link>
+                                <Link to={v.link} onClick={toggleMenu}>{v.txt}</Link>
                             </dt>
                             {v.sub && (
                                 <dd>
                                     {v.sub.map((e, n) => (
                                         <p key={n}>
-                                            <Link to={e.link}>
+                                            <Link to={e.link} onClick={toggleMenu}>
                                                 <span>{e.txt}</span>
                                             </Link>
                                         </p>

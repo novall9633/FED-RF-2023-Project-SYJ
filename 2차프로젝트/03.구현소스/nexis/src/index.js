@@ -20,8 +20,8 @@ function App(){
           -> path는 Layout의 Link to="/" 에 해당하는 셋팅*/}
           <Route index element={<Main />} />
           <Route path='b2b' element={<Business cat="b2b"  />} />
-          <Route path='import' element={<Business cat="2"  />} />
-          <Route path='wall' element={<Business cat="3"  />} />
+          <Route path='import' element={<Business cat="import"  />} />
+          <Route path='wall' element={<Business cat="wall"  />} />
         </Route>
       </Routes>
     </BrowserRouter>
