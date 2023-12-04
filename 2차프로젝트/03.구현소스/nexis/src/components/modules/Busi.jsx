@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { business } from "../data/business";
-import $ from 'jquery';
+import $ from "jquery";
 import "jquery-ui-dist/jquery-ui";
 
-import "../../css/busi.css"
+import "../../css/busi.css";
 import { useEffect } from "react";
+import { scrollFn } from "../func/scrollFn";
 
 export function Busi() {
     // 애니시간
@@ -14,57 +15,67 @@ export function Busi() {
     // 슬라이드 순번
     let sNum = 0;
 
-    const goSlide = (e) =>{
+    const goSlide = (e) => {
         const tg = e.target;
-        const sldBox = $(tg).parent().find('ul');
-        const sCnt = sldBox.find('li').length;
-        console.log(tg,sldBox,sCnt);
+        const sldBox = $(tg).parent().find("ul");
+        const sCnt = sldBox.find("li").length;
+        console.log(tg, sldBox, sCnt);
 
         // 광클금지
-        if(cSts) return;
-        cSts=1;
-        setTimeout(()=>cSts=0,A_TM);
+        if (cSts) return;
+        cSts = 1;
+        setTimeout(() => (cSts = 0), A_TM);
 
         // 오른쪽버튼 여부
-        let isR = $(tg).is('.ab2');
+        let isR = $(tg).is(".ab2");
 
-        if(isR){
-            sldBox.animate({left:'-100%'}, A_TM,()=>{
+        if (isR) {
+            sldBox.animate({ left: "-100%" }, A_TM, () => {
                 // 맨앞li 맨뒤로 이동
-                sldBox.append(sldBox.find('li').first())
-                // 동시에 left값은 0으로 초기화함!
-                .css({left:"0%"});
+                sldBox
+                    .append(sldBox.find("li").first())
+                    // 동시에 left값은 0으로 초기화함!
+                    .css({ left: "0%" });
             });
             sNum++;
-            if(sNum>=sCnt) sNum=0;
-        }
-        else{
+            if (sNum >= sCnt) sNum = 0;
+        } else {
             // 맨뒤li 맨앞으로 이동
-            sldBox.prepend(sldBox.find('li').last())
-            // left값 -50%
-            .css({left:'-100%'})
-            // left값을 0으로 애니메이션
-            .animate({left:'0'},A_TM);
-      
+            sldBox
+                .prepend(sldBox.find("li").last())
+                // left값 -50%
+                .css({ left: "-100%" })
+                // left값을 0으로 애니메이션
+                .animate({ left: "0" }, A_TM);
+
             // 슬라이드순번 감소(0보다 작으면 끝번호)
             sNum--;
-            if(sNum<0) sNum=sCnt-1;
-          } /////// else /////////
-    }
+            if (sNum < 0) sNum = sCnt - 1;
+        } /////// else /////////
+    };
 
-    const makeArr = () =>{
+    const makeArr = () => {
         let arr = "Our Business".split("");
+        let seqNum = 1;
         const hcode = [];
-        for(let i =0;i<arr.length;i++){
-            hcode[i] =  (
-                <span>{arr[i]}</span>
-            )
+        for (let i = 0; i < arr.length; i++) {
+            hcode[i] = <span style={{transitionDelay:seqNum*0.1+"s"}} key={i}>{arr[i]}</span>;
+            seqNum++;
         }
         return hcode;
-    }
-    useEffect(()=>{
+    };
+
+    useEffect(() => {  
+        const stage = $(".busi-info>h2");
         
-    })
+        setInterval(() => {
+            $(stage).addClass('on')
+        }, 3000);
+        setInterval(() => {
+            $(stage).removeClass('on')
+        }, 6000);
+    },[]);
+    
     return (
         <>
             <div id="main2">
