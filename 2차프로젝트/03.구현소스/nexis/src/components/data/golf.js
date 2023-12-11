@@ -34,7 +34,7 @@ export const golf_mem = [
     {
         link: "Limms",
         name: "임미소",
-        ename: "Lim Mi so",
+        ename: "Lim Mi So",
         presence: "2011.08",
         awards: [],
     },
