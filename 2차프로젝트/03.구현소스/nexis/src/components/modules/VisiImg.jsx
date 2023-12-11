@@ -8,13 +8,13 @@ export function VisiImg(props) {
             
                 <div className="sub">
                     <div className="bg">
-                        <img src={"./images/business/" + subBusiness[props.cat].text + "/bg_business.jpg"} alt="" />
+                        <img src={process.env.PUBLIC_URL+"/images/business/" + subBusiness[props.cat].text + "/bg_business.jpg"} alt="" />
                     </div>
                     <div className="sub_txt">
                         <div className="sub_tit">
                             <p className="text_up">
                                     <img
-                                        src={"./images/business/" + subBusiness[props.cat].text + "/title_txt.png"}
+                                        src={process.env.PUBLIC_URL+"/images/business/" + subBusiness[props.cat].text + "/title_txt.png"}
                                         alt=""
 										/>
 										<span>
@@ -31,14 +31,14 @@ export function VisiImg(props) {
                             <div className="round">
                                 <dl>
                                     <dt>
-                                        <img src="./images/logo_h1.jpg" alt="" />
+                                        <img src={process.env.PUBLIC_URL+"/images/logo_h1.jpg"} alt="" />
                                     </dt>
                                     <dd>
                                         <em>Nex</em>t built
                                         <em>i</em>n<em>S</em>ystem
                                     </dd>
                                 </dl>
-                                <img src="./images/business/rotate.png" alt="" />
+                                <img src={process.env.PUBLIC_URL+"/images/business/rotate.png"} alt="" />
                             </div>
                             <div className="tit_group">
                                 <h3>Business</h3>

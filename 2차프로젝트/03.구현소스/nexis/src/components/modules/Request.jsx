@@ -48,7 +48,7 @@ export function Request(){
                                         <li className="captcha">
                                             <label>Captcha <i>*</i></label>
                                             <div className="request-input-data">
-                                                <p className="captcha_img"><img src="./images/captcha.bmp" id="imgCaptcha" className="vmiddle" /></p>
+                                                <p className="captcha_img"><img src={process.env.PUBLIC_URL+"/images/captcha.bmp"} id="imgCaptcha" className="vmiddle" /></p>
                                                 <input type="button" defaultValue="새로고침" onClick={RefreshImage('imgCaptcha')} />
                                                 <input type="text" name="txtCaptcha" defaultValue="" placeholder="코드입력" maxLength="5" required />
                                             </div>
@@ -69,7 +69,7 @@ export function Request(){
                             </form>
                         </div>
                         <div className="request-project-img">
-                            <img src="./images/img_request.jpg" alt="이미지" />
+                            <img src={process.env.PUBLIC_URL+"/images/img_request.jpg"} alt="이미지" />
                         </div>
                     </div>
                 </article>

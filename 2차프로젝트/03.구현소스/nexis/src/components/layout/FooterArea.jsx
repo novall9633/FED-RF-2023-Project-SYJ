@@ -44,9 +44,9 @@ export function FooterArea(){
                     <div className="footer-info">
                         <div className="footer-sns">
                             <ul>
-                                <li><a href=""><img src="./images/icon_facebook.gif" alt="페이스북"/></a></li>
-                                <li><a href=""><img src="./images/icon_blog.gif" alt="블로그"/></a></li>
-                                <li><a href=""><img src="./images/icon_instagram.gif" alt="인스타그램"/></a></li>
+                                <li><a href=""><img src={process.env.PUBLIC_URL+"/images/icon_facebook.gif"} alt="페이스북"/></a></li>
+                                <li><a href=""><img src={process.env.PUBLIC_URL+"/images/icon_blog.gif"} alt="블로그"/></a></li>
+                                <li><a href=""><img src={process.env.PUBLIC_URL+"/images/icon_instagram.gif"} alt="인스타그램"/></a></li>
                             </ul>
                             <div className="footer-site">
                                 <a onClick={viewList}>+  Family Site</a>

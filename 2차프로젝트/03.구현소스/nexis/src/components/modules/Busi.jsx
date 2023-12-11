@@ -98,7 +98,7 @@ export function Busi() {
                             {business.map((v, i) => (
                                 <li key={i}>
                                     <div className="busi-slide-img">
-                                        <img src={v.src} alt={"biz0" + i} />
+                                        <img src={process.env.PUBLIC_URL+v.src} alt={"biz0" + i} />
                                         <Link to={v.link}>
                                             <div className="busi-slide-box">
                                                 <h2>{v.tit}</h2>

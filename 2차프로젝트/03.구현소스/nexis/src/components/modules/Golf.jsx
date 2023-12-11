@@ -62,10 +62,10 @@ export function Golf(){
                         </div>
                         <div className="golf-btn">
                             <div className="golf-prevBtn gBtn" onClick={goSlide}>
-                                <img src="./images/golf_arrow_prev.jpg" alt="이전" />
+                                <img src={process.env.PUBLIC_URL+"/images/golf_arrow_prev.jpg"} alt="이전" />
                             </div>
                             <div className="golf-nextBtn gBtn" onClick={goSlide}>
-                                <img src="./images/golf_arrow_next.jpg" alt="다음" />
+                                <img src={process.env.PUBLIC_URL+"/images/golf_arrow_next.jpg"} alt="다음" />
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@ export function Golf(){
                                     </Link>
                                 </div>
                                 <div className="golfMem-img">
-                                    <img src={"./images/"+v.ename.replaceAll(' ','')+"_thum.jpg"} alt="배경" />
+                                    <img src={process.env.PUBLIC_URL+"/images/"+v.ename.replaceAll(' ','')+"_thum.jpg"} alt="배경" />
                                 </div>
                             </li>
                                 )

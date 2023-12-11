@@ -48,7 +48,7 @@ export function TopArea() {
                 <div className="header">
                     <h1>
                         <a href="#">
-                            <img src="./images/logo_h1.jpg" alt="logo" />
+                            <img src={process.env.PUBLIC_URL+"/images/logo_h1.jpg"} alt="logo" />
                         </a>
                     </h1>
                     <div className="menuBtn">

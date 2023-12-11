@@ -3,7 +3,7 @@ import ReactDOM, {createRoot} from 'react-dom/client';
 
 import "./css/index.css";
 import { Layout } from './components/layout/Layout';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import { Main } from './components/pages/Main';
 import { Business } from './components/pages/Business';
 
@@ -11,7 +11,7 @@ import { Business } from './components/pages/Business';
 
 function App(){
   return(
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         {/* 중요!!! 레이아웃 컴포넌트를 루트로 설정! */}
         <Route path="/" element={<Layout />}>
@@ -24,7 +24,7 @@ function App(){
           <Route path='wall' element={<Business cat="wall"  />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+     </BrowserRouter>
   );
 }
 
