@@ -215,7 +215,7 @@ footer{
     color: rgb(255, 255, 255,.5);
 }
 .footer-sns{
-    display: flex;
+    position: relative;
 }
 .footer-sns>ul>li{
     width: 25px;
@@ -242,7 +242,11 @@ footer{
     left: 50%;
     transform: translate(-50%,-50%);
 }
-
+.footer-site{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 .footer-site a{
     display: inline-block;
     width: 250px;

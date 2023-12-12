@@ -44,13 +44,13 @@ export function VisiImg(props) {
                                 <h3>Business</h3>
                                 <div className="sub_menu">
                                     <ul>
-                                        <li className={props.cat=="b2b"?"on":""}>
+                                        <li className={subBusiness[props.cat].text=="b2b"?"on":""}>
                                             <Link to="/b2b" cat="b2b">Domestic B2B sales</Link>
                                         </li>
-                                        <li className={props.cat=="import"?"on":""}>
+                                        <li className={subBusiness[props.cat].text=="import"?"on":""}>
                                             <Link to="/import" cat="import">Import Business</Link>
                                         </li>
-                                        <li className={props.cat=="wall"?"on":""}>
+                                        <li className={subBusiness[props.cat].text=="wall"?"on":""}>
                                             <Link to="/wall" cat="wall">Wall bed ORN</Link>
                                         </li>
                                     </ul>
