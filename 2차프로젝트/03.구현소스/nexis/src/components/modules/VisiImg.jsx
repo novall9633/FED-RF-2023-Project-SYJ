@@ -6,12 +6,12 @@ export function VisiImg(props) {
     return (
         <>
             
-                <div className="sub">
+                <div className="subBs">
                     <div className="bg">
                         <img src={process.env.PUBLIC_URL+"/images/business/" + subBusiness[props.cat].text + "/bg_business.jpg"} alt="" />
                     </div>
-                    <div className="sub_txt">
-                        <div className="sub_tit">
+                    <div className="subBs-txt">
+                        <div className="subBs-tit">
                             <p className="text_up">
                                     <img
                                         src={process.env.PUBLIC_URL+"/images/business/" + subBusiness[props.cat].text + "/title_txt.png"}
@@ -25,9 +25,9 @@ export function VisiImg(props) {
                     </div>
                 </div>
 {/*                                                   */}
-                <div className="sub_cont">
-                    <div className="sub_top">
-                        <div className="inner">
+                <div className="subBs-cont">
+                    <div className="subBs-top">
+                        <div className="inner-subBs">
                             <div className="round">
                                 <dl>
                                     <dt>
@@ -40,9 +40,9 @@ export function VisiImg(props) {
                                 </dl>
                                 <img src={process.env.PUBLIC_URL+"/images/business/rotate.png"} alt="" />
                             </div>
-                            <div className="tit_group">
+                            <div className="tit-group">
                                 <h3>Business</h3>
-                                <div className="sub_menu">
+                                <div className="subBs-menu">
                                     <ul>
                                         <li className={subBusiness[props.cat].text=="b2b"?"on":""}>
                                             <Link to="/b2b" cat="b2b">Domestic B2B sales</Link>

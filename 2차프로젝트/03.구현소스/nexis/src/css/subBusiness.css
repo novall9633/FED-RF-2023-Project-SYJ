@@ -1,25 +1,25 @@
-.sub{
+.subBs{
     position: relative;
 }
 .bg{
     overflow: hidden;
 }
-.sub_tit{
+.subBs-tit{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
-.sub_tit img{
+.subBs-tit img{
     vertical-align: top;
 }
-.sub_tit span{
+.subBs-tit span{
     font-size: min(75px,10vw);
     margin-left: 2vw;
     font-weight: 700;
     color: #fff;
 }
-.inner{
+.inner-subBs{
     position: relative;
     padding: 150px 0;
 }
@@ -28,20 +28,20 @@
     position: absolute;
     margin-left: 70px;
 }
-.tit_group h3{
+.tit-group h3{
     text-align: center;
     font-size: 32px;
     padding-bottom: 15px;
 }
-.tit_group ul{
+.tit-group ul{
     display: flex;
     justify-content: center;
     gap:10px;
 }
-.tit_group li a{
+.tit-group li a{
     color: #000;
 }
-.tit_group li.on a{
+.tit-group li.on a{
     color: var(--main-color);
 }
 .round>img{
