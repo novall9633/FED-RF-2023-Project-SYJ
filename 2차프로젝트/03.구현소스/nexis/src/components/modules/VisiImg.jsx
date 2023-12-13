@@ -1,77 +1,102 @@
 import { subBusiness } from "../data/subBusiness";
-
-import "../../css/subBusiness.css"
+import $ from "jquery";
+import "../../css/subBusiness.css";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 export function VisiImg(props) {
+    useEffect(() => {
+        if (props.cat == "import") {
+            $(".header").addClass("on");
+        } else {
+            $(".header").removeClass("on");
+        }
+    }, []);
+
     return (
         <>
-            
-                <div className="subBs">
-                    <div className="bg">
-                        <img src={process.env.PUBLIC_URL+"/images/business/" + subBusiness[props.cat].text + "/bg_business.jpg"} alt="" />
+            <div className="subBs">
+                <div className="bg">
+                    <img
+                        src={
+                            process.env.PUBLIC_URL +
+                            "/images/business/" +
+                            subBusiness[props.cat].text +
+                            "/bg_business.jpg"
+                        }
+                        alt=""
+                    />
+                </div>
+                <div className="subBs-txt">
+                    <div className="subBs-tit">
+                        <p className="text_up">
+                            <img
+                                src={
+                                    process.env.PUBLIC_URL +
+                                    "/images/business/" +
+                                    subBusiness[props.cat].text +
+                                    "/title_txt.png"
+                                }
+                                alt=""
+                            />
+                            <span>{subBusiness[props.cat].tit}</span>
+                        </p>
                     </div>
-                    <div className="subBs-txt">
-                        <div className="subBs-tit">
-                            <p className="text_up">
-                                    <img
-                                        src={process.env.PUBLIC_URL+"/images/business/" + subBusiness[props.cat].text + "/title_txt.png"}
-                                        alt=""
-										/>
-										<span>
-                                    {subBusiness[props.cat].tit}
-                                </span>
-                            </p>
+                </div>
+            </div>
+            {/*                                                   */}
+            <div className="subBs-cont">
+                <div className="subBs-top">
+                    <div className="inner-subBs">
+                        <div className="round">
+                            <dl>
+                                <dt>
+                                    <img src={process.env.PUBLIC_URL + "/images/logo_h1.jpg"} alt="" />
+                                </dt>
+                                <dd>
+                                    <em>Nex</em>t built
+                                    <em>i</em>n<em>S</em>ystem
+                                </dd>
+                            </dl>
+                            <img src={process.env.PUBLIC_URL + "/images/business/rotate.png"} alt="" />
+                        </div>
+                        <div className="tit-group">
+                            <h3>Business</h3>
+                            <div className="subBs-menu">
+                                <ul>
+                                    <li className={subBusiness[props.cat].text == "b2b" ? "on" : ""}>
+                                        <Link to="/b2b" cat="b2b">
+                                            Domestic B2B sales
+                                        </Link>
+                                    </li>
+                                    <li className={subBusiness[props.cat].text == "import" ? "on" : ""}>
+                                        <Link to="/import" cat="import">
+                                            Import Business
+                                        </Link>
+                                    </li>
+                                    <li className={subBusiness[props.cat].text == "wall" ? "on" : ""}>
+                                        <Link to="/wall" cat="wall">
+                                            Wall bed ORN
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-{/*                                                   */}
-                <div className="subBs-cont">
-                    <div className="subBs-top">
-                        <div className="inner-subBs">
-                            <div className="round">
-                                <dl>
-                                    <dt>
-                                        <img src={process.env.PUBLIC_URL+"/images/logo_h1.jpg"} alt="" />
-                                    </dt>
-                                    <dd>
-                                        <em>Nex</em>t built
-                                        <em>i</em>n<em>S</em>ystem
-                                    </dd>
-                                </dl>
-                                <img src={process.env.PUBLIC_URL+"/images/business/rotate.png"} alt="" />
-                            </div>
-                            <div className="tit-group">
-                                <h3>Business</h3>
-                                <div className="subBs-menu">
-                                    <ul>
-                                        <li className={subBusiness[props.cat].text=="b2b"?"on":""}>
-                                            <Link to="/b2b" cat="b2b">Domestic B2B sales</Link>
-                                        </li>
-                                        <li className={subBusiness[props.cat].text=="import"?"on":""}>
-                                            <Link to="/import" cat="import">Import Business</Link>
-                                        </li>
-                                        <li className={subBusiness[props.cat].text=="wall"?"on":""}>
-                                            <Link to="/wall" cat="wall">Wall bed ORN</Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className="cont_bx">
-                        <div className="quality">
-                            <div className="bx_img">
-                                <em></em>
-                                <p></p>
-                            </div>
-                            <div className="bx_txt inner cf">
-                                <div className="txt_big">
-                                    <p className=" text_op left">
-                                        <span>Quality</span>
-                                    </p>
-                                    <p className="text_img">
-                                        {/* <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 377 147" style="enable-background:new 0 0 377 147;" xml:space="preserve">
+                <div className="cont_bx">
+                    <div className="quality">
+                        <div className="bx_img">
+                            <em></em>
+                            <p></p>
+                        </div>
+                        <div className="bx_txt inner cf">
+                            <div className="txt_big">
+                                <p className=" text_op left">
+                                    <span>Quality</span>
+                                </p>
+                                <p className="text_img">
+                                    {/* <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 377 147" style="enable-background:new 0 0 377 147;" xml:space="preserve">
 <g>
 	<path className="st0" d="M91.08,5.44v25.2h-56.7V60.7h49.14v25.2H34.38v52.02H8.28V5.44H91.08z" style="stroke-dashoffset: 0px;"></path>
 	<path className="st0" d="M115.83,22.27c2.82-2.46,6.03-3.69,9.63-3.69c3.48,0,6.6,1.23,9.36,3.69s4.14,5.49,4.14,9.09s-1.38,6.6-4.14,9
@@ -91,31 +116,31 @@ export function VisiImg(props) {
 	<path className="st0" d="M350.09,24.7v34.2h19.08v19.62h-19.08v59.4h-25.2v-59.4h-12.24V58.9h12.24V24.7H350.09z" style="stroke-dashoffset: 0px;"></path>
 </g>
 </svg> */}
-                                    </p>
-                                </div>
-                                <div className="txt_cont">
-                                    <p className="title">
-                                        <span>Domestic Edition</span>
-                                    </p>
-                                    <p className="txt">
-                                        보이지 않는 곳까지 완벽을 추구하는 품질 제일주의를 바탕으로 <br />
-                                        대단위 공동주택, 호텔, 리조트 등에 주방 및 수납 가구를 납품하고 있습니다.
-                                    </p>
-                                </div>
+                                </p>
+                            </div>
+                            <div className="txt_cont">
+                                <p className="title">
+                                    <span>Domestic Edition</span>
+                                </p>
+                                <p className="txt">
+                                    보이지 않는 곳까지 완벽을 추구하는 품질 제일주의를 바탕으로 <br />
+                                    대단위 공동주택, 호텔, 리조트 등에 주방 및 수납 가구를 납품하고 있습니다.
+                                </p>
                             </div>
                         </div>
+                    </div>
 
-                        <div className="content service right active">
-                            <div className="bx_img">
-                                <p></p>
-                            </div>
-                            <div className="bx_txt inner cf">
-                                <div className="txt_big">
-                                    <p className="text_op right">
-                                        <span>Best</span>
-                                    </p>
-                                    <p className="text_img">
-                                        {/* <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 618 149" style="enable-background:new 0 0 618 149;" xml:space="preserve">
+                    <div className="content service right active">
+                        <div className="bx_img">
+                            <p></p>
+                        </div>
+                        <div className="bx_txt inner cf">
+                            <div className="txt_big">
+                                <p className="text_op right">
+                                    <span>Best</span>
+                                </p>
+                                <p className="text_img">
+                                    {/* <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 618 149" style="enable-background:new 0 0 618 149;" xml:space="preserve">
 <g>
 	<path className="st0" d="M63.77,28.03c-5.76,0-10.23,1.14-13.41,3.42s-4.77,5.7-4.77,10.26c0,4.2,2.31,7.89,6.93,11.07
 		s10.77,6.21,18.45,9.09c6.24,2.28,11.58,4.89,16.02,7.83s8.13,6.99,11.07,12.15c2.94,5.16,4.41,11.7,4.41,19.62
@@ -147,30 +172,26 @@ export function VisiImg(props) {
 		c-3.36,3.84-5.04,9-5.04,15.48v1.62l34.56-11.7c-2.52-7.44-7.86-11.16-16.02-11.16C562.3,75.19,557.8,77.11,554.44,80.95z" style="stroke-dashoffset: 0px;"></path>
 </g>
 </svg> */}
-                                    </p>
-                                </div>
+                                </p>
+                            </div>
 
-                                <div className="txt_cont">
-                                    <p className="title">Pursuit of Perfection</p>
-                                    <p className="txt">
-                                        건설사와 시행사의 요구를 바탕으로 최적의 설계, 최고의 품질, 완벽한 시공과 AS를
-                                        약속합니다.
-                                    </p>
+                            <div className="txt_cont">
+                                <p className="title">Pursuit of Perfection</p>
+                                <p className="txt">
+                                    건설사와 시행사의 요구를 바탕으로 최적의 설계, 최고의 품질, 완벽한 시공과 AS를
+                                    약속합니다.
+                                </p>
 
-                                    <p className="btn_area">
-                                        <a
-                                            href="/file/2019넥시스_국내프로젝트자료.pdf"
-                                            target="_blank"
-                                            className="btn_s1"
-                                        >
-                                            <span>모델하우스 현황</span>
-                                        </a>
-                                    </p>
-                                </div>
+                                <p className="btn_area">
+                                    <a href="/file/2019넥시스_국내프로젝트자료.pdf" target="_blank" className="btn_s1">
+                                        <span>모델하우스 현황</span>
+                                    </a>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </>
     );
 }

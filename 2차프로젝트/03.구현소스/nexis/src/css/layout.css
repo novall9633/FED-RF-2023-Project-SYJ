@@ -16,6 +16,18 @@ header {
     min-height: 35px;
     overflow: hidden;
 }
+.header.w h1 img:nth-child(1){
+    display: none;
+}
+.header h1 img:nth-child(1){
+    display: inline-block;
+}
+.header.w h1 img:nth-child(2){
+    display: inline-block;
+}
+.header h1 img:nth-child(2){
+    display: none;
+}
 .header h1 {
     position: absolute;
     left: 5%;
@@ -35,12 +47,15 @@ header {
 #ham {
     margin: 0 10px;
 }
-.line {
+.header .line {
     background-color: black;
     width: 20px;
     height: 3px;
     margin: 5px 0px; /*상하5, 좌우0*/
     transition-duration: 0.5s;
+}
+.header.w .line{
+    background-color: #fff;
 }
 .menu-close.on + #ham .line{
     background-color: #fff;
@@ -62,7 +77,10 @@ header {
     transform: translateY(-8px) rotate(-45deg);
     transform-origin: center;
 }
-.menu-open{
+.header.w .menu-open{
+    color: white;
+}
+.header .menu-open{
     color: #000;
 }
 .menu-close{
