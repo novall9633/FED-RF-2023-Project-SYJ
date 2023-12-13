@@ -48,7 +48,7 @@ export const TopArea = memo(() => {
         <>
             <header>
                 <div className="header">
-                    <Logo />
+                    <Logo cat="/"/>
                     <div className="menuBtn">
                         <a href="#" onClick={toggleMenu}>
                             <div className="menu-open on">MENU</div>

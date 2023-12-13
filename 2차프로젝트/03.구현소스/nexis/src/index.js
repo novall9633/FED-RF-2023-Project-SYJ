@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import ReactDOM, {createRoot} from 'react-dom/client';
 
 import "./css/index.css";
@@ -10,6 +10,7 @@ import { Business } from './components/pages/Business';
 
 
 function App(){
+  const wimp = useRef(false);
   return(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>

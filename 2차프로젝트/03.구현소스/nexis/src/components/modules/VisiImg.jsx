@@ -2,15 +2,17 @@ import { subBusiness } from "../data/subBusiness";
 import $ from "jquery";
 import "../../css/subBusiness.css";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 export function VisiImg(props) {
+    const imp = useRef(true); 
     useEffect(() => {
-        if (props.cat == "import") {
-            $(".header").addClass("on");
+        if (props.cat == "import" && imp.current) {
+            $(".header").addClass("w");
+            imp.current=false;
         } else {
-            $(".header").removeClass("on");
+            $(".header").removeClass("w");
         }
-    }, []);
+    },[props.cat]);
 
     return (
         <>
@@ -53,8 +55,7 @@ export function VisiImg(props) {
                                     <img src={process.env.PUBLIC_URL + "/images/logo_h1.jpg"} alt="" />
                                 </dt>
                                 <dd>
-                                    <em>Nex</em>t built
-                                    <em>i</em>n<em>S</em>ystem
+                                    <em>Nex</em>t built <em>i</em>n<em> S</em>ystem
                                 </dd>
                             </dl>
                             <img src={process.env.PUBLIC_URL + "/images/business/rotate.png"} alt="" />
