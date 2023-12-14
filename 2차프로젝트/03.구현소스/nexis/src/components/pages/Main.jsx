@@ -1,13 +1,21 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { scrollFn } from "../func/scrollFn";
 import { Banner } from "../modules/Banner";
 import { Busi } from "../modules/Busi";
 import { Golf } from "../modules/Golf";
 import { Request } from "../modules/Request";
 import { Value } from "../modules/Value";
+import { nCon } from "../modules/nContext";
 import $ from 'jquery'
 
 export function Main(){
+
+    const myCon = useContext(nCon);
+
+    useEffect(()=>{
+        myCon.setLogoColor(null);
+    })
+
     useEffect(()=>{
         let main2 = $(".main2");
         let trends = $(".trends-wrap");

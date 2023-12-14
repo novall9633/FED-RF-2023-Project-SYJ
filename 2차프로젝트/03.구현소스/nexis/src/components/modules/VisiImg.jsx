@@ -2,17 +2,14 @@ import { subBusiness } from "../data/subBusiness";
 import $ from "jquery";
 import "../../css/subBusiness.css";
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
-export function VisiImg(props) {
-    const imp = useRef(true); 
-    useEffect(() => {
-        if (props.cat == "import" && imp.current) {
-            $(".header").addClass("w");
-            imp.current=false;
-        } else {
-            $(".header").removeClass("w");
-        }
-    });
+import { nCon } from "./nContext";
+import { useContext, useEffect } from "react";
+export function VisiImg(props) {     
+    const myCon = useContext(nCon);
+
+    useEffect(()=>{
+        myCon.setLogoColor(props.cat==="import"?'import':null);
+    })
 
     return (
         <>

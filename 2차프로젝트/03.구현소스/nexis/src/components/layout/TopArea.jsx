@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { Logo } from "../modules/Logo";
 import { menu } from "../data/gnb";
 import { Link } from "react-router-dom";
@@ -44,6 +44,8 @@ export const TopArea = memo(() => {
         });
         /////////////////메뉴 마우스 오버 /////////////////////////////////
     };
+
+
     return (
         <>
             <header>
