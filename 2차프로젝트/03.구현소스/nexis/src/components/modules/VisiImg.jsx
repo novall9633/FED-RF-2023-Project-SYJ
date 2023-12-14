@@ -45,7 +45,6 @@ export function VisiImg(props) {
                     </div>
                 </div>
             </div>
-            {/*                                                   */}
             <div className="subBs-cont">
                 <div className="subBs-top">
                     <div className="inner-subBs">
@@ -84,7 +83,7 @@ export function VisiImg(props) {
                         </div>
                     </div>
                 </div>
-
+{/*                                                                      */}
                 <div className="cont_bx">
                     <div className="quality">
                         <div className="bx_img">
