@@ -3,12 +3,12 @@ import "../../css/subBusiness.css";
 import { Link } from "react-router-dom";
 import { nCon } from "./nContext";
 import { useContext, useEffect } from "react";
-export function VisiImg(props) {     
+export function VisiImg(props) {
     const myCon = useContext(nCon);
 
-    useEffect(()=>{
-        myCon.setLogoColor(props.cat==="import"?'import':null);
-    })
+    useEffect(() => {
+        myCon.setLogoColor(props.cat === "import" ? "import" : null);
+    });
 
     return (
         <>
@@ -79,10 +79,22 @@ export function VisiImg(props) {
                         </div>
                     </div>
                 </div>
-{/*                                                                      */}
                 <div className="subBs-first">
-                    <div className="subBs-st-img">
-                        
+                    <div className="subBs-st1">
+                        <div className="subBs-st-cont">
+                            <div className="subBs-st-img greyImg"></div>
+                            <div className="subBs-st-img contImg">
+                                <img src={process.env.PUBLIC_URL +
+                                    "/images/business/" +
+                                    subBusiness[props.cat].text + "/img_business_01.jpg"} alt="" />
+                            </div>
+                        </div>
+                        <div className="subBs-st-txt">
+                            <h2>{subBusiness[props.cat].txt1}</h2>
+                        </div>
+                    </div>
+                    <div className="subBs-st2">
+                        .subBs-st
                     </div>
                 </div>
             </div>
