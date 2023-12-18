@@ -84,9 +84,15 @@ export function VisiImg(props) {
                         <div className="subBs-st-cont">
                             <div className="subBs-st-img greyImg"></div>
                             <div className="subBs-st-img contImg">
-                                <img src={process.env.PUBLIC_URL +
-                                    "/images/business/" +
-                                    subBusiness[props.cat].text + "/img_business_01.jpg"} alt="" />
+                                <img
+                                    src={
+                                        process.env.PUBLIC_URL +
+                                        "/images/business/" +
+                                        subBusiness[props.cat].text +
+                                        "/img_business_01.jpg"
+                                    }
+                                    alt=""
+                                />
                             </div>
                         </div>
                         <div className="subBs-st-txt">
@@ -94,7 +100,13 @@ export function VisiImg(props) {
                         </div>
                     </div>
                     <div className="subBs-st2">
-                        .subBs-st
+                        <div className="subBs-st2-cont">
+                            <div className="subBs-st2-svg"></div>
+                            <div className="subBs-st2-txt">
+                                <h2></h2>
+                                <h4></h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
