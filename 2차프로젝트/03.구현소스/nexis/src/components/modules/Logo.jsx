@@ -6,7 +6,6 @@ export const Logo = () => {
   const myCon = useContext(nCon);
 
   useEffect(() => {
-    console.log(myCon.logoColor);
     if (myCon.logoColor == "import") {
       $(".header").addClass("w");
     } else {

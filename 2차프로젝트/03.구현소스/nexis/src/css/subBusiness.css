@@ -97,3 +97,18 @@
     color: #fff;
     opacity: 0.7;
 }
+.subBs-st2-cont{
+    display: flex;
+}
+.subBs-st2-txt{
+    margin: 5vh 0;
+}
+.subBs-st2-txt h2{
+    font-size: 32px;
+    font-weight: 400;
+}
+.subBs-st2-txt h4{
+    font-size: 16px;
+    margin-top: 3vh;
+    font-weight: 200;
+}

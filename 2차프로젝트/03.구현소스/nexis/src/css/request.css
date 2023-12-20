@@ -177,7 +177,7 @@ cursor:pointer;
 .request-inq p{
     line-height: 3.5;
 }
-.request-inq button{
+.request-inq>button{
     position: relative;
     border: 0;
     background-color: transparent;
