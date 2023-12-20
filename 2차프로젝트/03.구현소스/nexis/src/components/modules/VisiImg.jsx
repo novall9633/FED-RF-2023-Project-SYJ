@@ -79,7 +79,6 @@ export function VisiImg(props) {
                         </div>
                     </div>
                 </div>
-               
             </div>
         </>
     );
