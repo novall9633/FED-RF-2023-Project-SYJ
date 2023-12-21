@@ -99,20 +99,24 @@
 }
 .subBs-st2-cont{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 .subBs-st2-svg{
-    
+    width: max(700px,40vw);
+    height: max(340px,30vh);
 }
 .subBs-st2-svg svg{
     width: 100%;
+    height: 100%;
 }
 .pa1{
     fill: none;
     stroke: var(--main-color);
     stroke-dasharray: 400%;
     transition: .7s ease-out;
-    animation: svg 5s ease-out;
+    animation: svg 10s ease-out;
+    display: none;
 }
 @keyframes svg {
     from{
