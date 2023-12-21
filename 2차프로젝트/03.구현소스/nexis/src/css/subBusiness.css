@@ -99,9 +99,32 @@
 }
 .subBs-st2-cont{
     display: flex;
+    justify-content: space-between;
+}
+.subBs-st2-svg{
+    
+}
+.subBs-st2-svg svg{
+    width: 100%;
+}
+.pa1{
+    fill: none;
+    stroke: var(--main-color);
+    stroke-dasharray: 400%;
+    transition: .7s ease-out;
+    animation: svg 5s ease-out;
+}
+@keyframes svg {
+    from{
+        stroke-dashoffset: 400%;
+    }
+    to{
+        stroke-dashoffset: 0%;
+    }
 }
 .subBs-st2-txt{
     margin: 5vh 0;
+    width: 40%;
 }
 .subBs-st2-txt h2{
     font-size: 32px;
