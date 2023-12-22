@@ -26,10 +26,10 @@ export function Main(){
         let golfMem=$(".golfMem");
         window.addEventListener('wheel',()=>{
             scrollFn("top",main2,1/4);
-            scrollFn("right",trends,1/3);
+            scrollFn("right30",trends,1/3);
             scrollFn("scale",trendsImg,2/3);
-            scrollFn("right",requestTxt,2/3);
-            scrollFn("left",requestImg,2/3);
+            scrollFn("right30",requestTxt,2/3);
+            scrollFn("left30",requestImg,2/3);
             scrollFn("top",golf,4/5);
             scrollFn("top",golfMem,4/5);
 
