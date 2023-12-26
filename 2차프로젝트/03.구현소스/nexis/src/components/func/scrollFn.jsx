@@ -33,15 +33,24 @@ export function scrollFn(dir, sel, num) {
             break;
         case "right":
             if (win >= set) {
-                doc.css({ transform: "translateX(-50%)"});
-            } else doc.css({ transform: "translateX(0%)", transition: "1s ease-out" });
+                doc.css({ transform: "translateX(-50%)", transition: "1s ease-out" });
+            } 
             break;
 
         case "left":
             if (win >= set) {
-                doc.css({ transform: "translateX(50%)"});
-            } else doc.css({ transform: "translateX(0%)", transition: "1s ease-out" });
+                doc.css({ transform: "translateX(50%)", transition: "1s ease-out" });
+            } 
             break;
+        case "opcity.7":
+            if(win >= set){
+                doc.css({opacity:"0.7",transition: "1s cubic-bezier(0.25, 0.1, 1, -0.25)"})
+            }
+            break;
+        case "addOn":
+            if(win >= set){
+                doc.addClass('on');
+            }
         default:
             break;
     }

@@ -6,11 +6,12 @@ import { Layout } from './components/layout/Layout';
 import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import { Main } from './components/pages/Main';
 import { Business } from './components/pages/Business';
+import {AboutComp} from './components/pages/AboutComp';
 
 
 
 function App(){
-  const wimp = useRef(false);
+  // const wimp = useRef(false);
   return(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
@@ -23,6 +24,9 @@ function App(){
           <Route path='b2b' element={<Business cat="b2b"  />} />
           <Route path='import' element={<Business cat="import"  />} />
           <Route path='wall' element={<Business cat="wall"  />} />
+          <Route path='greeting' element={<AboutComp cat="greeting" />} />
+          <Route path='philosophy' element={<AboutComp cat="philosophy" />} />
+          <Route path='History' element={<AboutComp cat="History" />} />
         </Route>
       </Routes>
      </BrowserRouter>

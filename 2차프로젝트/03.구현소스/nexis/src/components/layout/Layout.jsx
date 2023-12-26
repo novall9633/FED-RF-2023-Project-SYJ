@@ -20,6 +20,8 @@ export function Layout() {
   const goNav = useNavigate();
 
   const [logoColor,setLogoColor] = useState(null);
+  
+  
 
 
   // 라우터 이동함수 : pgName - 페이지이름 / param - 전달값
