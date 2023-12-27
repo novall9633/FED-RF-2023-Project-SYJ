@@ -1,0 +1,35 @@
+.subgre{
+    position: relative;
+}
+.subgre-bg{
+    overflow: hidden;
+}
+.subgre-bg img{
+    width: 100%;
+    max-height: 870px;
+}
+.subgre-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.subgre-text-up img{
+    vertical-align: top;
+}
+.subgre-text-up span{
+    font-weight: 700;
+    font-size: min(10vw,64px);
+}
+.subgre-tit ul{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 25px auto 0;
+}
+.subgre-tit li a{
+    color: #000;
+}
+.subgre-tit li.on a{
+    color: var(--main-color);
+}
