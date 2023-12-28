@@ -1,6 +1,6 @@
 export const golf_mem = [
     {
-        link: "/Kimba",
+        link: "Kimba",
         name: "김보아",
         ename: "Kim Bo Ah",
         presence: "2013.05",

@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { nCon } from "../modules/nContext";
 import "../../css/greeting.css";
 import { Link } from "react-router-dom";
+import { GreetingImgs } from "../modules/GreetingImgs";
 
 export function Greeting(props) {
     const myCon = useContext(nCon);
@@ -41,6 +42,15 @@ export function Greeting(props) {
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div className="subgreimg1">
+                <GreetingImgs cat="moto" />
+            </div>
+            <div className="subgretxt">
+                <GreetingImgs cat="lab" />
+            </div>
+            <div className="subgreimg2">
+                <GreetingImgs cat="vision" />
             </div>
         </>
     );

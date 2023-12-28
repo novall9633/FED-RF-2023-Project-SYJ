@@ -33,3 +33,50 @@
 .subgre-tit li.on a{
     color: var(--main-color);
 }
+.subgreimg-wrap ul{
+    display: flex;
+    justify-content: space-between;
+}
+.subgreimg-wrap.vision ul{
+    flex-direction: row-reverse;
+}
+.subgreimg-wrap li:first-child{
+    max-width: 25%;
+}
+.subgreimg-wrap.moto li:first-child{
+    margin-left: 15%;
+    padding-top: 5vh;
+}
+.subgreimg-wrap.vision li:first-child{
+    margin-right: 5%;
+}
+.subgreimg-wrap li p{
+    color: var(--main-color);
+    font-size: min(5vw,16px);
+}
+.subgreimg-wrap li h3{
+    font-size: min(10vw,72px);
+    word-wrap: break-word;
+    margin: 13% 0;
+    font-weight: 200;
+}
+.subgreimg-wrap li h4{
+    font-size: min(7vw,20px);
+    line-height: 2;
+    font-weight: 200;
+}
+.subgreimg-wrap li{
+    position: relative;
+    max-width: 70%;
+}
+.subgreimg-wrap.moto li:last-child{
+    margin-right: 15%;
+}
+.subgreimg-wrap.vision li:last-child{
+    margin-left: 5%;
+    padding-top: 5vh;
+}
+.subgreimg-img img{
+    max-width: 80%;
+}
+

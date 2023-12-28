@@ -21,8 +21,6 @@ export function Layout() {
 
   const [logoColor,setLogoColor] = useState(null);
   
-  
-
 
   // 라우터 이동함수 : pgName - 페이지이름 / param - 전달값
   // 메모이제이션 되는 TopArea 컴포넌트에 제공하는 함수가 
@@ -36,6 +34,7 @@ export function Layout() {
    [컨텍스트 API 공유값 설정]
    1. chgPage 함수 : 라우터 이동기능   
    **********************************/
+
   // 리턴코드 ////////////////////////
   return (
     <nCon.Provider value={{ chgPage, logoColor, setLogoColor }}>
