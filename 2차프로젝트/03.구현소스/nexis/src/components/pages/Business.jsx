@@ -6,8 +6,6 @@ import { scrollFn } from "../func/scrollFn";
 
 
 export function Business(props) {
-    // 리랜더링 강제 적용 상태변수
-    // const [force, setForce] = useState(null);
     useEffect(() => {
         let stCont = $(".subBs-st-cont .subBs-st-img");
         let ndCont = $(".subBs-nd-cont .subBs-nd-img");
@@ -30,7 +28,6 @@ export function Business(props) {
                 scrollFn("addOn", ndSvg, 1 / 2);
             }
         });
-        console.log(props.cat);
     });
 
     

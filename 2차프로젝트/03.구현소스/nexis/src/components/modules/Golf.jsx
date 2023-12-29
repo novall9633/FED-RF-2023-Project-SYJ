@@ -82,7 +82,7 @@ export function Golf(){
                                     </Link>
                                 </div>
                                 <div className="golfMem-img">
-                                    <img src={process.env.PUBLIC_URL+"/images/"+v.ename.replaceAll(' ','')+"_thum.jpg"} alt="배경" />
+                                    <img src={process.env.PUBLIC_URL+"/images/"+v.ename.replaceAll(' ','')+"_thum.jpg"} alt={v.ename} />
                                 </div>
                             </li>
                                 )

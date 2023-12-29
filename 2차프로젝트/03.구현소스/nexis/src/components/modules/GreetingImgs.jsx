@@ -9,14 +9,14 @@ export function GreetingImgs({ cat }) {
                         <h3>{greeting[cat].tit}</h3>
                         <h4>{greeting[cat].cont}</h4>
                     </li>
+                    <li>
                     {
                     greeting[cat].hasOwnProperty("img") && (
-                        <li>
                             <div className="subgreimg-img">
                                 <img src={process.env.PUBLIC_URL + greeting[cat].img} alt="img" />
                             </div>
-                        </li>
                     )}
+                    </li>
                 </ul>
             </div>
         </>

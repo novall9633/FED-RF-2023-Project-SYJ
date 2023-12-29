@@ -33,50 +33,60 @@
 .subgre-tit li.on a{
     color: var(--main-color);
 }
+.subgreimg-wrap.lab{
+    margin: 5% 0;
+}
+.subgreimg-wrap.lab ul{
+    justify-content: space-around;
+
+}
 .subgreimg-wrap ul{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
+
 .subgreimg-wrap.vision ul{
     flex-direction: row-reverse;
 }
 .subgreimg-wrap li:first-child{
     max-width: 25%;
 }
-.subgreimg-wrap.moto li:first-child{
-    margin-left: 15%;
-    padding-top: 5vh;
-}
-.subgreimg-wrap.vision li:first-child{
-    margin-right: 5%;
-}
 .subgreimg-wrap li p{
     color: var(--main-color);
     font-size: min(5vw,16px);
 }
 .subgreimg-wrap li h3{
-    font-size: min(10vw,72px);
+    font-size: min(5vw,72px);
     word-wrap: break-word;
     margin: 13% 0;
     font-weight: 200;
 }
 .subgreimg-wrap li h4{
-    font-size: min(7vw,20px);
+    font-size: min(2.5vw,20px);
     line-height: 2;
     font-weight: 200;
 }
-.subgreimg-wrap li{
-    position: relative;
-    max-width: 70%;
-}
-.subgreimg-wrap.moto li:last-child{
-    margin-right: 15%;
-}
-.subgreimg-wrap.vision li:last-child{
-    margin-left: 5%;
-    padding-top: 5vh;
-}
 .subgreimg-img img{
-    max-width: 80%;
+    max-width: 90%;
 }
-
+.subgre-svg{
+    width: min(70%,2000px);
+    height:  min(300px,28vh);
+    margin-left: auto;
+    margin-top: 5%;
+}
+.subgre-svg svg{
+    width: 100%;
+    height: 100%;
+}
+.subgre-bgImg{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+.subgre-bgImg-view{
+    position: relative;
+}
+.subgre-bgImg-view img{
+    width: 100%;
+}
