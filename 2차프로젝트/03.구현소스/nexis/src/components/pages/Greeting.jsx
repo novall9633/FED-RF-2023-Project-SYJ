@@ -19,7 +19,7 @@ export function Greeting(props) {
         
         window.addEventListener("wheel", (e) => {
             scrollFn("addOn", Svg, 1 / 2);
-            top = Math.ceil(-e.deltaY/5);
+            top = Math.ceil(-e.deltaY/4);
             imgTop+=top;
             $('.subgre-bgImg-view').animate({top:imgTop},10,"easeOutSine");
             console.log(Math.ceil(imgTop));
