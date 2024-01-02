@@ -19,7 +19,10 @@ export function Layout() {
   // 라우터 이동객체설정
   const goNav = useNavigate();
 
+  // 로고 스타일
   const [logoColor,setLogoColor] = useState(null);
+
+  const mounted = useRef(false);
   
 
   // 라우터 이동함수 : pgName - 페이지이름 / param - 전달값
@@ -37,7 +40,7 @@ export function Layout() {
 
   // 리턴코드 ////////////////////////
   return (
-    <nCon.Provider value={{ chgPage, logoColor, setLogoColor }}>
+    <nCon.Provider value={{ chgPage, logoColor, setLogoColor ,mounted}}>
       {/* 메모이제이션 관리를 위해 함수를 컨텍스트방식이 아닌 속성으로 직접보냄 */}
       <TopArea chgPageFn={chgPage} />
       <MainArea />

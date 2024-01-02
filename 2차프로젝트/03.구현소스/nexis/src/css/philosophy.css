@@ -1,0 +1,38 @@
+.subph-wrap{
+    background-color: rgb(246, 239, 229);
+}
+.subph-wrap a{
+    text-decoration: none;
+}
+.subph-top{
+    padding-top: 20vh;
+    text-align: center;
+}
+.subph-subject p{
+    font-size: 30px;
+    font-weight: 700;
+}
+.subph-nav>ul{
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+}
+.subph-nav>ul>li a{
+    line-height: 2.5;
+    font-size: 16px;
+    color: black;
+}
+.subph-nav>ul>li.on a{
+    color: var(--main-color);
+}
+.subph-contents{
+    margin-top: 5vh;
+}
+.subph-contents>ul{
+    display: flex;
+}
+.subph-contWrap{
+    position: relative;
+}
+
+

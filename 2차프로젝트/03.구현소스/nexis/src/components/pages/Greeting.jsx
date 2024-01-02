@@ -5,30 +5,49 @@ import { Link } from "react-router-dom";
 import { GreetingImgs } from "../modules/GreetingImgs";
 import { greeting } from "../data/greeting";
 import { scrollFn } from "../func/scrollFn";
-import $ from 'jquery';
+import $ from "jquery";
 
 export function Greeting(props) {
     const myCon = useContext(nCon);
 
     useEffect(() => {
+        let mounted = true;
+
         // 로고 색깔 상태 -검은색
         myCon.setLogoColor(null);
         let imgTop = 0;
-        let top=0;
+        let top = 0;
         let Svg = $(".subgre-svg .pa1");
-        
-        window.addEventListener("wheel", (e) => {
+
+        const mouseMoveG = (e) => {
             scrollFn("addOn", Svg, 1 / 2);
-            top = Math.ceil(-e.deltaY/4);
-            imgTop+=top;
-            $('.subgre-bgImg-view').animate({top:imgTop},10,"easeOutSine");
+
+            top = Math.ceil(-e.deltaY / 4);
+            imgTop += top;
+            if (imgTop < -500) {
+                imgTop = -500;
+            } else if (imgTop > 0) {
+                imgTop = 0;
+            }
+            $(".subgre-bgImg-view").animate({ top: imgTop + "px" }, 40, "easeOutSine");
             console.log(Math.ceil(imgTop));
+        };
+
+        window.addEventListener("wheel", (e) => {
+            if (mounted) {
+                mouseMoveG(e);
+            }
         });
-    });
+        return () => {
+            // document.removeEventListener("wheel",mouseMoveG);
+            mounted = false;
+            console.log("greeting 끝-------------------------------------");
+        };
+    }, []);
     useEffect(() => {
         const tit = document.querySelector(".subgre-text-up");
         // tit.style.transform = 'translateY(100%)'
-    });
+    }, []);
 
     const makeArr = () => {
         let arr = greeting.svg;
