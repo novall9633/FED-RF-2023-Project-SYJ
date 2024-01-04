@@ -12,8 +12,8 @@ export const menu = [
                 link: "/philosophy",
             },
             {
-                txt: "History",
-                link: "/history",
+                txt: "Request",
+                link: "/request",
             },
         ],
     },

@@ -1,5 +1,6 @@
 export const golf_mem = [
     {
+        no:"No.1",
         link: "Kimba",
         name: "김보아",
         ename: "Kim Bo Ah",
@@ -13,6 +14,7 @@ export const golf_mem = [
         ],
     },
     {
+        no:"No.2",
         link: "Kimgy",
         name: "김가윤",
         ename: "Kim Ga Yun",
@@ -25,6 +27,7 @@ export const golf_mem = [
         ],
     },
     {
+        no:"No.3",
         link: "Moonje",
         name: "문지은",
         ename: "Moon Ji Eun",
@@ -32,6 +35,7 @@ export const golf_mem = [
         awards: ["2018 파워풀엑스 점프투어 16차전 우승"],
     },
     {
+        no:"No.4",
         link: "Limms",
         name: "임미소",
         ename: "Lim Mi So",

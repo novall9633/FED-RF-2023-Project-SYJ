@@ -26,13 +26,114 @@
     color: var(--main-color);
 }
 .subph-contents{
-    margin-top: 5vh;
+    padding: 5vh 0;
 }
 .subph-contents>ul{
     display: flex;
+    gap: 5%;
+    justify-content: center;
 }
 .subph-contWrap{
     position: relative;
+    max-width: 390px;
+    color: white;
+    opacity: 0.5;
+}
+.subph-contWrap:hover{
+    opacity: 1;
+    transform: perspective(1600px) rotateY(0) rotateX(0) translate3d(0,0,0);
+    transform-style: preserve-3d;
+    animation: cardAni 0.7s cubic-bezier(0.315,0.605,0.375,0.925) forwards;
+    box-shadow: 2px 0px 25px rgba(0,0,0,.25);
+}
+@keyframes cardAni {
+    0%{
+        transform: perspective(1600px) rotateX(0) rotateY(0) translateZ(0);
+    }
+    16%{
+        transform: perspective(1600px) rotateX(10deg) rotateY(10deg) translateZ(50px);
+    }
+    100%{
+        transform: perspective(1600px) rotateX(0) rotateY(0) translateZ(100px);
+    }
 }
 
+.subph-contImg img{
+    width: 100%;
+}
+.subph-contTop{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 100%;
+    height: auto;
+    transition: .3s;
+}
+.subph-contWrap:hover .subph-contTop{
+    top: 10%;
+    left : -7%;
+}
+.subph-contWrap:hover .subph-contTop h3,.subph-contWrap:hover .subph-contTop h4{
+    display: inline-block;
+}
+.subph-contTop h4{
+    display: none;
+}
+.subph-contWrap .subph-contTop h3{
+    padding-right: 10px;
+    font-size: 45px;   
+}
+.subph-contTop::before{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 70%;
+    height: 1px;
+    background-color: white;
+    bottom: 0%;
+    left: 0;
+    margin: 0 5%;
+}
+.subph-contWrap:hover .subph-contTop::before{
+    animation: width linear 1s forwards;
+}
+@keyframes width {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 90%;
+    }
+}
+.subph-contMid h4{
+    opacity: 1;
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    font-size: 20px;
+    font-weight: 700;
+    transition: top 2s;
+}
+.subph-contWrap:hover .subph-contMid h4{
 
+    animation: top linear 1s forwards;
+}
+@keyframes top {
+    from{
+        top: 30%;
+    }
+    to{
+        top: 25%;
+    }
+}
+.subph-contBot h5{
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    transition: top 2s;
+}
+.subph-contWrap:hover .subph-contBot h5{
+    top:35%;
+    opacity: 1;
+}

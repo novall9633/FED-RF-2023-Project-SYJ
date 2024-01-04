@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { pData } from "../data/philosophy";
 import "../../css/philosophy.css";
-import { event } from "jquery";
 import { useContext, useEffect } from "react";
 import { nCon } from "../modules/nContext";
 
@@ -21,19 +20,19 @@ export function Philosophy(props) {
                 <>
                     <li className={i===0?"on":""} key={i}>
                         <a href="#">
-                            <div className="subph-contWrap">
+                            <div className="subph-contWrap" key={i+"ph"}>
                                 <div className="subph-contImg">
                                     <img src={process.env.PUBLIC_URL + pData[i].src} alt={pData[i].name} />
                                 </div>
                                 <div className="subph-contTop">
                                     <h3>{pData[i].num}</h3>
-                                    <h4>{pData[i].sub}</h4>
+                                    <h4>{codeSplit(pData[i].sub)[0]}<br />{codeSplit(pData[i].sub)[1]}</h4>
                                 </div>
                                 <div className="subph-contMid">
                                     <h4>{pData[i].name}</h4>
                                 </div>
                                 <div className="subph-contBot">
-                                    <h5>{pData[i].text}</h5>
+                                <h5>{codeSplit(pData[i].text)[0]}<br />{codeSplit(pData[i].text)[1]}<br />{codeSplit(pData[i].text)[2]}<br />{codeSplit(pData[i].text)[3]}<br />{pData[i].num==="02"?codeSplit(pData[i].text)[4]:""}</h5>
                                 </div>
                             </div>
                         </a>
@@ -44,6 +43,9 @@ export function Philosophy(props) {
         }
         return hcode;
     };
+    function codeSplit(data){
+        return data.split("^");
+    }
 
     return (
         <>

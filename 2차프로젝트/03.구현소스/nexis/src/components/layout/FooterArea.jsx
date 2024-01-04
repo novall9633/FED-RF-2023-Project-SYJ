@@ -34,7 +34,7 @@ export function FooterArea(){
                                     <td><Link to="/import">Import Business</Link></td>
                                 </tr>
                                 <tr>
-                                    <td><Link to="/history">History</Link></td>
+                                    <td><Link to="/request">Request</Link></td>
                                     <td><Link to="/wall">Wall bed ORN</Link></td>
                                 </tr>
                                 </tbody>

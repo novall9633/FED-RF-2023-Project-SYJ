@@ -32,7 +32,6 @@ export function Main(){
             scrollFn("left30",requestImg,2/3);
             scrollFn("top",golf,4/5);
             scrollFn("top",golfMem,4/5);
-            console.log("main");
         }
         window.addEventListener('wheel',()=>{
             if(mounted){
@@ -42,7 +41,6 @@ export function Main(){
         return () => {
             // document.removeEventListener("wheel",);
             mounted=false;
-            console.log("main 끝-------------------------------------");
         };
     },[]);
 

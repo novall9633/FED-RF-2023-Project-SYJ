@@ -30,7 +30,6 @@ export function Greeting(props) {
                 imgTop = 0;
             }
             $(".subgre-bgImg-view").animate({ top: imgTop + "px" }, 40, "easeOutSine");
-            console.log(Math.ceil(imgTop));
         };
 
         window.addEventListener("wheel", (e) => {
@@ -39,9 +38,7 @@ export function Greeting(props) {
             }
         });
         return () => {
-            // document.removeEventListener("wheel",mouseMoveG);
             mounted = false;
-            console.log("greeting 끝-------------------------------------");
         };
     }, []);
     useEffect(() => {
@@ -73,12 +70,12 @@ export function Greeting(props) {
                             <span> Company</span>
                         </p>
                         <ul>
-                            <li className={props.cat == "greeting" ? "on" : ""}>
+                            <li className={props.cat === "greeting" ? "on" : ""}>
                                 <Link to="/greeting" cat="greeting">
                                     Greeting
                                 </Link>
                             </li>
-                            <li className={props.cat == "philosophy" ? "on" : ""}>
+                            <li className={props.cat === "philosophy" ? "on" : ""}>
                                 <Link to="/philosophy" cat="philosophy">
                                     Philosophy
                                 </Link>

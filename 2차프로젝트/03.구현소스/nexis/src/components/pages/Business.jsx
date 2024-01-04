@@ -1,12 +1,11 @@
 import { BusiCont } from "../modules/BusiCont";
 import { VisiImg } from "../modules/VisiImg";
 import $ from "jquery";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { scrollFn } from "../func/scrollFn";
-import { nCon } from "../modules/nContext";
 
 export function Business(props) {
-    const myCon = useContext(nCon);
+
     
     useEffect(() => {
         let mounted = true;
@@ -17,7 +16,6 @@ export function Business(props) {
         let stSvg = $(".subBs-st2-svg .pa1");
         let ndSvg = $(".subBs-nd2-svg .pa1");
         let arr = [stCont, ndCont, stTxt, ndTxt, stSvg, ndSvg];
-        console.log("business");
         for (let i = 0; i < arr.length; i++) {
             arr[i].removeClass("on");
         }
@@ -40,7 +38,6 @@ export function Business(props) {
         return () => {
             // document.removeEventListener("wheel",mouseMoveB);
             mounted = false;
-            console.log("business 끝-------------------------------------");
         };
     });
 

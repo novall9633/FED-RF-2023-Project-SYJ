@@ -90,5 +90,6 @@
     position: relative;
 }
 .subgre-bgImg-view img{
-    width: 100%;
+    transform: translateY(-50%);
+
 }
