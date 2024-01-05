@@ -216,7 +216,7 @@ footer{
 .footer-dt{
     margin: 30px 0;
 }
-.footer-dt th, td{
+.footer-dt th,.footer-dt td{
     text-align: left;
     padding: 10px 15px 0 0;
 }

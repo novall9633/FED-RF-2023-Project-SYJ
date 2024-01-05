@@ -77,7 +77,7 @@ export function Golf(){
                                 <div className="golfMem-prof">
                                     <p>{v.ename}</p>
                                     <h2>{v.name}</h2>
-                                    <Link to={v.link}>
+                                    <Link to="golf">
                                         <h4>더 알아보기</h4>
                                     </Link>
                                 </div>

@@ -5,6 +5,7 @@ export const golf_mem = [
         name: "김보아",
         ename: "Kim Bo Ah",
         presence: "2013.05",
+        src:"/images/golf/img_player1.png",
         awards: [
             "2020 휴앤케어 여자오픈 준우승",
             "2019 제9회 롯데 칸타타 여자오픈 우승",
@@ -19,6 +20,7 @@ export const golf_mem = [
         name: "김가윤",
         ename: "Kim Ga Yun",
         presence: "2011.08",
+        src:"/images/golf/img_player2.png",
         awards: [
             "한세·휘니스 CC 드림투어 2차전 2위",
             "군산 CC 드림투어 10차전 4위",
@@ -32,6 +34,7 @@ export const golf_mem = [
         name: "문지은",
         ename: "Moon Ji Eun",
         presence: "2018.08",
+        src:"/images/golf/img_player3.png",
         awards: ["2018 파워풀엑스 점프투어 16차전 우승"],
     },
     {
@@ -40,6 +43,7 @@ export const golf_mem = [
         name: "임미소",
         ename: "Lim Mi So",
         presence: "2011.08",
+        src:"/images/golf/img_player4.png",
         awards: [],
     },
 ]
