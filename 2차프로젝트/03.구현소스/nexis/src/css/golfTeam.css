@@ -60,8 +60,8 @@
 }
 .subgt-slide{
     position: absolute;
-    top: 80%;
-    left: 52%;
+    top: 90%;
+    left: 50%;
 }
 .subgt-arrow{
     display: flex;
@@ -69,6 +69,29 @@
 .gfBtn{
     font-size: 35px;
     cursor: pointer;
-    margin: 0 35%;
+    margin: 10px 10%;
     font-weight: 300;
+}
+.subgt-bull ul{
+    display: flex;
+}
+.subgt-bull ul li{
+    width: 70px;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    text-align: center;
+}
+.subgt-bull ul li::after{
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 150%;
+    width: 100%;
+    left: 0;
+    height: 1px;
+    background-color: wheat;
+}
+.subgt-bull ul li.on::after{
+    background-color: var(--main-color);
 }

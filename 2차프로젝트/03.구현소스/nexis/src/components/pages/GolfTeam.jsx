@@ -12,9 +12,8 @@ export function GolfTeam(props) {
 
     const goSlide = (e) => {
         const tg = e.target;
-        const sldBox = $(tg).parent().parent().parent().find('.subgt-cont');
+        const sldBox = $(tg).parent().parent().parent().find(".subgt-cont");
         const sCnt = sldBox.length;
-        console.log(sldBox[sNum],sCnt);
 
         // 광클금지
         if (cSts) return;
@@ -32,7 +31,7 @@ export function GolfTeam(props) {
             sNum--;
             if (sNum < 0) sNum = sCnt - 1;
         } /////// else /////////
-        $(sldBox[sNum]).addClass('on').siblings().removeClass('on');
+        $(sldBox[sNum]).addClass("on").siblings().removeClass("on");
     };
 
     const makeArr = () => {
@@ -71,6 +70,7 @@ export function GolfTeam(props) {
         }
         return hcode;
     };
+    // 선수 이력 코드
     function awards(data) {
         let arr = data;
         const hcode = [];
@@ -86,6 +86,19 @@ export function GolfTeam(props) {
         }
         return hcode;
     }
+    const makeBull = () => {
+        let arr = golf_mem;
+        const hcode = [];
+        for (let i = 0; i < arr.length; i++) {
+            hcode[i] = <>
+            <li className={i ===0?"on":""} key={i} onClick={bullSlide}>{arr[i].name}</li>
+            </>;
+        }
+        return hcode;
+    };
+    function bullSlide(){
+
+    }
     return (
         <>
             <div className="subgt">
@@ -97,14 +110,20 @@ export function GolfTeam(props) {
                 {makeArr()}
                 <div className="subgt-slide">
                     <div className="subgt-arrow">
-                        <div className="subgt-prevBtn gfBtn" onClick={goSlide}>〈
-                            {/* <img src={process.env.PUBLIC_URL + "/images/golf_arrow_prev.jpg"} alt="이전" /> */}
+                        <div className="subgt-prevBtn gfBtn" onClick={goSlide}>
+                            〈{/* <img src={process.env.PUBLIC_URL + "/images/golf_arrow_prev.jpg"} alt="이전" /> */}
                         </div>
-                        <div className="subgt-nextBtn gfBtn" onClick={goSlide}>〉
-                            {/* <img src={process.env.PUBLIC_URL + "/images/golf_arrow_next.jpg"} alt="다음" /> */}
+                        <div className="subgt-nextBtn gfBtn" onClick={goSlide}>
+                            〉{/* <img src={process.env.PUBLIC_URL + "/images/golf_arrow_next.jpg"} alt="다음" /> */}
                         </div>
                     </div>
-                    <div className="subgt-line"></div>
+                    <div className="subgt-line">
+                        <div className="subgt-bull">
+                            <ul>
+                                {makeBull()}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
