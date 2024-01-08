@@ -6,7 +6,7 @@ import { TopArea } from "./TopArea";
 // Context API 불러오기
 import { nCon } from "../modules/nContext";
 import { useNavigate } from "react-router-dom";
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useLayoutEffect, useState } from "react";
 
 export function Layout() {
 
@@ -21,9 +21,6 @@ export function Layout() {
 
   // 로고 스타일
   const [logoColor,setLogoColor] = useState(null);
-
-  const mounted = useRef(false);
-  
 
   // 라우터 이동함수 : pgName - 페이지이름 / param - 전달값
   // 메모이제이션 되는 TopArea 컴포넌트에 제공하는 함수가 
@@ -40,7 +37,7 @@ export function Layout() {
 
   // 리턴코드 ////////////////////////
   return (
-    <nCon.Provider value={{ chgPage, logoColor, setLogoColor ,mounted}}>
+    <nCon.Provider value={{ chgPage, logoColor, setLogoColor}}>
       {/* 메모이제이션 관리를 위해 함수를 컨텍스트방식이 아닌 속성으로 직접보냄 */}
       <TopArea chgPageFn={chgPage} />
       <MainArea />

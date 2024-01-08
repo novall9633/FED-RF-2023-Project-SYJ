@@ -1,14 +1,58 @@
+import { useContext, useEffect, useRef } from "react";
 import "../../css/golfTeam.css";
 import { golf_mem } from "../data/golf";
 import $ from "jquery";
+import { nCon } from "../modules/nContext";
 export function GolfTeam(props) {
+    const myCon = useContext(nCon);
     // 애니시간
-    const A_TM = 600;
+    const A_TM = 4000;
 
     // 광클상대변수(1-불허용,0-허용)
     let cSts = 0;
     // 슬라이드 순번
-    let sNum = 0;
+    const sNum = useRef(0);
+    const autoT = useRef(null);
+
+    useEffect(() => {
+        myCon.setLogoColor(null);
+    });
+    
+    useEffect(() => {
+        autoT.current = null;
+        sNum.current = 0;
+        
+        console.log("useEffect 발동");
+        autoT.current = setTimeout(autoSlide, A_TM);
+        return () => {
+            autoT.current=null;
+            console.log(autoT.current);
+        };
+    },[]);
+    
+    const autoSlide = () => {
+        onSlide();
+        console.log("autoSlide:" + sNum.current);
+        
+        sNum.current++;
+        if (sNum.current > 3) {
+            sNum.current = 0;
+        }
+        autoT.current = setTimeout(autoSlide, A_TM);
+        console.log(autoT.current);
+    };
+    
+    const clearAuto = () => {
+        clearTimeout(autoT.current);
+        autoT.current = setTimeout(autoSlide, A_TM);
+        console.log(autoT.current);
+    };
+
+    function onSlide() {
+        console.log("onSlide:" + sNum.current);
+        $(".subgt-cont").eq(sNum.current).addClass("on").siblings().removeClass("on");
+        $(".subgt-bull ul li").eq(sNum.current).addClass("on").siblings().removeClass("on");
+    }
 
     const goSlide = (e) => {
         const tg = e.target;
@@ -18,20 +62,21 @@ export function GolfTeam(props) {
         // 광클금지
         if (cSts) return;
         cSts = 1;
-        setTimeout(() => (cSts = 0), A_TM);
+        setTimeout(() => (cSts = 0), 600);
 
         // 오른쪽버튼 여부
         let isR = $(tg).is(".subgt-nextBtn");
 
         if (isR) {
-            sNum++;
-            if (sNum >= sCnt) sNum = 0;
+            sNum.current++;
+            if (sNum.current > 3) sNum.current = 0;
         } else {
             // 슬라이드순번 감소(0보다 작으면 끝번호)
-            sNum--;
-            if (sNum < 0) sNum = sCnt - 1;
+            sNum.current--;
+            if (sNum.current < 0) sNum.current = sCnt - 1;
         } /////// else /////////
-        $(sldBox[sNum]).addClass("on").siblings().removeClass("on");
+        onSlide();
+        clearAuto();
     };
 
     const makeArr = () => {
@@ -90,15 +135,30 @@ export function GolfTeam(props) {
         let arr = golf_mem;
         const hcode = [];
         for (let i = 0; i < arr.length; i++) {
-            hcode[i] = <>
-            <li className={i ===0?"on":""} key={i} onClick={bullSlide}>{arr[i].name}</li>
-            </>;
+            hcode[i] = (
+                <>
+                    <li className={i === 0 ? "on" : ""} key={i} onClick={bullSlide}>
+                        {arr[i].name}
+                    </li>
+                </>
+            );
         }
         return hcode;
     };
-    function bullSlide(){
+    const bullSlide = (e) => {
+        const tg = e.target;
+        const tgidx = $(tg).index();
 
-    }
+        // 광클금지
+        if (cSts) return;
+        cSts = 1;
+        setTimeout(() => (cSts = 0), 600);
+
+        sNum.current = tgidx;
+        onSlide();
+        clearAuto();
+    };
+
     return (
         <>
             <div className="subgt">
@@ -111,17 +171,15 @@ export function GolfTeam(props) {
                 <div className="subgt-slide">
                     <div className="subgt-arrow">
                         <div className="subgt-prevBtn gfBtn" onClick={goSlide}>
-                            〈{/* <img src={process.env.PUBLIC_URL + "/images/golf_arrow_prev.jpg"} alt="이전" /> */}
+                            〈
                         </div>
                         <div className="subgt-nextBtn gfBtn" onClick={goSlide}>
-                            〉{/* <img src={process.env.PUBLIC_URL + "/images/golf_arrow_next.jpg"} alt="다음" /> */}
+                            〉
                         </div>
                     </div>
                     <div className="subgt-line">
                         <div className="subgt-bull">
-                            <ul>
-                                {makeBull()}
-                            </ul>
+                            <ul>{makeBull()}</ul>
                         </div>
                     </div>
                 </div>

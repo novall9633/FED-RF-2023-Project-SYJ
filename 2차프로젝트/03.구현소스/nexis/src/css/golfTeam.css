@@ -39,6 +39,19 @@
     position: relative;
     z-index: 2;
 }
+.subgt-cont.on .subgt-memImg img:last-child{
+    animation: toRight ease-out 1s forwards;
+}
+@keyframes toRight {
+    from{
+        opacity: 0.15;
+        transform: translateX(-20%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 .subgt-memInfo p {
     color: var(--main-color);
     margin-top: 23%;
@@ -57,6 +70,20 @@
     font-weight: 300;
     text-align: left;
     padding: 10px 15px 0 0;
+}
+.subgt-cont.on .subgt-memInfo h1{
+    animation: opacity0 ease-in-out 2s forwards;
+}
+.subgt-cont.on .subgt-memInfo table{
+    animation: opacity0 ease-out 4s forwards;
+}
+@keyframes opacity0 {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 .subgt-slide{
     position: absolute;
@@ -89,8 +116,8 @@
     bottom: 150%;
     width: 100%;
     left: 0;
-    height: 1px;
-    background-color: wheat;
+    height: 2px;
+    background-color: rgba(128, 128, 128, 0.464);
 }
 .subgt-bull ul li.on::after{
     background-color: var(--main-color);

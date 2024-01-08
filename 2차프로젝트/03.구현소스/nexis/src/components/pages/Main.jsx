@@ -39,7 +39,6 @@ export function Main(){
             }
         });
         return () => {
-            // document.removeEventListener("wheel",);
             mounted=false;
         };
     },[]);

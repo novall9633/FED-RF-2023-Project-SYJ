@@ -41,8 +41,9 @@ export function Banner() {
         $(".inner ul li").eq(mySeq.current).addClass("on").siblings().removeClass("on");
 
         mySeq.current++;
-        if (mySeq.current > 3) mySeq.current = 0;
-
+        if (mySeq.current > 3) {
+            return true;
+        }
         clearTimeout(autoT.current);
         autoT.current = setTimeout(autoSlide, A_TM);
     };
