@@ -14,10 +14,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.subgre-text-up img{
-    width: 50%;
-    vertical-align: middle;
-}
 .subgre-text-up{
     font-weight: 700;
     font-size: min(5vw,64px);
@@ -111,5 +107,9 @@
     .subgre-bgImg-view img {
         transform: translateY(0%);
         width: 100%;
+    }
+    .subgre-text-up img {
+        width: 50%; 
+        vertical-align: middle;
     }
 }
