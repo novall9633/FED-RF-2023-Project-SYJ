@@ -35,7 +35,7 @@
 }
 .busi-info h3{
     font-family: 'Noto Sans KR', sans-serif; 
-    font-size: min(28px,20vw);
+    font-size: min(28px,3vw);
     color : var(--main-color);
     line-height: 2;
 }
@@ -43,6 +43,7 @@
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 300;
     line-height: 2;
+    font-size: min(10px,3vw);
 }
 .busi-gallery{
     position: absolute;
@@ -75,6 +76,7 @@
     position: relative;
 }
 .busi-slide-img img{
+    width: 100vw;
     transition: .5s;
 }
 .busi-slide-box{
@@ -96,11 +98,11 @@
     opacity: 1;
 }
 .busi-slide-box h2{
-    font-size: min(36px,17vw);
+    font-size: min(36px,3vw);
     line-height: 1.5;
 }
 .busi-slide-box h3{
-    font-size: min(24px,8vw);
+    font-size: min(24px,2vw);
 }
 .abtn{
     position: absolute;
@@ -121,4 +123,12 @@
 .ab2{
     background: #0000006d url(/public/images/next1.jpg) no-repeat 50%/30%;
     right: 5%;
+}
+@media screen and (max-width: 900px) {
+    .busi-gallery {
+        position: relative;
+        left: 0%;
+        top: 0;
+        width: 100%;
+    }
 }

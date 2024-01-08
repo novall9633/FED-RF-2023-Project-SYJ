@@ -54,7 +54,7 @@ li.on .main-txt-area {
     top: 40%;
 }
 .main-txt-area h2 {
-    font-size: 70px;
+    font-size: min(70px,10vw);
     font-weight: 700;
 }
 .main-txt-area span img{
@@ -62,7 +62,7 @@ li.on .main-txt-area {
     margin-right: 1vw;
 }
 .main-txt-area dd{
-    font-size: 17px;
+    font-size: min(17px,5vw);
     font-weight: 300;
     white-space:pre-wrap;
 }
@@ -126,4 +126,22 @@ li.on .main-txt-area {
 .main-bul li.active:first-child a:before,
 .main-bul li.active:last-child a:after {
     display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .inner li>img{
+        height: 70%;
+    }
+    .main-txt-area span img{
+        width: 49%;
+    }
+    .main-txt-area h2{
+        margin-bottom: 10%;
+    }
+    li.on .main-txt-area{
+        width: 80%;
+    }
+    .inner li.on>img{
+        animation: none;
+    }
 }

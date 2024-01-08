@@ -10,16 +10,18 @@
 }
 .subgre-txt{
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .subgre-text-up img{
-    vertical-align: top;
+    width: 50%;
+    vertical-align: middle;
 }
-.subgre-text-up span{
+.subgre-text-up{
     font-weight: 700;
-    font-size: min(10vw,64px);
+    font-size: min(5vw,64px);
+
 }
 .subgre-tit ul{
     display: flex;
@@ -92,4 +94,22 @@
 .subgre-bgImg-view img{
     transform: translateY(-50%);
 
+}
+@media screen and (max-width: 900px) {
+    .subgreimg-wrap ul{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .subgreimg-wrap ul li:first-child{
+        max-width: 80%;
+    }
+    .subgreimg-wrap.vision ul{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 700px) {
+    .subgre-bgImg-view img {
+        transform: translateY(0%);
+        width: 100%;
+    }
 }

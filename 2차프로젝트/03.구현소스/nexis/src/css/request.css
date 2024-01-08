@@ -92,7 +92,8 @@
     height: 40px;
 }
 .list li input{
-    display: inline-block;
+    /* display: inline-block; */
+    display: none;
     border:none;
     width: 100%;
     text-align: right;
@@ -212,4 +213,19 @@ cursor:pointer;
 }
 .request-inq button:hover::after{
     width: 140%;
+}
+@media screen and (max-width: 900px) {
+    .request-project-img img{
+        width: 63vw;
+    }
+    .request-info{
+        bottom: 80%;
+    }
+    .captcha_img img{
+        width: 70%;
+    }
+    .request-inq p {
+        font-size: min(10px,2vw);
+    }
+    
 }

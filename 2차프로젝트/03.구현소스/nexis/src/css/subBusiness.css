@@ -4,6 +4,9 @@
 .bg{
     overflow: hidden;
 }
+.bg img{
+    width: 100%;
+}
 .subBs-tit{
     position: absolute;
     top: 50%;
@@ -14,7 +17,7 @@
     vertical-align: top;
 }
 .subBs-tit span{
-    font-size: min(75px,10vw);
+    font-size: min(75px,5vw);
     margin-left: 2vw;
     font-weight: 700;
     color: #fff;
@@ -160,4 +163,33 @@
     font-size: 16px;
     margin-top: 3vh;
     font-weight: 300;
+}
+@media screen and (max-width: 900px) {
+    .subBs-tit img{
+        width: 50%;
+        vertical-align: middle;
+    }
+    .round>img{
+        width: 40%;
+    }
+    .round>dl>dt img{
+        width: 40%;
+    }
+    .round dl{
+        margin-left: 30px;
+        text-align: center;
+    }
+    .tit-group{
+        transform: translateY(100px);
+    }
+    .subBs-st2-cont, .subBs-nd2-cont{
+        flex-direction: column;
+    }
+    .subBs-st2-txt, .subBs-nd2-txt{
+        width: 80%;
+    }
+    svg{
+        aspect-ratio: "none";
+    }
+
 }
