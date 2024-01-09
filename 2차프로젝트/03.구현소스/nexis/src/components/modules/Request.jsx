@@ -101,6 +101,7 @@ export function Request() {
                                                     type="button"
                                                     defaultValue="새로고침"
                                                     onClick={RefreshImage("imgCaptcha")}
+                                                    style={{display:"none"}}
                                                 />
                                                 <input
                                                     type="text"

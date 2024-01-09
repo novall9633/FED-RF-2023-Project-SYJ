@@ -110,6 +110,11 @@
     }
     .subgre-text-up img {
         width: 50%; 
-        vertical-align: middle;
+    }
+    .subgre-text-up span {
+        vertical-align: super;
+    }
+    .subgreimg-img img{
+        max-width: 100%;
     }
 }

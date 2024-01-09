@@ -145,4 +145,7 @@
     .subph-contWrap{
         max-width: 100%;
     }
+    .subph-contWrap:hover{
+        animation: none;
+    }
 }

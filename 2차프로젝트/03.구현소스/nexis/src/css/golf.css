@@ -132,7 +132,7 @@
         height: 450px;
     }
     .golfMem ul {
-        flex-direction: column;
+        /* flex-direction: column; */
     }
     .golfMem li{
         width: 100%;

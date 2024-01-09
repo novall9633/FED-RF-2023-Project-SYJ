@@ -10,6 +10,8 @@ import { Greeting } from './components/pages/Greeting';
 import { Philosophy } from './components/pages/Philosophy';
 import { Prequest } from './components/pages/Prequest';
 import { GolfTeam } from './components/pages/GolfTeam';
+import { Contact } from './components/pages/Contact';
+import { DesignCenter } from './components/pages/DesignCenter';
 
 
 
@@ -25,7 +27,9 @@ function App(){
           <Route path='b2b' element={<Business cat="b2b"  />} />
           <Route path='import' element={<Business cat="import"  />} />
           <Route path='wall' element={<Business cat="wall"  />} />
+          <Route path='design' element={<DesignCenter cat="design"  />} />
           <Route path='golf' element={<GolfTeam cat="golf"  />} />
+          <Route path='contact' element={<Contact cat="contact"  />} />
         </Route>
       </Routes>
      </BrowserRouter>

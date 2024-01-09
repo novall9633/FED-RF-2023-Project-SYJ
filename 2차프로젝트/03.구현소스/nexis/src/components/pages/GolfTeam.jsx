@@ -22,34 +22,35 @@ export function GolfTeam(props) {
         autoT.current = null;
         sNum.current = 0;
         
-        console.log("useEffect 발동");
+        // console.log("useEffect 발동");
         autoT.current = setTimeout(autoSlide, A_TM);
         return () => {
             autoT.current=null;
-            console.log(autoT.current);
+            // console.log(autoT.current);
         };
     },[]);
     
     const autoSlide = () => {
-        onSlide();
-        console.log("autoSlide:" + sNum.current);
-        
-        sNum.current++;
-        if (sNum.current > 3) {
-            sNum.current = 0;
+        if(matchMedia("screen and (min-width: 900px)").matches){
+            onSlide();
+            
+            sNum.current++;
+            if (sNum.current > 3) {
+                sNum.current = 0;
+            }
+            autoT.current = setTimeout(autoSlide, A_TM);
+            // console.log(autoT.current);
         }
-        autoT.current = setTimeout(autoSlide, A_TM);
-        console.log(autoT.current);
     };
     
     const clearAuto = () => {
         clearTimeout(autoT.current);
         autoT.current = setTimeout(autoSlide, A_TM);
-        console.log(autoT.current);
+        // console.log(autoT.current);
     };
 
     function onSlide() {
-        console.log("onSlide:" + sNum.current);
+        // console.log("onSlide:" + sNum.current);
         $(".subgt-cont").eq(sNum.current).addClass("on").siblings().removeClass("on");
         $(".subgt-bull ul li").eq(sNum.current).addClass("on").siblings().removeClass("on");
     }
@@ -87,9 +88,9 @@ export function GolfTeam(props) {
                 <>
                     <div className={i === 0 ? "subgt-cont on" : "subgt-cont"} key={i}>
                         <ul>
-                            <li>
+                            <li key={i}>
                                 <div className="subgt-memImg">
-                                    <img src={process.env.PUBLIC_URL + "images/bg.jpg"} alt="bg" />
+                                    <img src={process.env.PUBLIC_URL + "images/golf/bg.jpg"} alt="bg" />
                                     <img src={process.env.PUBLIC_URL + golf_mem[i].src} alt={golf_mem[i].name} />
                                 </div>
                             </li>

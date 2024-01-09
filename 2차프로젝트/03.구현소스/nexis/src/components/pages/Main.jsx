@@ -17,9 +17,8 @@ export function Main(){
 
     useEffect(()=>{
         let mounted = true;
-        if(matchMedia("screen and (min-width: 1024px)").matches)
+        if(matchMedia("screen and (min-width: 900px)").matches)
         {
-            console.log("1024이상");
             let main2 = $(".main2");
             let trends = $(".trends-wrap");
             let trendsImg = $(".trends-img");
@@ -42,9 +41,7 @@ export function Main(){
                 }
             });
         }
-        else{
-            console.log("1024이하");
-        }
+        
         return () => {
             mounted=false;
         };

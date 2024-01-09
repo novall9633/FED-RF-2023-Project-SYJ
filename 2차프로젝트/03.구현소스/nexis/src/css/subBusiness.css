@@ -188,8 +188,11 @@
     .subBs-st2-txt, .subBs-nd2-txt{
         width: 80%;
     }
-    svg{
-        aspect-ratio: "none";
+    .subBs-st2-svg, .subBs-nd2-svg{
+        display: none;
+    }
+    .subBs-st-txt, .subBs-nd-txt{
+        left: 0;
     }
 
 }

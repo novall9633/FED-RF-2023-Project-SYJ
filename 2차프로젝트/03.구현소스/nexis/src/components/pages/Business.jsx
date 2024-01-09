@@ -16,27 +16,33 @@ export function Business(props) {
         let stSvg = $(".subBs-st2-svg .pa1");
         let ndSvg = $(".subBs-nd2-svg .pa1");
         let arr = [stCont, ndCont, stTxt, ndTxt, stSvg, ndSvg];
-        for (let i = 0; i < arr.length; i++) {
-            arr[i].removeClass("on");
+        if(matchMedia("screen and (min-width: 900px)").matches){
+            for (let i = 0; i < arr.length; i++) {
+                arr[i].removeClass("on");
+            }
+            const mouseMoveB =()=>{
+                scrollFn("addOn", stCont, 1 / 3);
+                scrollFn("addOn", stTxt, 1 / 3);
+                scrollFn("addOn", stSvg, 1 / 3);
+                if (props.cat !== "wall") {
+                    scrollFn("addOn", ndCont, 1 / 2);
+                    scrollFn("addOn", ndTxt, 1 / 2);
+                    scrollFn("addOn", ndSvg, 1 / 2);
+                }
+            }
+            
+            window.addEventListener("wheel", ()=>{
+                if(mounted){
+                    mouseMoveB();
+                }
+            });
         }
-        const mouseMoveB =()=>{
-            scrollFn("addOn", stCont, 1 / 3);
-            scrollFn("addOn", stTxt, 1 / 3);
-            scrollFn("addOn", stSvg, 1 / 3);
-            if (props.cat !== "wall") {
-                scrollFn("addOn", ndCont, 1 / 2);
-                scrollFn("addOn", ndTxt, 1 / 2);
-                scrollFn("addOn", ndSvg, 1 / 2);
+        else{
+            for (let i = 0; i < arr.length; i++) {
+                arr[i].addClass("on");
             }
         }
-        
-        window.addEventListener("wheel", ()=>{
-            if(mounted){
-                mouseMoveB();
-            }
-        });
         return () => {
-            // document.removeEventListener("wheel",mouseMoveB);
             mounted = false;
         };
     });

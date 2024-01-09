@@ -92,8 +92,7 @@
     height: 40px;
 }
 .list li input{
-    /* display: inline-block; */
-    display: none;
+    display: inline-block;
     border:none;
     width: 100%;
     text-align: right;
