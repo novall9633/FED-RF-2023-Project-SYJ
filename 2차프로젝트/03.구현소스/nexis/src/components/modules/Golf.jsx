@@ -29,7 +29,7 @@ export function Golf() {
 
         if (isR) {
             if (matchMedia("screen and (min-width: 900px)").matches) {
-                sldBox.animate({ left: "-50%" }, A_TM, () => {
+                sldBox.animate({ left: "-50%" }, A_TM,"easeInOutQuint", () => {
                     // 맨앞li 맨뒤로 이동
                     sldBox
                         .append(sldBox.find("li").first())
@@ -37,7 +37,7 @@ export function Golf() {
                         .css({ left: "0" });
                 });
             } else {
-                sldBox.animate({ left: "-110.5%" }, A_TM, () => {
+                sldBox.animate({ left: "-110.5%" }, A_TM,"easeInOutQuint", () => {
                     // 맨앞li 맨뒤로 이동
                     sldBox
                         .append(sldBox.find("li").first())
@@ -55,14 +55,14 @@ export function Golf() {
                     // left값 -50%
                     .css({ left: "-50%" })
                     // left값을 0으로 애니메이션
-                    .animate({ left: "0" }, A_TM);
+                    .animate({ left: "0" }, A_TM,"easeInOutQuint",);
             } else {
                 sldBox
                     .prepend(sldBox.find("li").last())
                     // left값 -50%
                     .css({ left: "-110.5%" })
                     // left값을 0으로 애니메이션
-                    .animate({ left: "0" }, A_TM);
+                    .animate({ left: "0" }, A_TM,"easeInOutQuint",);
             }
 
             // 슬라이드순번 감소(0보다 작으면 끝번호)

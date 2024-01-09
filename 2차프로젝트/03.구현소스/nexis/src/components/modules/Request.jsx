@@ -1,9 +1,19 @@
+import { useContext } from "react";
 import "../../css/request.css";
+import $ from 'jquery';
+import { nCon } from "./nContext";
 
 export function Request() {
-    function RefreshImage(){
-        
-    }
+    const myCon = useContext(nCon);
+    function refreshImage (){
+        let random = Math.floor(Math.random() * 9) + 1;
+        let capt = $(".vmiddle");
+        $(capt).attr("src",process.env.PUBLIC_URL + "/images/captcha"+random+".bmp");
+    };
+    const onSubmit = (e) => {
+        e.preventDefault();
+        setTimeout(() => myCon.chgPage("request", {}), 1000);
+    };
     return (
         <>
             <div id="main4">
@@ -92,7 +102,7 @@ export function Request() {
                                             <div className="request-input-data">
                                                 <p className="captcha_img">
                                                     <img
-                                                        src={process.env.PUBLIC_URL + "/images/captcha.bmp"}
+                                                        src={process.env.PUBLIC_URL + "/images/captcha1.bmp"}
                                                         id="imgCaptcha"
                                                         className="vmiddle"
                                                     />
@@ -100,8 +110,8 @@ export function Request() {
                                                 <input
                                                     type="button"
                                                     defaultValue="새로고침"
-                                                    onClick={RefreshImage("imgCaptcha")}
-                                                    style={{display:"none"}}
+                                                    onClick={refreshImage}
+                                                    // style={{display:"none"}}
                                                 />
                                                 <input
                                                     type="text"
@@ -128,7 +138,7 @@ export function Request() {
                                             &nbsp;<span></span> 위의 모든 약관의 내용을 확인하였으며 이에 동의합니다.
                                         </label>
                                     </p>
-                                    <button>문의사항 작성하기</button>
+                                    <button onClick={onSubmit}>문의사항 작성하기</button>
                                 </div>
                             </form>
                         </div>

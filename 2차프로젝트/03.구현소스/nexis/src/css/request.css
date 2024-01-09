@@ -221,7 +221,7 @@ cursor:pointer;
         bottom: 80%;
     }
     .captcha_img img{
-        width: 70%;
+        width: 100%;
     }
     .request-inq p {
         font-size: min(10px,2vw);

@@ -349,4 +349,7 @@ footer {
     .footer-comp{
         text-align-last: left;
     }
+    .footer-comp ul{
+        padding-top: 0;
+    }
 }

@@ -20,7 +20,7 @@
 
 }
 .busi-info h2 span{
-    font-size: min(64px,30vw);
+    font-size: min(64px,15vw);
     font-weight: 700;
     transform: rotateX(-360deg);
     transition: .3s;
