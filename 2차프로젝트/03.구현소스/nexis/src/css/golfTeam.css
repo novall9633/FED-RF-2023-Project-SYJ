@@ -28,19 +28,15 @@
 }
 .subgt-memImg {
     position: relative;
+    background-image: url(../../public/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
-.subgt-memImg img:first-child {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.subgt-memImg img:last-child {
+.subgt-memImg img {
     position: relative;
     z-index: 2;
 }
-.subgt-cont.on .subgt-memImg img:last-child{
+.subgt-cont.on .subgt-memImg img{
     animation: toRight ease-out 1s forwards;
 }
 @keyframes toRight {
@@ -135,13 +131,8 @@
         gap:0;
         flex-direction: row-reverse;
     }
-    .subgt-memImg img:first-child{
+    .subgt-memImg img{
         width: 100%;
-        /* height: 50%; */
-    }
-    .subgt-memImg img:last-child{
-        width: 100%;
-        height: 50%;
     }
     .subgt-cont li:first-child{
         width: 70%;

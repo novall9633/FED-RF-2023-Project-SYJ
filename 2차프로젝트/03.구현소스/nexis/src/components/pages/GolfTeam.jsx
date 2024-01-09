@@ -90,7 +90,7 @@ export function GolfTeam(props) {
                         <ul>
                             <li key={i}>
                                 <div className="subgt-memImg">
-                                    <img src={process.env.PUBLIC_URL + "images/golf/bg.jpg"} alt="bg" />
+                                    {/* <img src={process.env.PUBLIC_URL + "images/golf/bg.jpg"} alt="bg" /> */}
                                     <img src={process.env.PUBLIC_URL + golf_mem[i].src} alt={golf_mem[i].name} />
                                 </div>
                             </li>

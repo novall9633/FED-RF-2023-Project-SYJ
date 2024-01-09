@@ -111,6 +111,7 @@ export function Request() {
                                                     type="button"
                                                     defaultValue="새로고침"
                                                     onClick={refreshImage}
+                                                    style={{cursor:"pointer"}}
                                                     // style={{display:"none"}}
                                                 />
                                                 <input
