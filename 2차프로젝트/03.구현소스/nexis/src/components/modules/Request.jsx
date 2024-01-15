@@ -2,44 +2,39 @@ import { useContext, useEffect } from "react";
 import "../../css/request.css";
 import $ from "jquery";
 import { nCon } from "./nContext";
+import { response } from "express";
 
 export function Request() {
     const myCon = useContext(nCon);
 
-    let express = require("express");
-    let app = express();
     let clientId = process.env.REACT_APP_CLIENT_ID;
     let clientSc = process.env.REACT_APP_CLIENT_SECRET;
     let code = 0;
-    app.get("/captcha/nkey", function (req, res) {
-        let api_url = "https://openapi.naver.com/v1/captcha/nkey?code=" + code;
-        let request = require("request");
-        let options = {
-            url: api_url,
-            headers: { "X-Naver-Client-Id": clientId, "X-Naver-Client-Secret": clientSc },
-        };
-        request.get(options, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                res.writeHead(200, { "Content-Type": "text/json;charset=utf-8" });
-                res.end(body);
-            } else {
-                res.status(response.statusCode).end();
-                console.log("error = " + response.statusCode);
-            }
+    let api_url = "https://openapi.naver.com/v1/captcha/nkey?code=" + code;
+    let options = {
+        url: api_url,
+        headers: { "X-Naver-Client-Id": clientId, "X-Naver-Client-Secret": clientSc },
+    };
+
+    function getToken(api_url) {
+        return new Promise((resolve, reject) => {
+            fetch(api_url, {
+                method: "GET",
+                mode: "no-cors",
+                headers: { "X-Naver-Client-Id": clientId, "X-Naver-Client-Secret": clientSc },
+            })
+                .then((res) => {
+                    if (res.ok) {
+                        resolve(res);
+                        console.log(res);
+                    }else{
+                        reject(new Error('error'));
+                    }
+                })
+                .then((data) => console.log(data));
         });
-    });
-    //  async function getToken(options){
-    //     // 1. 파일 로드까지 기다려~
-    //     let myFetch = await fetch(options);
-    //     // 2. 로드된 파일 내용 읽을때까지 기다려
-    //     let token = await myFetch.text();
-
-    //     return token;
-    // }/////////async 함수 ////////////////
-
-    // // 비동기함수 호출
-    // const TOKEN = getToken(options);
-    // console.log(TOKEN);
+    }
+    getToken(api_url);
 
     function refreshImage() {
         // let random = Math.floor(Math.random() * 9) + 1;
