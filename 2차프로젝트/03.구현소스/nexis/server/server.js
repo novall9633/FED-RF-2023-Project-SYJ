@@ -1,7 +1,9 @@
 var express = require("express");
 var app = express();
 var client_id = process.env.REACT_APP_CLIENT_ID; //개발자센터에서 발급받은 Client ID
+// REACT_APP_CLIENT_ID = 'hwl1zg9wp_QipovESODT',
 var client_secret = process.env.REACT_APP_CLIENT_SECRET; //개발자센터에서 발급받은 Client Secret
+// REACT_APP_CLIENT_SECRET = "9DletTgwZr"
 var code = "0";
 app.get("/captcha/nkey", function (req, res) {
     var api_url = "https://openapi.naver.com/v1/captcha/nkey?code=" + code;
