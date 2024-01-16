@@ -1,40 +1,17 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../../css/request.css";
 import $ from "jquery";
 import { nCon } from "./nContext";
-import { response } from "express";
+
 
 export function Request() {
     const myCon = useContext(nCon);
-
-    let clientId = process.env.REACT_APP_CLIENT_ID;
-    let clientSc = process.env.REACT_APP_CLIENT_SECRET;
-    let code = 0;
-    let api_url = "https://openapi.naver.com/v1/captcha/nkey?code=" + code;
-    let options = {
-        url: api_url,
-        headers: { "X-Naver-Client-Id": clientId, "X-Naver-Client-Secret": clientSc },
-    };
-
-    function getToken(api_url) {
-        return new Promise((resolve, reject) => {
-            fetch(api_url, {
-                method: "GET",
-                mode: "no-cors",
-                headers: { "X-Naver-Client-Id": clientId, "X-Naver-Client-Secret": clientSc },
-            })
-                .then((res) => {
-                    if (res.ok) {
-                        resolve(res);
-                        console.log(res);
-                    }else{
-                        reject(new Error('error'));
-                    }
-                })
-                .then((data) => console.log(data));
-        });
-    }
-    getToken(api_url);
+    const [token,setToken] = useState("");
+    useEffect(()=>{
+        fetch("http://127.0.0.1:3000/captcha/nkey")
+        .then((res)=>console.log(res))
+        // .then((data)=>console.log(data))
+    })
 
     function refreshImage() {
         // let random = Math.floor(Math.random() * 9) + 1;
