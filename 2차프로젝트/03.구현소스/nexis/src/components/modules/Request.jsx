@@ -6,12 +6,12 @@ import { nCon } from "./nContext";
 
 export function Request() {
     const myCon = useContext(nCon);
+
     const [token,setToken] = useState("");
     useEffect(()=>{
-        fetch("http://127.0.0.1:3000/captcha/nkey")
-        .then((res)=>console.log(res))
-        // .then((data)=>console.log(data))
-    })
+        fetch("/captcha/nkey")
+        .then((data)=>console.log(data))
+    },[])
 
     function refreshImage() {
         // let random = Math.floor(Math.random() * 9) + 1;
