@@ -6,24 +6,30 @@ import { nCon } from "./nContext";
 // https://codedamn.com/news/reactjs/how-to-connect-react-with-node-js
 
 export function Request() {
-    const myCon = useContext(nCon);
-    var client_id = "hwl1zg9wp_QipovESODT";
-    var client_secret = "9DletTgwZr";
-    var head = {headers: {
-                "X-Naver-Client-Id": client_id,
-                "X-Naver-Client-Secret": client_secret,
-            },
-        }
-    
-
     const [token, setToken] = useState("");
+    const myCon = useContext(nCon);
+
+    // var client_id = "hwl1zg9wp_QipovESODT";
+    var client_id = process.env.REACT_APP_CLIENT_ID;
+    // var client_secret = "9DletTgwZr";
+    var client_secret = process.env.REACT_APP_CLIENT_SECRET;
+
+    async function getToken() {
+        try {
+            const response = await fetch("http://localhost/captcha/nkey", {
+                headers: {
+                    "X-Naver-Client-Id": client_id,
+                    "X-Naver-Client-Secret": client_secret,
+                },
+            })
+                .then((res) => res.json())
+                .then((data) => setToken(data.key))
+        } catch (error) {
+            console.log("error : ", error);
+        }
+    }
     useEffect(() => {
-        fetch("http://localhost:4000/captcha/nkey", {
-            headers: {
-                "X-Naver-Client-Id": client_id,
-                "X-Naver-Client-Secret": client_secret,
-            },
-        }).then((data) => console.log(data));
+        getToken();
     }, []);
 
     function refreshImage() {
