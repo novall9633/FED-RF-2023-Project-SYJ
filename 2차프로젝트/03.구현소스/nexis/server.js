@@ -31,6 +31,7 @@ app.get("/captcha/nkey", function (req, res) {
 });
 // 캡처 이미지 요청
 app.get("/captcha/image", function (req, res) {
+    console.log("dads"+req.query.key);
     var api_url = "https://openapi.naver.com/v1/captcha/ncaptcha.bin?key=" + req.query.key;
     var request = require("request");
     var options = {

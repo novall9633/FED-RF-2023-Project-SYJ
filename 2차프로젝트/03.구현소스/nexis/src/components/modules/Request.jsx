@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import "../../css/request.css";
 import $ from "jquery";
 import { nCon } from "./nContext";
@@ -6,7 +6,7 @@ import { nCon } from "./nContext";
 // https://codedamn.com/news/reactjs/how-to-connect-react-with-node-js
 
 export function Request() {
-    const [token, setToken] = useState("");
+    let token = useRef("");
     const myCon = useContext(nCon);
 
     // var client_id = "hwl1zg9wp_QipovESODT";
@@ -16,23 +16,52 @@ export function Request() {
 
     async function getToken() {
         try {
-            const response = await fetch("http://localhost/captcha/nkey", {
+            token.current = await fetch("http://localhost/captcha/nkey", {
                 headers: {
                     "X-Naver-Client-Id": client_id,
                     "X-Naver-Client-Secret": client_secret,
                 },
             })
                 .then((res) => res.json())
-                .then((data) => setToken(data.key))
+                .then((data) => {
+                    // token.current = data.key;
+                    return data.key;
+                });
+                
         } catch (error) {
             console.log("error : ", error);
         }
     }
-    useEffect(() => {
-        getToken();
-    }, []);
+    async function getImg(key) {
+        try {
+            await fetch("http://localhost/captcha/image?key="+key, {
+                headers: {
+                    "X-Naver-Client-Id": client_id,
+                    "X-Naver-Client-Secret": client_secret,
+                },
+            })
+                // .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                });
+        } catch (error) {
+            console.log("error : ", error);
+        }
+    }
 
-    function refreshImage() {
+    
+    useEffect(()=>{
+        getToken();
+        setTimeout(() => {
+            console.log("키 : ",token.current);
+            getImg(token.current);
+        }, 2000);
+
+
+    },[])
+
+
+    function refreshImage(key) {
         // let random = Math.floor(Math.random() * 9) + 1;
         // let capt = $(".vmiddle");
         // $(capt).attr("src",process.env.PUBLIC_URL + "/images/captcha"+random+".bmp");
@@ -129,7 +158,7 @@ export function Request() {
                                             <div className="request-input-data">
                                                 <p className="captcha_img">
                                                     <img
-                                                        src={process.env.PUBLIC_URL + "/images/captcha1.bmp"}
+                                                        src="captcha.jpg"
                                                         id="imgCaptcha"
                                                         className="vmiddle"
                                                     />
