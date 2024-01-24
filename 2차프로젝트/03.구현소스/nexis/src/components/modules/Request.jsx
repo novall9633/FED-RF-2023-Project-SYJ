@@ -48,23 +48,29 @@ export function Request() {
             console.log("error : ", error);
         }
     }
-
-    
     useEffect(()=>{
-        getToken();
-        setTimeout(() => {
-            console.log("키 : ",token.current);
-            getImg(token.current);
-        }, 2000);
-
-
-    },[])
-
-
-    function refreshImage(key) {
-        // let random = Math.floor(Math.random() * 9) + 1;
-        // let capt = $(".vmiddle");
-        // $(capt).attr("src",process.env.PUBLIC_URL + "/images/captcha"+random+".bmp");
+        // getToken();
+        // setTimeout(() => {
+        //     console.log("키 : ",token.current);
+        //     getImg(token.current);
+        // }, 2000);
+    },[]);
+    
+    async function refreshImage(key) {
+        try {
+            await fetch("http://localhost/captcha/image?key="+key, {
+                headers: {
+                    "X-Naver-Client-Id": client_id,
+                    "X-Naver-Client-Secret": client_secret,
+                },
+            })
+                // .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                });
+        } catch (error) {
+            console.log("error : ", error);
+        }
     }
     const onSubmit = (e) => {
         e.preventDefault();
@@ -158,7 +164,7 @@ export function Request() {
                                             <div className="request-input-data">
                                                 <p className="captcha_img">
                                                     <img
-                                                        src="captcha.jpg"
+                                                        src={process.env.PUBLIC_URL + "/images/captcha.jpg"}
                                                         id="imgCaptcha"
                                                         className="vmiddle"
                                                     />

@@ -38,7 +38,7 @@ app.get("/captcha/image", function (req, res) {
         url: api_url,
         headers: { "X-Naver-Client-Id": client_id, "X-Naver-Client-Secret": client_secret },
     };
-    var writeStream = fs.createWriteStream("./captcha.jpg");
+    var writeStream = fs.createWriteStream("./public/images/captcha.jpg");
     var _req = request.get(options).on("response", function (response) {
         console.log(response.statusCode); // 200
         console.log(response.headers["content-type"]);

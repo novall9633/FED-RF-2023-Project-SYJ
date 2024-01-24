@@ -119,6 +119,7 @@
 }
 .captcha_img img{
     height: 100%;
+    aspect-ratio: 5/1;
 }
 .btn{
     display: flex;
@@ -177,6 +178,7 @@ cursor:pointer;
 .request-inq p{
     line-height: 3.5;
 }
+
 .request-inq>button{
     position: relative;
     border: 0;
