@@ -14,6 +14,12 @@ export function Request() {
     // var client_secret = "9DletTgwZr";
     var client_secret = process.env.REACT_APP_CLIENT_SECRET;
 
+    getToken();
+    setTimeout(() => {
+        console.log("키 : ",token.current);
+        getImg(token.current);
+    }, 2000);
+
     async function getToken() {
         try {
             token.current = await fetch("http://localhost/captcha/nkey", {
@@ -48,13 +54,13 @@ export function Request() {
             console.log("error : ", error);
         }
     }
-    useEffect(()=>{
+    // useEffect(()=>{
         // getToken();
         // setTimeout(() => {
         //     console.log("키 : ",token.current);
         //     getImg(token.current);
         // }, 2000);
-    },[]);
+    // },[]);
     
     async function refreshImage(key) {
         try {
