@@ -4,6 +4,7 @@
 .main4{
     position: relative;
     /* height: 100vh; */
+    overflow: hidden;
 }
 .request-info{
     position: absolute;

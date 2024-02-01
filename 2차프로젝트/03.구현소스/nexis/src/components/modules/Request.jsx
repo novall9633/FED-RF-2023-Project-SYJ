@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef } from "react";
 import "../../css/request.css";
 import $ from "jquery";
 import { nCon } from "./nContext";
+import { Captcha } from "./Captcha";
 
 // https://codedamn.com/news/reactjs/how-to-connect-react-with-node-js
 
@@ -14,11 +15,12 @@ export function Request() {
     // var client_secret = "9DletTgwZr";
     var client_secret = process.env.REACT_APP_CLIENT_SECRET;
 
-    getToken();
-    setTimeout(() => {
-        console.log("키 : ",token.current);
-        getImg(token.current);
-    }, 2000);
+    
+    // getToken();
+    // setTimeout(() => {
+    //     console.log("키 : ",token.current);
+    //     getImg(token.current);
+    // }, 2000);
 
     async function getToken() {
         try {
@@ -54,13 +56,13 @@ export function Request() {
             console.log("error : ", error);
         }
     }
-    // useEffect(()=>{
-        // getToken();
-        // setTimeout(() => {
-        //     console.log("키 : ",token.current);
-        //     getImg(token.current);
-        // }, 2000);
-    // },[]);
+    useEffect(()=>{
+        getToken();
+        setTimeout(() => {
+            console.log("키 : ",token.current);
+            getImg(token.current);
+        }, 2000);
+    },[]);
     
     async function refreshImage(key) {
         try {
@@ -169,16 +171,12 @@ export function Request() {
                                             </label>
                                             <div className="request-input-data">
                                                 <p className="captcha_img">
-                                                    <img
-                                                        src={process.env.PUBLIC_URL + "/images/captcha.jpg"}
-                                                        id="imgCaptcha"
-                                                        className="vmiddle"
-                                                    />
+                                                    <Captcha />
                                                 </p>
                                                 <input
                                                     type="button"
                                                     defaultValue="새로고침"
-                                                    onClick={refreshImage}
+                                                    onClick={refreshImage(token.current)}
                                                     style={{ cursor: "pointer" }}
                                                     // style={{display:"none"}}
                                                 />

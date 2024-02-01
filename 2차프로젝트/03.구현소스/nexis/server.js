@@ -1,9 +1,11 @@
 // https://developers.naver.com/docs/utils/captcha/examples/
 
 var express = require("express");
+const path = require("path");
 var app = express();
 const cors = require("cors");
 app.use(cors());
+// const multer = require("multer");
 
 // var client_id = process.env.REACT_APP_CLIENT_ID; //개발자센터에서 발급받은 Client ID
 var client_id = "hwl1zg9wp_QipovESODT";
@@ -79,3 +81,13 @@ app.listen(80, function () {
 // app.listen(4000, function () {
 //     console.log("http://localhost:4000/captcha/nkey app listening on port 4000!");
 // });
+
+
+app.use(express.static(path.join(__dirname, "/build")));
+
+app.get("/", function (request, response) {
+    // 내부로 전달되는 값은 처음것이 요청, 두번째가 응답임!
+    response.sendFile(path.join(__dirname), "/build/index.html");
+    // 첫페이지는 요청에 대한 응답임! 파일을 내려보내주니까
+    // sendFile() 메서드사용!
+  });
