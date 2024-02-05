@@ -1,23 +1,5 @@
 import domFn from "./dom.js";
-import { liveData, center, subMenu, product, subData } from "./data.js";
-// import { startSS,setPos } from "./smoothScroll23.js";
-
-// startSS();
-
-// setTimeout(() => {
-//     // 윈도우 스크롤 맨위로!
-//     window.scrollTo(0, 0);
-//     // 부드러운 스크롤 위치값 반영!
-//     setPos(0);
-//     // 안하면 원래 위치로 스크롤시 튐!
-//   }, 400);
-//   // 0. 스크롤바 트랙을 잡고 위치이동시 위치값 반영
-//   domFn.addEvt(window, "mouseup", () => setPos(window.scrollY));
-//   //////// mouseup /////////////
-  
-//   // 0. 키보드 방향키 이동시 위치값 반영
-//   domFn.addEvt(window, "keyup", () => setPos(window.scrollY));
-//   //////// mouseup /////////////
+import { subMenu, subData } from "./data.js";
 
 let nextSeq = 0;
 
@@ -158,6 +140,3 @@ slideImg.forEach((ele, idx) => {
     if(idx == nextSeq) ele.style.opacity = '1';
 });
 
-setTimeout(() => {
-    
-}, 5000);

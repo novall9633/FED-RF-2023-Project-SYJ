@@ -1,5 +1,5 @@
 import domFn from "./dom.js";
-import { liveData, center, subMenu, product, subData} from "./data.js";
+import { liveData, center, subMenu, product} from "./data.js";
 
 let pg_num = 0;
 let sts_wheel = 0;
