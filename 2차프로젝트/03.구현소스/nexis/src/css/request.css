@@ -3,8 +3,6 @@
 ********************************************************************/
 .main4{
     position: relative;
-    /* height: 100vh; */
-    overflow: hidden;
 }
 .request-info{
     position: absolute;
@@ -15,6 +13,7 @@
     color: #fff;
     background-color: var(--main-color);
     box-shadow: 3px 3px 3px #000000a3;
+    overflow: hidden;
 }
 .request-info p{
     font-size: min(24px,10vw);
@@ -63,6 +62,7 @@
     padding-top: 200px;
     max-width: 1400px;
     margin: 0 auto;
+    overflow: hidden;
 }
 .request-project-req, .request-project-img{
     max-width: 650px;
