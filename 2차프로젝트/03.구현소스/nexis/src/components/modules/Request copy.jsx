@@ -1,54 +1,85 @@
 import { useContext, useEffect, useRef } from "react";
 import "../../css/request.css";
-import axios from "axios";
-import { Captcha } from "./Captcha";
+import $ from "jquery";
 import { nCon } from "./nContext";
+import { Captcha } from "./Captcha";
 
 // https://codedamn.com/news/reactjs/how-to-connect-react-with-node-js
 
 export function Request() {
+    let token = useRef("");
     const myCon = useContext(nCon);
-    // const CLIENT_ID = "hwl1zg9wp_QipovESODT";
-    const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-    // const CLIENT_SECRET = "9DletTgwZr";
-    const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
-    let code=0;
-    
-    const option= {
-        method:'GET',
-        header:{
-            "Access-Control-Allow-Origin": "*",
-            "X-Naver-Client-Id":CLIENT_ID,
-            "X-Naver-Client-Secret":CLIENT_SECRET,
-            "Host":"openapi.naver.com",
-        }
-    };
-    
-    console.log(option);
-    const TOKEN = getToken();
 
-    async function getToken(){
-        try{
-            const response = await axios.get(`https://openapi.naver.com/v1/captcha/nkey?code=${code}`,option)
-            .then((res)=>{console.log(res);})
-        }
-        catch(e){
-            console.log(e);
+    // var client_id = "hwl1zg9wp_QipovESODT";
+    var client_id = process.env.REACT_APP_CLIENT_ID;
+    // var client_secret = "9DletTgwZr";
+    var client_secret = process.env.REACT_APP_CLIENT_SECRET;
+
+    
+    // getToken();
+    // setTimeout(() => {
+    //     console.log("키 : ",token.current);
+    //     getImg(token.current);
+    // }, 2000);
+
+    async function getToken() {
+        try {
+            token.current = await fetch("http://localhost/captcha/nkey", {
+                headers: {
+                    "X-Naver-Client-Id": client_id,
+                    "X-Naver-Client-Secret": client_secret,
+                },
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    // token.current = data.key;
+                    return data.key;
+                });
+                
+        } catch (error) {
+            console.log("error : ", error);
         }
     }
-
-
+    async function getImg(key) {
+        try {
+            await fetch("http://localhost/captcha/image?key="+key, {
+                headers: {
+                    "X-Naver-Client-Id": client_id,
+                    "X-Naver-Client-Secret": client_secret,
+                },
+            })
+                // .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                });
+        } catch (error) {
+            console.log("error : ", error);
+        }
+    }
     useEffect(()=>{
-        console.log(TOKEN);
-    })
+        getToken();
+        setTimeout(() => {
+            console.log("키 : ",token.current);
+            getImg(token.current);
+        }, 2000);
+    },[]);
     
-
-    // axios.get(`/v1/captcha/nkey?code=${code}`,option)
-    // .then((res)=>{console.log(res);})
-    // .catch((err)=>{console.log(err)})
-
-    
-
+    async function refreshImage(key) {
+        try {
+            await fetch("http://localhost/captcha/image?key="+key, {
+                headers: {
+                    "X-Naver-Client-Id": client_id,
+                    "X-Naver-Client-Secret": client_secret,
+                },
+            })
+                // .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                });
+        } catch (error) {
+            console.log("error : ", error);
+        }
+    }
     const onSubmit = (e) => {
         e.preventDefault();
         setTimeout(() => myCon.chgPage("request", {}), 1000);
@@ -145,7 +176,7 @@ export function Request() {
                                                 <input
                                                     type="button"
                                                     defaultValue="새로고침"
-                                                    // onClick={refreshImage(token.current)}
+                                                    onClick={refreshImage(token.current)}
                                                     style={{ cursor: "pointer" }}
                                                     // style={{display:"none"}}
                                                 />

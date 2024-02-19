@@ -14,7 +14,6 @@ import { Contact } from './components/pages/Contact';
 import { DesignCenter } from './components/pages/DesignCenter';
 
 
-
 function App(){
   return(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
