@@ -2,15 +2,16 @@
 
 var express = require("express");
 const path = require("path");
-var app = express();
 const cors = require("cors");
+const dotenv = require('dotenv');
+dotenv.config({path: path.join(__dirname, ".env")});
+var app = express();
 app.use(cors());
-// const multer = require("multer");
 
-// var client_id = process.env.REACT_APP_CLIENT_ID; //개발자센터에서 발급받은 Client ID
-var client_id = "hwl1zg9wp_QipovESODT";
-// var client_secret = process.env.REACT_APP_CLIENT_SECRET; //개발자센터에서 발급받은 Client Secret
-var client_secret = "9DletTgwZr";
+
+var CLIENT_ID = process.env.REACT_APP_CLIENT_ID; //개발자센터에서 발급받은 Client ID
+var CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET; //개발자센터에서 발급받은 Client Secret
+
 var fs = require("fs");
 // 캡처 키 발급 요청
 app.get("/captcha/nkey", function (req, res) {
@@ -19,7 +20,7 @@ app.get("/captcha/nkey", function (req, res) {
     var request = require("request");
     var options = {
         url: api_url,
-        headers: { "X-Naver-Client-Id": client_id, "X-Naver-Client-Secret": client_secret },
+        headers: { "X-Naver-Client-Id": CLIENT_ID, "X-Naver-Client-Secret": CLIENT_SECRET },
     };
     request.get(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -27,18 +28,18 @@ app.get("/captcha/nkey", function (req, res) {
             res.end(body);
         } else {
             res.status(response.statusCode).end();
-            console.log("error = " + response.statusCode);
+            console.log("키발급 error = " + response.statusCode);
         }
     });
 });
 // 캡처 이미지 요청
 app.get("/captcha/image", function (req, res) {
-    console.log("dads"+req.query.key);
+    console.log("token값:"+req.query.key);
     var api_url = "https://openapi.naver.com/v1/captcha/ncaptcha.bin?key=" + req.query.key;
     var request = require("request");
     var options = {
         url: api_url,
-        headers: { "X-Naver-Client-Id": client_id, "X-Naver-Client-Secret": client_secret },
+        headers: { "X-Naver-Client-Id": CLIENT_ID, "X-Naver-Client-Secret": CLIENT_SECRET },
     };
     var writeStream = fs.createWriteStream("./public/images/captcha.jpg");
     var _req = request.get(options).on("response", function (response) {
@@ -61,7 +62,7 @@ app.get("/captcha/result", function (req, res) {
     var request = require("request");
     var options = {
         url: api_url,
-        headers: { "X-Naver-Client-Id": client_id, "X-Naver-Client-Secret": client_secret },
+        headers: { "X-Naver-Client-Id": CLIENT_ID, "X-Naver-Client-Secret": CLIENT_SECRET },
     };
     request.get(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -69,15 +70,13 @@ app.get("/captcha/result", function (req, res) {
             res.end(body);
         } else {
             res.status(response.statusCode).end();
-            console.log("error = " + response.statusCode);
+            console.log("입력값 요청 error = " + response.statusCode);
         }
     });
 });
-// 운영용
 app.listen(80, function () {
     console.log("http://localhost:80/captcha/nkey app listening on port 80!");
 });
-// 개발용
 // app.listen(4000, function () {
 //     console.log("http://localhost:4000/captcha/nkey app listening on port 4000!");
 // });

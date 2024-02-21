@@ -1,54 +1,99 @@
 import { useContext, useEffect, useRef } from "react";
 import "../../css/request.css";
-import axios from "axios";
-import { Captcha } from "./Captcha";
+import $ from "jquery";
 import { nCon } from "./nContext";
+import { Captcha } from "./Captcha";
 
 // https://codedamn.com/news/reactjs/how-to-connect-react-with-node-js
 
 export function Request() {
+    // let token = useRef("");
     const myCon = useContext(nCon);
-    // const CLIENT_ID = "hwl1zg9wp_QipovESODT";
-    const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-    // const CLIENT_SECRET = "9DletTgwZr";
-    const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
-    let code=0;
-    
-    const option= {
-        method:'GET',
-        header:{
-            "Access-Control-Allow-Origin": "*",
-            "X-Naver-Client-Id":CLIENT_ID,
-            "X-Naver-Client-Secret":CLIENT_SECRET,
-            "Host":"openapi.naver.com",
-        }
-    };
-    
-    console.log(option);
-    const TOKEN = getToken();
 
-    async function getToken(){
-        try{
-            const response = await axios.get(`https://openapi.naver.com/v1/captcha/nkey?code=${code}`,option)
-            .then((res)=>{console.log(res);})
-        }
-        catch(e){
-            console.log(e);
-        }
+    // var CLIENT_ID = "hwl1zg9wp_QipovESODT";
+    var CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+    // var CLIENT_SECRET = "9DletTgwZr";
+    var CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
+
+    async function showCaptcha() {
+        let token = await fetch("/captcha/nkey", {
+            headers: {
+                "X-Naver-Client-Id": CLIENT_ID,
+                "X-Naver-Client-Secret": CLIENT_SECRET,
+            },
+        }).then((res) => res.json());
+
+        let getImg = await fetch(`/captcha/image?key=${token}`, {
+            headers: {
+                "X-Naver-Client-Id": CLIENT_ID,
+                "X-Naver-Client-Secret": CLIENT_SECRET,
+            },
+        })
+            // .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            });
     }
 
+    // async function getToken() {
+    //     try {
+    //         token.current = await fetch("/captcha/nkey", {
+    //             headers: {
+    //                 "X-Naver-Client-Id": CLIENT_ID,
+    //                 "X-Naver-Client-Secret": CLIENT_SECRET,
+    //             },
+    //         })
+    //             .then((res) => res.json())
+    //             .then((data) => {
+    //                 // token.current = data.key;
+    //                 return data.key;
+    //             });
 
+    //     } catch (error) {
+    //         console.log("error : ", error);
+    //     }
+    // }
+    // async function getImg(key) {
+    //     try {
+    //         await fetch(`/captcha/image?key=${key}`, {
+    //             headers: {
+    //                 "X-Naver-Client-Id": CLIENT_ID,
+    //                 "X-Naver-Client-Secret": CLIENT_SECRET,
+    //             },
+    //         })
+    //             // .then((res) => res.json())
+    //             .then((data) => {
+    //                 console.log(data);
+    //             });
+    //     } catch (error) {
+    //         console.log("error : ", error);
+    //     }
+    // }
     useEffect(()=>{
-        console.log(TOKEN);
-    })
-    
+        // getToken();
+        // setTimeout(() => {
+        //     console.log("키 : ",token.current);
+        //     getImg(token.current);
+        // }, 2000);\
+        showCaptcha();
+    },[]);
 
-    // axios.get(`/v1/captcha/nkey?code=${code}`,option)
-    // .then((res)=>{console.log(res);})
-    // .catch((err)=>{console.log(err)})
-
-    
-
+    async function refreshImage(key) {
+        try {
+            await fetch(`/captcha/image?key=${key}`, {
+                headers: {
+                    "X-Naver-Client-Id": CLIENT_ID,
+                    "X-Naver-Client-Secret": CLIENT_SECRET,
+                },
+            })
+                // .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                });
+        } catch (error) {
+            console.log("error : ", error);
+        }
+    }
     const onSubmit = (e) => {
         e.preventDefault();
         setTimeout(() => myCon.chgPage("request", {}), 1000);
@@ -139,9 +184,7 @@ export function Request() {
                                                 Captcha <i>*</i>
                                             </label>
                                             <div className="request-input-data">
-                                                <p className="captcha_img">
-                                                    <Captcha />
-                                                </p>
+                                                <p className="captcha_img">{/* <Captcha /> */}</p>
                                                 <input
                                                     type="button"
                                                     defaultValue="새로고침"
