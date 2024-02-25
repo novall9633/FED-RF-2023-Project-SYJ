@@ -38,7 +38,7 @@ else {
 // // // console.log(org);
 
 // ******* Borad 컴포넌트 ******* //
-export function Prequest() {
+export function Board() {
     // 보드 데이터가 로컬스에 없으면 생성하기!
     if (!localStorage.getItem("bdata")) {
         // !연산자로 false일때 실행
@@ -55,9 +55,9 @@ export function Prequest() {
 
     // [컴포넌트 전체 공통변수] /////////////
     // 1-1. 페이지 단위수 : 한 페이지 당 레코드수
-    const pgBlock = 10;
+    const pgBlock = 7;
     // 1-2. 페이징의 페이지 단위수 : 페이징 표시 개수
-    const pgPgBlock = 5;
+    const pgPgBlock = 4;
 
     // 2. 전체 레코드수 : 배열데이터 총개수
     const totNum = orgData.length;
@@ -69,6 +69,9 @@ export function Prequest() {
     const [pgNum, setPgNum] = useState(1);
     // 1-2. 페이징의 현재 페이지 번호 : 참조변수로 생성
     const pgPgNum = useRef(1);
+
+    // 1. 데이터 변경변수 : 리스트에 표시되는 실제 데이터셋
+    // const [currData, setCurrData] = useState(null);
 
     // 2. 게시판 모드관리변수
     const [bdMode, setBdMode] = useState("L");
@@ -411,7 +414,7 @@ export function Prequest() {
         // 기본막기
         e.preventDefault();
 
-        // 만약 검색상태였다면 searchSts값이 true이므로
+        // 만약 검색상태였다면 searchSts값이 treu이므로
         // 이때 false로 업데이트와 함께 orgData도 초기화해준다!
         if (searchSts.current) {
             // searchSts값 true 업데이트
@@ -1046,7 +1049,14 @@ export function Prequest() {
                                     <textarea className="content" cols="60" rows="10"></textarea>
                                 </td>
                             </tr>
-                            
+                            <tr>
+                                <td>Attachment</td>
+                                <td>
+                                    {/* 파일정보를 하위 컴포넌트에서 상위컴포넌트
+                  변수인 uploadFile에 저장한다! */}
+                                    <AttachBox saveFile={updateFileInfo} />
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 )
@@ -1087,7 +1097,14 @@ export function Prequest() {
                                     ></textarea>
                                 </td>
                             </tr>
-                            
+                            <tr>
+                                <td>Attach</td>
+                                <td>
+                                    <a href={"/uploads/"+cData.current.att} download={true}>
+                                        {cData.current.att}
+                                    </a>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 )
@@ -1124,7 +1141,14 @@ export function Prequest() {
                                     {/* defaultValue로 써야 수정가능! */}
                                 </td>
                             </tr>
-                            
+                            <tr>
+                                <td>Attach</td>
+                                <td>
+                                    <b>
+                                        {cData.current.att}
+                                    </b>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 )
