@@ -3,11 +3,11 @@ import "../../css/request.css";
 import $ from "jquery";
 import { nCon } from "./nContext";
 import { Captcha } from "./Captcha";
+import axios from 'axios';
 
 // https://codedamn.com/news/reactjs/how-to-connect-react-with-node-js
 
 export function Request() {
-    // let token = useRef("");
     const myCon = useContext(nCon);
 
     // var CLIENT_ID = "hwl1zg9wp_QipovESODT";
@@ -15,13 +15,25 @@ export function Request() {
     // var CLIENT_SECRET = "9DletTgwZr";
     var CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
 
-    async function showCaptcha() {
-        let token = await fetch("/captcha/nkey", {
+    const token =
+    axios.get("/captcha/nkey",{
             headers: {
                 "X-Naver-Client-Id": CLIENT_ID,
                 "X-Naver-Client-Secret": CLIENT_SECRET,
             },
-        }).then((res) => res.json());
+        }).then((response)=>console.log("1"+response))
+        .then((res)=>res.json())
+        .then((re)=>console.log("2"+re));
+    // const token = fetch("/captcha/nkey",{
+    //     headers: {
+    //         "X-Naver-Client-Id": CLIENT_ID,
+    //         "X-Naver-Client-Secret": CLIENT_SECRET,
+    //     },
+    // }).then((res)=> res.json())
+    // .then((token)=> token.key);
+
+    async function showCaptcha(token) {
+        console.log(token);
 
         let getImg = await fetch(`/captcha/image?key=${token}`, {
             headers: {
@@ -69,14 +81,14 @@ export function Request() {
     //         console.log("error : ", error);
     //     }
     // }
-    useEffect(()=>{
-        // getToken();
+    useEffect(() => {
         // setTimeout(() => {
         //     console.log("키 : ",token.current);
         //     getImg(token.current);
         // }, 2000);\
-        showCaptcha();
-    },[]);
+        console.log("토큰" + token);
+        showCaptcha(token);
+    }, []);
 
     async function refreshImage(key) {
         try {

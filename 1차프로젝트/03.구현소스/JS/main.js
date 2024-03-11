@@ -341,7 +341,7 @@ function touchEnd(e) {
     movePage(result > 0 ? 1 : 0);
 } //touchEnd함수////////////////////
 
-//// 이벤트 처리함수 : 화면이동 /////
+//// 이벤트 처리함수 : 화면이동 /////`
 function movePage(dir) {
     if (dir) {
         pg_num++;
